@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Receta extends javax.swing.JFrame implements Printable {
-//d
+//df
     /**
      * Creates new form Receta
      */

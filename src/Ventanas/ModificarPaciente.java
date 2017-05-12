@@ -145,28 +145,73 @@ public class ModificarPaciente extends javax.swing.JFrame {
         getContentPane().add(txtNExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 110, -1));
 
         txtSNombre.setText(" ");
+        txtSNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSNombreKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 120, -1));
 
         txtPNombre.setText(" ");
+        txtPNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPNombreKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 110, -1));
 
         txtApeMat.setText(" ");
+        txtApeMat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApeMatKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 120, -1));
 
         txtApePat.setText(" ");
+        txtApePat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApePatKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 110, -1));
 
         txtCiudad.setText(" ");
+        txtCiudad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCiudadKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 240, -1));
 
         txtCodigoPostal.setText(" ");
+        txtCodigoPostal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoPostalActionPerformed(evt);
+            }
+        });
+        txtCodigoPostal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCodigoPostalKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 120, -1));
 
         txtEstado.setText(" ");
+        txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEstadoKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 240, -1));
 
         txtDomicilio.setColumns(20);
         txtDomicilio.setRows(5);
+        txtDomicilio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDomicilioKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtDomicilio);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 240, 68));
@@ -194,19 +239,54 @@ public class ModificarPaciente extends javax.swing.JFrame {
 
         jLabel15.setText("Medico");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+
+        txtTelDom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelDomKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 159, -1));
+
+        txtTelOfi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelOfiKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 159, -1));
         getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 160, -1));
 
         jLabel23.setText("Lugar de Nacimiento");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
+
+        txtDerechohabiente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDerechohabienteKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 158, -1));
+
+        txtrfc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtrfcKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtrfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 158, -1));
         getContentPane().add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 75, -1));
+
+        txtLugarNac1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtLugarNac1KeyReleased(evt);
+            }
+        });
         getContentPane().add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 158, -1));
         getContentPane().add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 158, -1));
 
         txtEstadoCivil.setText(" ");
+        txtEstadoCivil.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEstadoCivilKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 240, -1));
 
         jLabel24.setText("RFC");
@@ -237,23 +317,55 @@ public class ModificarPaciente extends javax.swing.JFrame {
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 0, 990, -1));
 
         txtNombrePadre.setText(" ");
+        txtNombrePadre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombrePadreKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtNombrePadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 240, -1));
 
         txtNombreMadre.setText(" ");
+        txtNombreMadre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreMadreKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtNombreMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 240, -1));
 
         txtNombrePareja.setText(" ");
+        txtNombrePareja.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreParejaKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtNombrePareja, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 240, -1));
 
         txtProcedencia.setText(" ");
+        txtProcedencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtProcedenciaKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtProcedencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 590, 240, -1));
 
         jLabel25.setText("Estado Civil");
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, -1, -1));
+
+        txtOcupacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtOcupacionKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, 230, -1));
 
         jLabel26.setText("Escolaridad");
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, -1, -1));
+
+        txtEscolaridad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEscolaridadKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtEscolaridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 230, -1));
 
         jLabel27.setText("Observaciones");
@@ -312,6 +424,110 @@ public class ModificarPaciente extends javax.swing.JFrame {
     private void lblCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelarMouseClicked
         dispose();
     }//GEN-LAST:event_lblCancelarMouseClicked
+
+    private void txtPNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPNombreKeyReleased
+    String temp = txtPNombre.getText();
+    txtPNombre.setText(temp.toUpperCase());
+    }//GEN-LAST:event_txtPNombreKeyReleased
+
+    private void txtSNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSNombreKeyReleased
+    String temp = txtSNombre.getText();
+    txtSNombre.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSNombreKeyReleased
+
+    private void txtApePatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApePatKeyReleased
+    String temp = txtApePat.getText();
+    txtApePat.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApePatKeyReleased
+
+    private void txtApeMatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeMatKeyReleased
+    String temp = txtApeMat.getText();
+    txtApeMat.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApeMatKeyReleased
+
+    private void txtDomicilioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDomicilioKeyReleased
+    String temp = txtDomicilio.getText();
+    txtDomicilio.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDomicilioKeyReleased
+
+    private void txtCiudadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiudadKeyReleased
+    String temp = txtCiudad.getText();
+    txtCiudad.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtCiudadKeyReleased
+
+    private void txtEstadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoKeyReleased
+    String temp = txtEstado.getText();
+    txtEstado.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoKeyReleased
+
+    private void txtCodigoPostalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoPostalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoPostalActionPerformed
+
+    private void txtCodigoPostalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoPostalKeyReleased
+    String temp = txtCodigoPostal.getText();
+    txtCodigoPostal.setText(temp.toUpperCase());   // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoPostalKeyReleased
+
+    private void txtTelDomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelDomKeyReleased
+    String temp = txtTelDom.getText();
+    txtTelDom.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelDomKeyReleased
+
+    private void txtEstadoCivilKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyReleased
+    String temp = txtEstadoCivil.getText();
+    txtEstadoCivil.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoCivilKeyReleased
+
+    private void txtNombreMadreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreMadreKeyReleased
+    String temp = txtNombreMadre.getText();
+    txtNombreMadre.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreMadreKeyReleased
+
+    private void txtNombrePadreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombrePadreKeyReleased
+    String temp = txtNombrePadre.getText();
+    txtNombrePadre.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePadreKeyReleased
+
+    private void txtNombreParejaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreParejaKeyReleased
+    String temp = txtNombrePareja.getText();
+    txtNombrePareja.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreParejaKeyReleased
+
+    private void txtProcedenciaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtProcedenciaKeyReleased
+    String temp = txtProcedencia.getText();
+    txtProcedencia.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProcedenciaKeyReleased
+
+    private void txtTelOfiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelOfiKeyReleased
+    String temp = txtTelOfi.getText();
+    txtTelOfi.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelOfiKeyReleased
+
+    private void txtDerechohabienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDerechohabienteKeyReleased
+    String temp = txtDerechohabiente.getText();
+    txtDerechohabiente.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDerechohabienteKeyReleased
+
+    private void txtLugarNac1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLugarNac1KeyReleased
+    String temp = txtLugarNac1.getText();
+    txtLugarNac1.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLugarNac1KeyReleased
+
+    private void txtrfcKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtrfcKeyReleased
+    String temp = txtrfc.getText();
+    txtrfc.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtrfcKeyReleased
+
+    private void txtOcupacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionKeyReleased
+    String temp = txtOcupacion.getText();
+    txtOcupacion.setText(temp.toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_txtOcupacionKeyReleased
+
+    private void txtEscolaridadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEscolaridadKeyReleased
+    String temp = txtEscolaridad.getText();
+    txtEscolaridad.setText(temp.toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEscolaridadKeyReleased
 
     public boolean validarCampos(String nom,String apePat,String domicilio,
                 String ciudad, String estado,String telDom,String sexo,

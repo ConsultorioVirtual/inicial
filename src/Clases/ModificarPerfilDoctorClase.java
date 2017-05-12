@@ -5,6 +5,7 @@
  */
 package Clases;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +15,9 @@ import java.sql.SQLException;
  * @author carlo
  */
 public class ModificarPerfilDoctorClase {
- 
+    /*Variables*/
+    conectar cc=new conectar();
+    Connection cn=cc.conexion();
     /*Metodos*/
     public Object[] obtenerDatosDoctor(int id_doctor){
     String nombre = "";
@@ -46,40 +49,24 @@ public class ModificarPerfilDoctorClase {
                  PreparedStatement st = cn.prepareStatement(query);
                  ResultSet rs = st.executeQuery();
                  while(rs.next()){
-                    nombre= rs.getString("nombre");
-                    segundo_nombre= rs.getString("segundo_nombre");
-                    apellido_paterno= rs.getString("apellido_paterno");
-                    apellido_paterno= rs.getString("apellido_paterno");
-                    domicilio= rs.getString("domicilio");
-                    ciudad= rs.getString("ciudad");
-                    estado= rs.getString("estado");
-                    codigo_postal= rs.getString("codigo_postal");
-                    tel_domicilio= rs.getString("tel_domicilio");
-                    tel_oficina= rs.getString("tel_oficina");
-                    correo_electronico= rs.getString("correo_electronico");
-                    sexo= rs.getString("sexo");
-                    derechohabiente= rs.getString("derechohabiente");
-                    lugar_nacimiento= rs.getString("lugar_nacimiento");
-                    fecha_nacimiento= rs.getString("fecha_nacimiento");
-                    edad= rs.getString("edad");
-                    id_doctor=rs.getString("id_doctor");
-                    rfc= rs.getString("rfc");
-                    estado_civil= rs.getString("estado_civil");
-                    nombre_madre= rs.getString("nombre_madre");
-                    nombre_padre= rs.getString("nombre_padre");
-                    nombre_pareja= rs.getString("nombre_pareja");
-                    procedencia= rs.getString("procedencia");
-                    ocupacion= rs.getString("ocupacion");
-                    escolaridad= rs.getString("escolaridad");
-                    observaciones= rs.getString("observaciones");
-                    }   
-      String doctor=obtenerDoctor(Integer.parseInt(id_doctor));
-      Object vector[]={nombre,segundo_nombre,apellido_paterno,apellido_materno,
-          domicilio,ciudad,estado,codigo_postal,tel_domicilio,tel_oficina,
-            correo_electronico,sexo,derechohabiente,lugar_nacimiento,
-            fecha_nacimiento,edad,doctor,rfc,estado_civil,
-            nombre_madre,nombre_padre,nombre_pareja,procedencia,
-            ocupacion,escolaridad,observaciones};
+                    nombre = rs.getString("d.nombre");
+                    segundo_nombre = rs.getString("d.segundo_nombre");
+                    apellido_paterno = rs.getString("d.apellido_paterno");
+                    apellido_materno = rs.getString("d.apellido_materno");
+                    domicilio = rs.getString("do.domicilio");
+                    ciudad = rs.getString("do.ciudad");
+                    estado = rs.getString("do.estado");
+                    codigo_postal = rs.getString("do.codigo_postal");
+                    tel_domicilio = rs.getString("do.tel_domicilio");
+                    tel_oficina = rs.getString("do.tel_oficina");
+                    tel_movil = rs.getString("do.tel_movil");
+                    tel_extra = rs.getString("do.tel_extra");
+                    correo_electronico = rs.getString("do.correo_electronico");
+                    cedula_profecional = rs.getString("do.cedula_profecional");
+                    especialidad = rs.getString("do.especialidad");
+                    observaciones = rs.getString("do.observaciones");
+                    }  
+      Object vector[]={nombre,segundo_nombre,apellido_paterno,apellido_materno,domicilio,ciudad,estado,codigo_postal,tel_domicilio,tel_oficina,tel_movil,tel_extra,correo_electronico,cedula_profecional,especialidad,observaciones};
          return vector;               
             }catch (SQLException ex){
                     System.out.println(ex.getMessage());

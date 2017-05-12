@@ -6,17 +6,7 @@
 package Ventanas;
 
 import Clases.Paciente;
-import Clases.conectar;
-import com.mxrck.autocompleter.TextAutoCompleter;
 import java.awt.Color;
-import java.awt.HeadlessException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.control.ComboBox;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /**

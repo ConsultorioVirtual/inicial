@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.ComboBoxModel;
-import javax.swing.JComboBox;
 
 public class ModificarPacienteClase {
   /*Variables*/
@@ -95,8 +93,8 @@ public Object[] obtenerDatospaciente(int id_paciente){
        String ap = nombres[2];
             try{
                  String query = "select id_doctor\n" +
-"from detalle_doctor\n" +
-"where nombre= \""+nomb+"\" and apellido_paterno=\""+ap+"\"";
+                                "from detalle_doctor\n" +
+                   "where nombre= \""+nomb+"\" and apellido_paterno=\""+ap+"\"";
                  PreparedStatement st = cn.prepareStatement(query);
                  ResultSet rs = st.executeQuery();
                  while(rs.next()){

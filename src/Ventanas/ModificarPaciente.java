@@ -747,5 +747,5 @@ public class ModificarPaciente extends javax.swing.JFrame {
         txtOcupacion.setText(vector[23]+"");
         txtEscolaridad.setText(vector[24]+"");
         txtaObservaciones.setText(vector[25]+"");
-    }//obtenerDatos
+    }//obtenerDato
 }

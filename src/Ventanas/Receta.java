@@ -8,6 +8,7 @@
  *
  * @author Carlos Puga
  */
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
@@ -18,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Receta extends javax.swing.JFrame implements Printable {
-
+//d
     /**
      * Creates new form Receta
      */

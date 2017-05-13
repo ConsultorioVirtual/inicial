@@ -165,17 +165,17 @@ public class Expediente extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        cmbFrecuencia = new javax.swing.JComboBox<>();
-        cmbDuracion = new javax.swing.JComboBox<>();
-        cmbCantidad = new javax.swing.JComboBox<>();
+        cmbFrecuencia = new javax.swing.JComboBox<String>();
+        cmbDuracion = new javax.swing.JComboBox<String>();
+        cmbCantidad = new javax.swing.JComboBox<String>();
         jLabel58 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         spnVidaSexual = new javax.swing.JSpinner();
         jLabel63 = new javax.swing.JLabel();
         spnNoParejas = new javax.swing.JSpinner();
         txtTipo = new javax.swing.JTextField();
-        cmbInicio = new javax.swing.JComboBox<>();
-        cmbSuspencion = new javax.swing.JComboBox<>();
+        cmbInicio = new javax.swing.JComboBox<String>();
+        cmbSuspencion = new javax.swing.JComboBox<String>();
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
@@ -186,7 +186,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel69 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
-        cmbFPP = new javax.swing.JComboBox<>();
+        cmbFPP = new javax.swing.JComboBox<String>();
         jLabel72 = new javax.swing.JLabel();
         spnG = new javax.swing.JSpinner();
         spnA = new javax.swing.JSpinner();
@@ -771,13 +771,13 @@ public class Expediente extends javax.swing.JFrame {
         jLabel61.setText("de Cantidad");
         jPanel7.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, 20));
 
-        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
+        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
         jPanel7.add(cmbFrecuencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 80, -1));
 
-        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Menometrorragia" }));
+        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Menometrorragia" }));
         jPanel7.add(cmbDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
 
-        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
+        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
         jPanel7.add(cmbCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 80, -1));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -793,10 +793,10 @@ public class Expediente extends javax.swing.JFrame {
         jPanel7.add(spnNoParejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 80, -1));
         jPanel7.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 420, -1));
 
-        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui se pone Date Chooser" }));
+        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui se pone Date Chooser" }));
         jPanel7.add(cmbInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 160, -1));
 
-        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui va un datechooser" }));
+        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un datechooser" }));
         jPanel7.add(cmbSuspencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
 
         jLabel67.setText("Suspención");
@@ -831,7 +831,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel70.setText("F.P.P");
         jPanel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
 
-        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui va un date chooser" }));
+        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un date chooser" }));
         jPanel8.add(cmbFPP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 150, -1));
 
         jLabel72.setText("G");

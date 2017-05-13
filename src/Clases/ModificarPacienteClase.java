@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ModificarPacienteClase {
   /*Variables*/
@@ -147,4 +148,52 @@ public Object[] obtenerDatospaciente(int id_paciente){
         }
         return id_paciente;
     }//obtenerIdPaciente
-}
+
+    
+    public void soloNumeros(java.awt.event.KeyEvent evt) {
+        int k=(int)evt.getKeyChar();
+        if (k >= 97 && k <= 122 || k>=65 && k<=90){
+            showMessageDialog(null,"solo ingresar numeros");
+        }
+        if(k==241 || k==209){
+            showMessageDialog(null,"solo ingresar numeros");
+        }
+    }//soloNumeros
+    
+    public void validarTelefono(java.awt.event.KeyEvent evt) {
+        int k=(int)evt.getKeyChar();
+        if (k >= 97 && k <= 122 || k>=65 && k<=90){
+            showMessageDialog(null,"solo ingresar numeros o guiones");
+        }
+        if(k==241 || k==209){
+            showMessageDialog(null,"solo ingresar numeros o guiones");
+        }
+    }//validarTelefono
+    
+    public boolean validarFecha(String fecha){
+        //retornara verdadero si algo esta mal
+        boolean est = false;
+        if(fecha.equals("aaaa-mm-dd")|fecha.equals("")){
+            return true;
+        }   
+        for(int i=0;i<fecha.length();i++){
+        //revisar que solo sean numeros y -
+        char k = fecha.charAt(i);
+        if ( k>= 97 && k <= 122 || k>=65 && k<=90){
+            showMessageDialog(null,"solo ingresar numeros o guiones");
+            return true;
+        }
+        if(k==241 || k==209){
+            showMessageDialog(null,"solo ingresar numeros o guiones");
+            return true;
+        }
+        }//for 
+        String []fec=fecha.split("-");
+        if(fec.length!=3){return true;}
+        if(fec[0].length()!=4){return true;}
+        if(Integer.parseInt(fec[1])>12){return true;}
+        if(Integer.parseInt(fec[2])>31){return true;}
+        
+        return est;
+    } //  validarFecha 
+}//class

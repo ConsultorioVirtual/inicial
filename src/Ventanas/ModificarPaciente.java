@@ -271,6 +271,12 @@ public class ModificarPaciente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtrfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 158, -1));
+
+        txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEdadKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 75, -1));
 
         txtLugarNac1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -279,6 +285,12 @@ public class ModificarPaciente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 158, -1));
+
+        txtFechaNac.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFechaNacKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 158, -1));
 
         txtEstadoCivil.setText(" ");
@@ -418,7 +430,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptar1MouseClicked
-                
+                    
     }//GEN-LAST:event_lblAceptar1MouseClicked
 
     private void lblCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelarMouseClicked
@@ -465,13 +477,11 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoPostalActionPerformed
 
     private void txtCodigoPostalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoPostalKeyReleased
-    String temp = txtCodigoPostal.getText();
-    txtCodigoPostal.setText(temp.toUpperCase());   // TODO add your handling code here:
+    m.soloNumeros(evt);
     }//GEN-LAST:event_txtCodigoPostalKeyReleased
 
     private void txtTelDomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelDomKeyReleased
-    String temp = txtTelDom.getText();
-    txtTelDom.setText(temp.toUpperCase());    // TODO add your handling code here:
+    m.validarTelefono(evt);
     }//GEN-LAST:event_txtTelDomKeyReleased
 
     private void txtEstadoCivilKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoCivilKeyReleased
@@ -500,8 +510,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtProcedenciaKeyReleased
 
     private void txtTelOfiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelOfiKeyReleased
-    String temp = txtTelOfi.getText();
-    txtTelOfi.setText(temp.toUpperCase());    // TODO add your handling code here:
+    m.validarTelefono(evt);  // TODO add your handling code here:
     }//GEN-LAST:event_txtTelOfiKeyReleased
 
     private void txtDerechohabienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDerechohabienteKeyReleased
@@ -528,6 +537,14 @@ public class ModificarPaciente extends javax.swing.JFrame {
     String temp = txtEscolaridad.getText();
     txtEscolaridad.setText(temp.toUpperCase());        // TODO add your handling code here:
     }//GEN-LAST:event_txtEscolaridadKeyReleased
+
+    private void txtEdadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyReleased
+    m.soloNumeros(evt);
+    }//GEN-LAST:event_txtEdadKeyReleased
+
+    private void txtFechaNacKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFechaNacKeyReleased
+    
+    }//GEN-LAST:event_txtFechaNacKeyReleased
 
     public boolean validarCampos(String nom,String apePat,String domicilio,
                 String ciudad, String estado,String telDom,String sexo,

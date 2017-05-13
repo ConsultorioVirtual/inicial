@@ -44,7 +44,6 @@ public class PerfilDoctor extends javax.swing.JFrame {
         txtCodigoPostal = new javax.swing.JTextField();
         txtTelefonoOficina = new javax.swing.JTextField();
         txtTelefonoDomicilio = new javax.swing.JTextField();
-        pswContraseña = new javax.swing.JPasswordField();
         txtTelefonoExtra = new javax.swing.JTextField();
         txtCedulaProfesional = new javax.swing.JTextField();
         txtCorreoElectronico = new javax.swing.JTextField();
@@ -61,7 +60,6 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -109,16 +107,23 @@ public class PerfilDoctor extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtMedicoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 80, -1));
+
+        txtNombre1.setEditable(false);
         jPanel1.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 140, -1));
+
+        txtNombre2.setEditable(false);
         jPanel1.add(txtNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 150, -1));
+
+        txtApellido1.setEditable(false);
         jPanel1.add(txtApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 140, -1));
+
+        txtApellido2.setEditable(false);
         jPanel1.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 150, -1));
         jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 300, -1));
         jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 300, -1));
         jPanel1.add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 110, -1));
         jPanel1.add(txtTelefonoOficina, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 150, -1));
         jPanel1.add(txtTelefonoDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 150, -1));
-        jPanel1.add(pswContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 90, -1));
         jPanel1.add(txtTelefonoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 240, -1));
         jPanel1.add(txtCedulaProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 240, -1));
         jPanel1.add(txtCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 140, -1));
@@ -160,14 +165,11 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel17.setText("Teléfono Movil");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, 20));
 
-        jLabel16.setText("Contraseña");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, 20));
-
         jLabel15.setText("Nombre de Usuario");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, 20));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, -1, 20));
 
         jLabel14.setText("Nombre de Usuario");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, 20));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 20));
 
         jLabel12.setText("Telefono Oficina");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
@@ -257,7 +259,6 @@ public class PerfilDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -279,7 +280,6 @@ public class PerfilDoctor extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JPasswordField pswContraseña;
     private javax.swing.JTextField txtApellido1;
     private javax.swing.JTextField txtApellido2;
     private javax.swing.JTextArea txtAreaDomicilio;

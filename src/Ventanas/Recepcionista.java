@@ -2,18 +2,10 @@ package Ventanas;
 import Clases.CitasClase;
 import Clases.ModificarPacienteClase;
 import Clases.RecepcionistaClase;
-import Clases.conectar;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import javax.swing.table.TableModel;
 import Ventanas.AgregarPacienteR;
 import java.util.Date;
 import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.table.DefaultTableModel;
 
 
 public class Recepcionista extends javax.swing.JFrame {
@@ -30,11 +22,8 @@ public class Recepcionista extends javax.swing.JFrame {
         setTitle("RECEPCIONISTA");
         Tabla.setModel(r.obtenerCitas(fechaInic));
         addItemsCitas();
-        //obtenerFecha();
-        
+        //obtenerFecha();   
     }
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -128,7 +117,7 @@ public class Recepcionista extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Tabla);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 890, 170));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 890, 340));
 
         cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 260, 30));
@@ -331,6 +320,9 @@ public class Recepcionista extends javax.swing.JFrame {
          
         int columna=Tabla.getSelectedRow();
         if(columna==-1){
+        showMessageDialog(null,"Seleccione una cita");
+        }
+        if(Tabla.getValueAt(columna,1)==""){
         showMessageDialog(null,"Seleccione una cita");
         }
         else{

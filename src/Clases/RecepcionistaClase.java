@@ -21,6 +21,12 @@ public class RecepcionistaClase {
     DefaultTableModel modelo;
     String cabeceraCitas[]={"Hora", "Paciente", "Fecha", "Doctor"};
     String cabeceraPacientes[]={"Primer nombre", "Segundo nombre", "Apellido paterno", "Apellido materno"};
+    int x = getRowNumber("doctor");
+    
+    String h [][] = {{"08:00",""},{"09:00",""},{"10:00",""},{"11:00",""}
+            ,{"12:00",""},{"13:00",""},{"14:00",""},{"15:00",""},{"16:00",""},
+            {"17:00",""},{"18:00",""},{"19:00",""},{"20:00",""},{"21:00",""},{"22:00",""}}; 
+    String doctores[]=obtenerDoctores();
     String datos[][]={};
    
   /*metodos*/
@@ -40,7 +46,17 @@ public class RecepcionistaClase {
     }//obtenerFecha
     
        public DefaultTableModel tablaAgenda(){
-        return new DefaultTableModel(datos,cabeceraCitas);
+           DefaultTableModel mod = new DefaultTableModel(datos,cabeceraCitas);
+           /*get h [i][0](las horas)*/
+           for(int i=0;i<h.length;i++){
+               for(int j=0;j<doctores.length;j++){
+                   Object vect[]= {h[i][0],"","",doctores[j]};
+                mod.addRow(vect);
+               }
+           }//horas
+            
+            
+        return mod;
     }//tablaAgenda
        
        public DefaultTableModel tablaPacientes(){
@@ -120,13 +136,57 @@ public class RecepcionistaClase {
                         
                  for(int i=0;i<horaArr.length;i++){
                     Object vector[]={horaArr[i],pacienteArr[i],fechaArr[i],doctorArr[i]};
-                    
-                    mod.addRow(vector);
-                 }//for
+                    for(int j=0;j<mod.getRowCount();j++){
+                         if(mod.getValueAt(j,0).equals(horaArr[i])&&mod.getValueAt(j,3).equals(doctorArr[i])){
+                            mod.removeRow(j);
+                            mod.insertRow(j, vector);
+                        }
+                    }
+                      }//for
             }catch (SQLException ex){
                     System.out.println(ex.getMessage());
               }
            return mod;
        }//obtenerCitas
-       
-}
+    public int getRowNumber(String tabla){
+       int numberRow = 0;
+            try{
+                 String query = "select count(*) from "+tabla;
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                   numberRow = rs.getInt("count(*)");
+                    }
+            }catch (SQLException ex){
+                    System.out.println(ex.getMessage());
+              }
+            return numberRow;
+    }//getRowNumber 
+    
+    public String[] obtenerDoctores(){
+           String nombre="";
+           String doctoresArr[];
+           try{
+                 String query = "select nombre,segundo_nombre,apellido_paterno,"
+                         + "apellido_materno from detalle_doctor";
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                    nombre+=rs.getString("nombre")+" ";
+                    nombre+=rs.getString("segundo_nombre")+" ";
+                    nombre+=rs.getString("apellido_paterno")+" ";
+                    nombre+=rs.getString("apellido_materno")+",";
+                    }             
+            }catch (SQLException ex){
+                    System.out.println(ex.getMessage());
+              }
+           doctoresArr=nombre.split(",");
+           return doctoresArr;
+       }//obtenerDoctores
+    
+    
+    
+    
+    
+    
+}//clase

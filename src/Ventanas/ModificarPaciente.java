@@ -430,7 +430,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptar1MouseClicked
-                    
+
     }//GEN-LAST:event_lblAceptar1MouseClicked
 
     private void lblCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelarMouseClicked
@@ -599,7 +599,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
         
     }
     
-    public void insertarP(int id_Exp,String nom,String seg_nom,String apePat,
+  /*  public void insertarP(int id_Exp,String nom,String seg_nom,String apePat,
                             String apeMat,String domicilio,String ciudad,
                             String estado,String telDom,String telOfi,
                             String correo,String sexo,String LugNac,
@@ -621,7 +621,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
         catch(HeadlessException e){} catch (SQLException ex) {
                 Logger.getLogger(ModificarPaciente.class.getName()).log(Level.SEVERE, null, ex);
             }
-    }
+    }*/
     
     public int getRowNumber(){
        int numberRow = 0;

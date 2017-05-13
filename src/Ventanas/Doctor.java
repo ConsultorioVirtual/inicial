@@ -22,18 +22,17 @@ public class Doctor extends javax.swing.JFrame {
     String cabeceraPacientes[]={"Primer nombre", "Segundo nombre", "Apellido paterno", "Apellido materno"};
     String datos[][]={};
     static int id_doct;
+    java.util.Date fechasis = new Date();
     DoctorClase d = new DoctorClase();
+    String fechaInic=d.obtenerFecha(fechasis+"");
     public Doctor(int id) {/*debe recibir el id del doctor para que solo pueda ver
         los pacientes que le corresponden*/
         id_doct=id;
-        java.util.Date fechasis = new Date();
-        String fechaInic=d.obtenerFecha(fechasis+"");
+        
         initComponents();
         setLocationRelativeTo(null);
         setTitle("DOCTOR");
-        
-        tablaAgenda();
-        obtenerFecha();
+        Tabla.setModel(d.obtenerCitas(fechaInic, id_doct));
     }
     public void tablaAgenda(){
         modelo=new DefaultTableModel(datos,cabeceraCitas);
@@ -240,6 +239,11 @@ public class Doctor extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnIr.setText("Ir a fecha");
+        btnIr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIrMouseClicked(evt);
+            }
+        });
         btnIr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIrActionPerformed(evt);
@@ -276,7 +280,7 @@ public class Doctor extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Tabla);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 900, 170));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 900, 270));
         jPanel4.add(txtBusquedaAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 260, 30));
 
         cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
@@ -307,7 +311,7 @@ public class Doctor extends javax.swing.JFrame {
 
     private void panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMouseClicked
         if(panel.getSelectedIndex()==0){
-            tablaAgenda();
+            Tabla.setModel(d.obtenerCitas(fechaInic, id_doct));
             cmbPacientes.removeAllItems();
             cmbPacientes.addItem("Seleccione una opcion");
             cmbPacientes.addItem("Paciente");
@@ -350,6 +354,12 @@ public class Doctor extends javax.swing.JFrame {
     private void lblModificarExpedienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarExpedienteMouseClicked
         new Expediente().setVisible(true);
     }//GEN-LAST:event_lblModificarExpedienteMouseClicked
+
+    private void btnIrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIrMouseClicked
+        String fecha = Calendar1.getDate().toString();
+        fecha=d.obtenerFecha(fecha);
+        Tabla.setModel(d.obtenerCitas(fecha, id_doct));
+    }//GEN-LAST:event_btnIrMouseClicked
     
     
     public static void main(String args[]) {

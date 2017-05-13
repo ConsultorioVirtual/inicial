@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -16,9 +17,12 @@ public class DoctorClase {
     String cabeceraCitas[]={"Hora", "Paciente", "Fecha", "Doctor"};
     String cabeceraPacientes[]={"Primer nombre", "Segundo nombre", "Apellido paterno", "Apellido materno"};
     String datos[][]={};
+    String h [][] = {{"08:00",""},{"09:00",""},{"10:00",""},{"11:00",""}
+            ,{"12:00",""},{"13:00",""},{"14:00",""},{"15:00",""},{"16:00",""},
+            {"17:00",""},{"18:00",""},{"19:00",""},{"20:00",""},{"21:00",""},{"22:00",""}};
     /*Metodos*/
        public DefaultTableModel tablaAgenda(){
-        return new DefaultTableModel(datos,cabeceraCitas);
+        return new DefaultTableModel(h,cabeceraCitas);
     }//tablaAgenda
        
        public DefaultTableModel tablaPacientes(){
@@ -72,7 +76,6 @@ public class DoctorClase {
     
     public DefaultTableModel obtenerCitas(String fechaCitas,int id_doctor){
            DefaultTableModel mod = tablaAgenda();
-           //"Hora", "Paciente", "Fecha", "Doctor"
            String hora="";
            String paciente="";
            String fecha="";
@@ -85,10 +88,11 @@ public class DoctorClase {
 "inner join paciente p on c.id_paciente=p.id_paciente\n" +
 "inner join detalle_doctor dd on dd.id_doctor=c.id_doctor\n" +
 "where c.estado = 1 and c.fecha=\""+fechaCitas+"\"" +
-"and id_doctor = '"+id_doctor+"'order by hora";
+"and id_usuario = '"+id_doctor+"'order by hora";
                  PreparedStatement st = cn.prepareStatement(query);
                  ResultSet rs = st.executeQuery();
-                 while(rs.next()){
+                  while(rs.next()){
+                    
                     hora += rs.getString("c.hora")+",";
                     
                     paciente+=rs.getString("p.nombre")+" ";
@@ -108,15 +112,18 @@ public class DoctorClase {
                  String horaArr[]=hora.split(",");
                  String pacienteArr[]=paciente.split(",");
                  String fechaArr[]=fecha.split(",");
-                 String doctorArr[]=doctor.split(",");
-                        
+                 String doctorArr[]=doctor.split(",");     
                  for(int i=0;i<horaArr.length;i++){
                     Object vector[]={horaArr[i],pacienteArr[i],fechaArr[i],doctorArr[i]};
-                    
-                    mod.addRow(vector);
+                        for(int j=0;j<mod.getRowCount();j++){
+                         if(mod.getValueAt(j,0).equals(horaArr[i])){
+                            mod.removeRow(j);
+                            mod.insertRow(j, vector);
+                        }
+                    }
                  }//for
             }catch (SQLException ex){
-                    System.out.println(ex.getMessage());
+                     JOptionPane.showMessageDialog(null,ex.getMessage());
               }
            return mod;
        }//obtenerCitas

@@ -171,7 +171,7 @@ public Object[] obtenerDatospaciente(int id_paciente){
     }//validarTelefono
     
     public boolean validarFecha(String fecha){
-        //retornara verdadero si algo esta mal
+        //retornara verdadero si algo esta  mal
         boolean est = false;
         if(fecha.equals("aaaa-mm-dd")|fecha.equals("")){
             return true;

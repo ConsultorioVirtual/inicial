@@ -195,5 +195,140 @@ public Object[] obtenerDatospaciente(int id_paciente){
         if(Integer.parseInt(fec[2])>31){return true;}
         
         return est;
-    } //  validarFecha 
+    } //  validarFecha
+    
+    public boolean validarCampos(String nombre, String apellido_paterno,String domicilio,
+             String ciudad, String estado,String codigo_postal, String tel_domicilio, String tel_oficina,
+             String lugar_nacimiento,String fecha_nacimiento, String edad){
+         boolean est = true;
+         
+            if(nombre.equals("")){
+                showMessageDialog(null,"Ingrese un nombre");
+                est = false;
+                return est;}
+            if(apellido_paterno.equals("")){
+                showMessageDialog(null,"ingrese un apellido");
+                est = false;
+                return est;}
+            if(domicilio.equals("")){
+                showMessageDialog(null,"ingrese un domicilio");
+                est = false;
+                return est;}
+            if(ciudad.equals("")){
+                showMessageDialog(null,"ingrese una ciudad");
+                est = false;
+                return est;}
+            if(estado.equals("")){
+                showMessageDialog(null,"ingrese un estado");
+                est = false;
+                return est;}
+            if(codigo_postal.length()>6){
+                showMessageDialog(null,"Ingrese un codigo postal valido");
+                est=false;
+                return est;
+            }
+            if(tel_domicilio.equals("")){
+                showMessageDialog(null,"ingrese un telefono");
+                est = false;
+                return est;}
+            if(tel_domicilio.length()>10){
+                showMessageDialog(null,"ingrese un telefono de 10 o menos digitos");
+                est = false;
+                return est;}
+            if(tel_oficina.equals("")){
+                showMessageDialog(null,"ingrese un telefono de oficina");
+                est = false;
+                return est;}
+            if(tel_oficina.length()>10){
+                showMessageDialog(null,"ingrese un telefono de 10 o menos digitos");
+                est = false;
+                return est;
+            }
+            /*if(sexo.equals("")){
+                showMessageDialog(null,"seleccione un sexo");
+                est = false;
+                return est;}*/
+            if(lugar_nacimiento.equals("")){
+                showMessageDialog(null,"ingrese un lugar de nacimiento");
+                est = false;
+                return est;}
+            if(validarFecha(fecha_nacimiento)){
+                showMessageDialog(null,"Ingrese un fecha en el formato 'aaaa-mm-dd'");
+                est = false;
+                return est;
+            }          
+            if(edad.equals("")){
+                showMessageDialog(null,"ingrese una edad");
+                est = false;
+                return est;}
+            /*if(medico.equals("")){
+                showMessageDialog(null,"Seleccione un medico");
+                est = false;
+                return est;}*/
+         return est;
+    }//validarCampos
+
+
+
+
+public void actualizarP(String nombre,String segundo_nombre, String apellido_paterno,
+                String apellido_materno,String domicilio,String ciudad,String estado,
+        String codigo_postal, String tel_domicilio, String tel_oficina, String correo_electronico,
+        String derechohabiente, String lugar_nacimiento, String fecha_nacimiento,
+        String edad, String rfc, String estado_civil, String nombre_madre, String nombre_padre,
+        String nombre_pareja, String procedencia, String ocupacion, String escolaridad,
+        String observaciones){
+        
+           
+        
+        if(segundo_nombre.equals("")){segundo_nombre="-";}
+        if(apellido_materno.equals("")){apellido_materno="-";}
+        if(derechohabiente.equals("ISSSTE, IMSS, ETC")){derechohabiente="";}
+        int id_Paciente = obtenerIdPaciente(nombre, segundo_nombre, apellido_paterno, apellido_materno);
+    
+        
+        
+        
+        try{
+            PreparedStatement pst = cn.prepareStatement("UPDATE paciente SET nombre ='"+nombre+
+                "',segundo_nombre = '"+segundo_nombre+
+                "',apellido_paterno = '"+apellido_paterno+
+                "',apellido_materno = '"+apellido_materno+
+                "',domicilio = '"+domicilio+
+                "',ciudad = '"+ciudad+
+                "',estado = '"+estado+
+                "',codigo_postal = '"+codigo_postal+
+                "',tel_domicilio = '"+tel_domicilio+
+                "',tel_oficina = '"+tel_oficina+
+                "',correo_electronico = '"+correo_electronico+
+                "',derechohabiente = '"+derechohabiente+
+                "',lugar_nacimiento = '"+lugar_nacimiento+
+                "',fecha_nacimiento = '"+fecha_nacimiento+
+                "',edad = '"+edad+
+                "',rfc = '"+rfc+
+                "',estado_civil = '"+estado_civil+
+                "',nombre_madre = '"+nombre_madre+
+                "',nombre_padre = '"+nombre_padre+
+                "',nombre_pareja = '"+nombre_pareja+
+                "',procedencia = '"+procedencia+
+                "',ocupacion = '"+ocupacion+
+                "',escolaridad = '"+escolaridad+ 
+                "',observaciones = '"+observaciones+" WHERE id_paciente =  '"+id_Paciente                    
+                    
+            );//24 campos
+              
+              int a=pst.executeUpdate();
+         if(a>0){
+               showMessageDialog(null,"Registro de paciente actualizado");
+           }
+           else{
+                showMessageDialog(null,"Error al actualizar");
+                
+           }
+           }catch(SQLException ex){
+               showMessageDialog(null,ex.getMessage());
+               
+           }  
+      
+    }//ActualizarP             
 }//class

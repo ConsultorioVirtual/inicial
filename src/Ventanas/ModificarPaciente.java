@@ -430,7 +430,48 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptar1MouseClicked
-
+        try{
+        String nombre = txtPNombre.getText();
+        String segundo_nombre = txtSNombre.getText();
+        String apellido_paterno = txtApePat.getText();
+        String apellido_materno = txtApeMat.getText();
+        String domicilio = txtDomicilio.getText();
+        String ciudad = txtCiudad.getText();
+        String estado = txtEstado.getText();
+        String codigo_postal = txtCodigoPostal.getText();
+        String tel_domicilio = txtTelDom.getText();
+        String tel_oficina = txtTelOfi.getText();
+        String correo_electronico = txtCorreo.getText();
+        String sexo = lblSexo.getText();
+        String derechohabiente = txtDerechohabiente.getText();
+        String lugar_nacimiento = txtLugarNac1.getText();
+        String fecha_nacimiento = txtFechaNac.getText();
+        String edad = txtEdad.getText();
+        String rfc = txtrfc.getText();
+        String estado_civil = txtEstadoCivil.getText();
+        String nombre_madre = txtNombreMadre.getText();
+        String nombre_padre = txtNombrePadre.getText();
+        String nombre_pareja = txtNombrePareja.getText();
+        String procedencia = txtProcedencia.getText();
+        String ocupacion = txtOcupacion.getText();
+        String escolaridad = txtEscolaridad.getText();
+        String observaciones = txtaObservaciones.getText();
+        String doctor = lblMedico.getText();
+         if(m.validarCampos(nombre, apellido_paterno, domicilio, ciudad, estado, 
+                codigo_postal,tel_domicilio, tel_oficina, lugar_nacimiento, 
+                fecha_nacimiento, edad)){
+           m.actualizarP(nombre, segundo_nombre, apellido_paterno, apellido_materno, 
+           domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, 
+           correo_electronico, derechohabiente, lugar_nacimiento, 
+           fecha_nacimiento, edad, rfc, estado_civil, nombre_madre, nombre_padre, 
+           nombre_pareja, procedencia, ocupacion, escolaridad, observaciones);
+            dispose();
+            
+           
+        }//ActualizarP
+        }//if validarCampos
+        catch(NumberFormatException e){showMessageDialog(null, e.getMessage());}
+        
     }//GEN-LAST:event_lblAceptar1MouseClicked
 
     private void lblCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelarMouseClicked

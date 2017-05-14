@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
@@ -39,6 +40,12 @@ public class ModificarPaciente extends javax.swing.JFrame {
         //cmbMedico.setModel(m.obtenerDoctor());
         vector=m.obtenerDatospaciente(id);
         obtenerDatos();
+        
+        txtPNombre.enable(false);
+        txtSNombre.enable(false);
+        txtApePat.enable(false);
+        txtApeMat.enable(false);
+        
     }
 
     /**
@@ -122,22 +129,22 @@ public class ModificarPaciente extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 770, 10));
 
-        jLabel2.setText("Nombre(s)");
+        jLabel2.setText("*Nombre(s)");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
 
-        jLabel3.setText("Apellidos");
+        jLabel3.setText("*Apellidos");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
-        jLabel4.setText("Domicilio");
+        jLabel4.setText("*Domicilio");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
-        jLabel5.setText("Ciudad");
+        jLabel5.setText("*Ciudad");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
-        jLabel6.setText("Estado");
+        jLabel6.setText("*Estado");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
-        jLabel7.setText("Codigo Postal");
+        jLabel7.setText("*Codigo Postal");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         txtNExpediente.setEditable(false);
@@ -216,7 +223,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 240, 68));
 
-        jLabel8.setText("Teléfono Dom");
+        jLabel8.setText("*Teléfono Dom");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
 
         jLabel9.setText("Telefono Oficina");
@@ -231,10 +238,10 @@ public class ModificarPaciente extends javax.swing.JFrame {
         jLabel12.setText("Derechohabiente");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, -1));
 
-        jLabel13.setText("Fecha de Nacimiento");
+        jLabel13.setText("*Fecha de Nacimiento");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
 
-        jLabel14.setText("Edad");
+        jLabel14.setText("*Edad");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
 
         jLabel15.setText("Medico");
@@ -255,7 +262,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
         getContentPane().add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 159, -1));
         getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 160, -1));
 
-        jLabel23.setText("Lugar de Nacimiento");
+        jLabel23.setText("*Lugar de Nacimiento");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
 
         txtDerechohabiente.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -430,6 +437,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptar1MouseClicked
+        
         try{
         String nombre = txtPNombre.getText();
         String segundo_nombre = txtSNombre.getText();
@@ -457,14 +465,20 @@ public class ModificarPaciente extends javax.swing.JFrame {
         String escolaridad = txtEscolaridad.getText();
         String observaciones = txtaObservaciones.getText();
         String doctor = lblMedico.getText();
+        
          if(m.validarCampos(nombre, apellido_paterno, domicilio, ciudad, estado, 
                 codigo_postal,tel_domicilio, tel_oficina, lugar_nacimiento, 
                 fecha_nacimiento, edad)){
+             int respuesta=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?",
+                 "Modificar perfil", JOptionPane.YES_NO_OPTION, 
+                 JOptionPane.QUESTION_MESSAGE);
+           if(respuesta==0){
            m.actualizarP(nombre, segundo_nombre, apellido_paterno, apellido_materno, 
            domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, 
            correo_electronico, derechohabiente, lugar_nacimiento, 
            fecha_nacimiento, edad, rfc, estado_civil, nombre_madre, nombre_padre, 
            nombre_pareja, procedencia, ocupacion, escolaridad, observaciones);
+           }//if confirmacion
             dispose();
             
            
@@ -806,4 +820,5 @@ public class ModificarPaciente extends javax.swing.JFrame {
         txtEscolaridad.setText(vector[24]+"");
         txtaObservaciones.setText(vector[25]+"");
     }//obtenerDato
+    
 }

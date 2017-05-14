@@ -36,6 +36,7 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         setTitle("PERFIL RECEPCIONISTA");
         txtMedicoNo.setText(id+"");
         Object vector[] = p.obtenerDatosRecepcionista(id_recep);
+        
         //JOptionPane.showMessageDialog(null,"vector: "+vector[0]);
         llenarCampos(vector);
     }

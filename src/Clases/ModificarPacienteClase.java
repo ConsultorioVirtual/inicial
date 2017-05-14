@@ -49,7 +49,7 @@ public Object[] obtenerDatospaciente(int id_paciente){
                     nombre= rs.getString("nombre");
                     segundo_nombre= rs.getString("segundo_nombre");
                     apellido_paterno= rs.getString("apellido_paterno");
-                    apellido_paterno= rs.getString("apellido_paterno");
+                    apellido_materno= rs.getString("apellido_materno");
                     domicilio= rs.getString("domicilio");
                     ciudad= rs.getString("ciudad");
                     estado= rs.getString("estado");

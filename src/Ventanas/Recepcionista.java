@@ -280,8 +280,8 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
 
     private void lblAgregarPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgregarPacienteMouseClicked
         AgregarPacienteR ap = new AgregarPacienteR();
+        ap.addWindowListener(this);
         ap.setVisible(true);
-        Tabla.setModel(r.obtenerPacientes());
     }//GEN-LAST:event_lblAgregarPacienteMouseClicked
 
     private void lblNuevaCitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaCitaMouseClicked

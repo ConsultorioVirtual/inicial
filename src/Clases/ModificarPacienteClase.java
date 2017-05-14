@@ -313,7 +313,7 @@ public void actualizarP(String nombre,String segundo_nombre, String apellido_pat
                 "',procedencia = '"+procedencia+
                 "',ocupacion = '"+ocupacion+
                 "',escolaridad = '"+escolaridad+ 
-                "',observaciones = '"+observaciones+" WHERE id_paciente =  '"+id_Paciente                    
+                "',observaciones = '"+observaciones+"' WHERE id_paciente =  "+id_Paciente                    
                     
             );//24 campos
               

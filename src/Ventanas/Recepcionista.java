@@ -2,13 +2,16 @@ package Ventanas;
 import Clases.CitasClase;
 import Clases.ModificarPacienteClase;
 import Clases.RecepcionistaClase;
+import Clases.VentanaListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.JOptionPane;
-import Ventanas.AgregarPacienteR;
 import java.util.Date;
+import javax.swing.JFrame;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 
-public class Recepcionista extends javax.swing.JFrame {
+public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     RecepcionistaClase r =  new RecepcionistaClase();
     CitasClase c = new CitasClase();
     java.util.Date fechasis = new Date();
@@ -39,11 +42,10 @@ public class Recepcionista extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
         cmbPacientes = new javax.swing.JComboBox<>();
-        lblActualizar = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         panel = new javax.swing.JTabbedPane();
         AgendaPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblNuevaCita = new javax.swing.JLabel();
         lblCancelar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -122,17 +124,6 @@ public class Recepcionista extends javax.swing.JFrame {
         cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 260, 30));
 
-        lblActualizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        lblActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tabla-de-actualizacion-icono-9177-32.png"))); // NOI18N
-        lblActualizar.setText("Actualizar");
-        lblActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblActualizarMouseClicked(evt);
-            }
-        });
-        jPanel4.add(lblActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 120, -1));
-
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Busqueda2_32.png"))); // NOI18N
@@ -151,20 +142,20 @@ public class Recepcionista extends javax.swing.JFrame {
 
         AgendaPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NuevaCita_32.png"))); // NOI18N
-        jLabel2.setText("Nueva Cita");
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblNuevaCita.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblNuevaCita.setForeground(new java.awt.Color(255, 255, 255));
+        lblNuevaCita.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNuevaCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NuevaCita_32.png"))); // NOI18N
+        lblNuevaCita.setText("Nueva Cita");
+        lblNuevaCita.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblNuevaCita.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblNuevaCita.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblNuevaCita.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                lblNuevaCitaMouseClicked(evt);
             }
         });
-        AgendaPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        AgendaPanel.add(lblNuevaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         lblCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,7 +267,8 @@ public class Recepcionista extends javax.swing.JFrame {
     private void panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMouseClicked
         if(panel.getSelectedIndex()==0){
             Tabla.setModel(r.obtenerCitas(fechaInic));
-            addItemsCitas();        
+            addItemsCitas(); 
+            
         }
         if(panel.getSelectedIndex()==1){
             Tabla.setModel(r.obtenerPacientes());
@@ -292,9 +284,12 @@ public class Recepcionista extends javax.swing.JFrame {
         Tabla.setModel(r.obtenerPacientes());
     }//GEN-LAST:event_lblAgregarPacienteMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        new NuevaCita().setVisible(true);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    private void lblNuevaCitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaCitaMouseClicked
+        JFrame cita = new NuevaCita();
+        cita.setVisible(true);
+        cita.addWindowListener(this);
+        
+    }//GEN-LAST:event_lblNuevaCitaMouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         new PerfilRecepcionista(id_recep).setVisible(true);
@@ -338,6 +333,8 @@ public class Recepcionista extends javax.swing.JFrame {
                  JOptionPane.QUESTION_MESSAGE);
             if(respuesta==0){
             c.cancelarCita(hora,fecha,nombres[0],nombres[1],nombres[2],nombres[3]);
+            //refrescar la tabla
+            Tabla.setModel(r.obtenerCitas(fecha));
             }
         }
     }//GEN-LAST:event_lblCancelarMouseClicked
@@ -347,15 +344,6 @@ public class Recepcionista extends javax.swing.JFrame {
         fecha=r.obtenerFecha(fecha);
         Tabla.setModel(r.obtenerCitas(fecha));
     }//GEN-LAST:event_btnIrMouseClicked
-
-    private void lblActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblActualizarMouseClicked
-        if(panel.getSelectedIndex()==0){
-            Tabla.setModel(r.obtenerCitas(r.obtenerFecha(Calendar1.getDate()+"")));
-        }
-        if(panel.getSelectedIndex()==1){
-            Tabla.setModel(r.obtenerPacientes());
-        }
-    }//GEN-LAST:event_lblActualizarMouseClicked
     
     
     public static void main(String args[]) {
@@ -405,7 +393,6 @@ public class Recepcionista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -416,10 +403,10 @@ public class Recepcionista extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel lblActualizar;
     private javax.swing.JLabel lblAgregarPaciente;
     private javax.swing.JLabel lblCancelar;
     private javax.swing.JLabel lblModificarPaciente;
+    private javax.swing.JLabel lblNuevaCita;
     private javax.swing.JTabbedPane panel;
     private javax.swing.JTextField txtBusquedaAgenda;
     // End of variables declaration//GEN-END:variables
@@ -428,7 +415,52 @@ public class Recepcionista extends javax.swing.JFrame {
         cmbPacientes.removeAllItems();
         cmbPacientes.addItem("Seleccione una opcion");
         cmbPacientes.addItem("Paciente");
-        cmbPacientes.addItem("Fecha");
         cmbPacientes.addItem("Doctor");
     }//addItemsCitas
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        if(panel.getSelectedIndex()==0){
+            Tabla.setModel(r.obtenerCitas(fechaInic));
+            addItemsCitas(); 
+            
+        }
+        if(panel.getSelectedIndex()==1){
+            Tabla.setModel(r.obtenerPacientes());
+            cmbPacientes.removeAllItems();
+            cmbPacientes.addItem("Seleccione una opcion");
+            cmbPacientes.addItem("Paciente");
+        }
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+       
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+        
+    }
+    
 }//class

@@ -142,6 +142,7 @@ public class NuevaCita extends javax.swing.JFrame {
      if(c.validarFechayHora(txtHora.getText(),DateChooser1.getDate())){
        if(c.insertarCita(c.obtenerFecha(DateChooser1),txtHora.getText(),
                c.obtenerIdPaciente(txtPaciente.getText()))){
+           this.setVisible(false);
            dispose();
        }
      }

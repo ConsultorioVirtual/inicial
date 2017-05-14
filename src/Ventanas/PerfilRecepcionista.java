@@ -235,10 +235,10 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         jLabel14.setText("Nombre de Usuario");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, -1, 20));
 
-        jLabel12.setText("Telefono Oficina");
+        jLabel12.setText("*Telefono Oficina");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
 
-        jLabel11.setText("Codigo Postal");
+        jLabel11.setText("*Codigo Postal");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, 20));
 
         jLabel6.setText("Usuario No");
@@ -268,7 +268,7 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 460, 440));
 
-        jLabel13.setText("Telefono Domicilio");
+        jLabel13.setText("*Telefono Domicilio");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 20));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 153));
@@ -325,13 +325,16 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         tel_movil=txtTelefonoMovil.getText();
         tel_extra=txtCorreoElectronico.getText();
         correo_electronico=txtTelefonoExtra.getText();
+        
+        if(p.validarCampos(domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, tel_movil)){
         int respuesta=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?",
                  "Modificar perfil", JOptionPane.YES_NO_OPTION, 
                  JOptionPane.QUESTION_MESSAGE);
         if(respuesta == 0){
        p.actualizarDatosRecepcionista(domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, tel_movil, tel_extra, correo_electronico, id_recep);
        dispose(); 
-        }
+        }//confirmacion y actualizacion
+        }//if Validacion de datos y actualizacion
     }//GEN-LAST:event_lblAceptarMouseClicked
 
     private void txtAreaDomicilioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAreaDomicilioKeyReleased
@@ -351,23 +354,28 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoElectronicoKeyReleased
 
     private void txtCodigoPostalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoPostalKeyReleased
-    txtCodigoPostal.setText(txtCodigoPostal.getText().toUpperCase());        // TODO add your handling code here:
+    txtCodigoPostal.setText(txtCodigoPostal.getText().toUpperCase()); 
+    p.soloNumeros(evt);// TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoPostalKeyReleased
 
     private void txtTelefonoDomicilioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoDomicilioKeyReleased
-    txtTelefonoDomicilio.setText(txtTelefonoDomicilio.getText().toUpperCase());        // TODO add your handling code here:
+    txtTelefonoDomicilio.setText(txtTelefonoDomicilio.getText().toUpperCase()); 
+    p.validarTelefono(evt);// TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoDomicilioKeyReleased
 
     private void txtTelefonoOficinaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoOficinaKeyReleased
-    txtTelefonoOficina.setText(txtTelefonoOficina.getText().toUpperCase());        // TODO add your handling code here:
+    txtTelefonoOficina.setText(txtTelefonoOficina.getText().toUpperCase());
+   p.validarTelefono(evt);// TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoOficinaKeyReleased
 
     private void txtTelefonoMovilKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoMovilKeyReleased
-    txtTelefonoMovil.setText(txtTelefonoMovil.getText().toUpperCase());        // TODO add your handling code here:
+    txtTelefonoMovil.setText(txtTelefonoMovil.getText().toUpperCase());
+    p.validarTelefono(evt);// TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoMovilKeyReleased
 
     private void txtTelefonoExtraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoExtraKeyReleased
-    txtTelefonoExtra.setText(txtTelefonoExtra.getText().toUpperCase());        // TODO add your handling code here:
+    txtTelefonoExtra.setText(txtTelefonoExtra.getText().toUpperCase());  
+    p.validarTelefono(evt);// TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoExtraKeyReleased
 
     private void txtNombre1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre1KeyReleased

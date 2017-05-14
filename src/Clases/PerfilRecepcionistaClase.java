@@ -111,4 +111,104 @@ public class PerfilRecepcionistaClase {
                     System.out.println(ex.getMessage());
               }
     }//SafeUpdates 
+    
+    
+    public boolean validarCampos(String domicilio,String ciudad, String estado,String codigo_postal, 
+                                 String tel_domicilio, String tel_oficina,String tel_Movil){
+         boolean est = true;
+         
+            /*if(nombre.equals("")){
+                showMessageDialog(null,"Ingrese un nombre");
+                est = false;
+                return est;}*/
+            /*if(apellido_paterno.equals("")){
+                showMessageDialog(null,"ingrese un apellido");
+                est = false;
+                return est;}*/
+            if(domicilio.equals("")){
+                showMessageDialog(null,"ingrese un domicilio");
+                est = false;
+                return est;}
+            if(ciudad.equals("")){
+                showMessageDialog(null,"ingrese una ciudad");
+                est = false;
+                return est;}
+            if(estado.equals("")){
+                showMessageDialog(null,"ingrese un estado");
+                est = false;
+                return est;}
+            if(codigo_postal.length()>6){
+                showMessageDialog(null,"Ingrese un codigo postal valido");
+                est=false;
+                return est;
+            }
+            if(tel_domicilio.equals("")){
+                showMessageDialog(null,"ingrese un telefono");
+                est = false;
+                return est;}
+            if(tel_domicilio.length()>10){
+                showMessageDialog(null,"ingrese un telefono de 10 o menos digitos");
+                est = false;
+                return est;}
+            if(tel_oficina.equals("")){
+                showMessageDialog(null,"ingrese un telefono de oficina");
+                est = false;
+                return est;}
+            if(tel_oficina.length()>10){
+                showMessageDialog(null,"ingrese un telefono de 10 o menos digitos");
+                est = false;
+                return est;
+                }
+            if(tel_Movil.equals("")){
+                showMessageDialog(null,"ingrese un telefono de oficina");
+                est = false;
+                return est;}
+            if(tel_Movil.length()>10){
+                showMessageDialog(null,"ingrese un telefono de 10 o menos digitos");
+                est = false;
+                return est;    
+            }
+            /*if(sexo.equals("")){
+                showMessageDialog(null,"seleccione un sexo");
+                est = false;
+                return est;}*/
+            /*if(lugar_nacimiento.equals("")){
+                showMessageDialog(null,"ingrese un lugar de nacimiento");
+                est = false;
+                return est;}/*
+            /*if(validarFecha(fecha_nacimiento)){
+                showMessageDialog(null,"Ingrese un fecha en el formato 'aaaa-mm-dd'");
+                est = false;
+                return est;
+            } */         
+            /*if(edad.equals("")){
+                showMessageDialog(null,"ingrese una edad");
+                est = false;
+                return est;}/
+            /*if(medico.equals("")){
+                showMessageDialog(null,"Seleccione un medico");
+                est = false;
+                return est;}*/
+         return est;
+    }//validarCampos
+    
+    public void soloNumeros(java.awt.event.KeyEvent evt) {
+        int k=(int)evt.getKeyChar();
+        if (k >= 97 && k <= 122 || k>=65 && k<=90){
+            showMessageDialog(null,"solo ingresar numeros");
+        }
+        if(k==241 || k==209){
+            showMessageDialog(null,"solo ingresar numeros");
+        }
+    }//soloNumeros
+    
+    public void validarTelefono(java.awt.event.KeyEvent evt) {
+        int k=(int)evt.getKeyChar();
+        if (k >= 97 && k <= 122 || k>=65 && k<=90){
+            showMessageDialog(null,"solo ingresar numeros o guiones");
+        }
+        if(k==241 || k==209){
+            showMessageDialog(null,"solo ingresar numeros o guiones");
+        }
+    }//validarTelefono
 }//clase

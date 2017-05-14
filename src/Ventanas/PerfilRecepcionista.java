@@ -36,11 +36,11 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         setTitle("PERFIL RECEPCIONISTA");
         txtMedicoNo.setText(id+"");
         Object vector[] = p.obtenerDatosRecepcionista(id_recep);
-        
         //JOptionPane.showMessageDialog(null,"vector: "+vector[0]);
         llenarCampos(vector);
+        
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -330,6 +330,7 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
                  JOptionPane.QUESTION_MESSAGE);
         if(respuesta == 0){
        p.actualizarDatosRecepcionista(domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, tel_movil, tel_extra, correo_electronico, id_recep);
+       dispose(); 
         }
     }//GEN-LAST:event_lblAceptarMouseClicked
 
@@ -480,6 +481,17 @@ txtTelefonoMovil.setText(vector[10]+"");
 txtCorreoElectronico.setText(vector[11]+"");
 txtTelefonoExtra.setText(vector[12]+"");
 lblNombreUsuario.setText(vector[0]+" "+vector[2]);
+
+        if(txtAreaDomicilio.getText().equals("null")){txtAreaDomicilio.setText("");}
+        if(txtCiudad.getText().equals("null")){txtCiudad.setText("");}
+        if(txtEstado.getText().equals("null")){txtEstado.setText("");}
+        if(txtCodigoPostal.getText().equals("null")){txtCodigoPostal.setText("");}
+        if(txtAreaDomicilio.getText().equals("null")){txtAreaDomicilio.setText("");}
+        if(txtTelefonoDomicilio.getText().equals("null")){txtTelefonoDomicilio.setText("");}
+        if(txtTelefonoOficina.getText().equals("null")){txtTelefonoOficina.setText("");}
+        if(txtTelefonoMovil.getText().equals("null")){txtTelefonoMovil.setText("");}
+        if(txtTelefonoExtra.getText().equals("null")){txtTelefonoExtra.setText("");}
+        if(txtCorreoElectronico.getText().equals("null")){txtCorreoElectronico.setText("");}
 
 
 

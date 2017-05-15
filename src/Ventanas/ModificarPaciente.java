@@ -57,7 +57,6 @@ public class ModificarPaciente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -65,7 +64,6 @@ public class ModificarPaciente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtNExpediente = new javax.swing.JTextField();
         txtSNombre = new javax.swing.JTextField();
         txtPNombre = new javax.swing.JTextField();
         txtApeMat = new javax.swing.JTextField();
@@ -124,32 +122,25 @@ public class ModificarPaciente extends javax.swing.JFrame {
         setTitle("Agregar Paciente");
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Expediente No.");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 770, 10));
 
         jLabel2.setText("*Nombre(s)");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
 
         jLabel3.setText("*Apellidos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         jLabel4.setText("*Domicilio");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
 
         jLabel5.setText("*Ciudad");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
 
         jLabel6.setText("*Estado");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
         jLabel7.setText("*Codigo Postal");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
-
-        txtNExpediente.setEditable(false);
-        txtNExpediente.setText("1");
-        getContentPane().add(txtNExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 110, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
 
         txtSNombre.setText(" ");
         txtSNombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -157,7 +148,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtSNombreKeyReleased(evt);
             }
         });
-        getContentPane().add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 120, -1));
+        getContentPane().add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 120, -1));
 
         txtPNombre.setText(" ");
         txtPNombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -165,7 +156,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtPNombreKeyReleased(evt);
             }
         });
-        getContentPane().add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 110, -1));
+        getContentPane().add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 110, -1));
 
         txtApeMat.setText(" ");
         txtApeMat.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -173,7 +164,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtApeMatKeyReleased(evt);
             }
         });
-        getContentPane().add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 120, -1));
+        getContentPane().add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 120, -1));
 
         txtApePat.setText(" ");
         txtApePat.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -181,7 +172,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtApePatKeyReleased(evt);
             }
         });
-        getContentPane().add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 110, -1));
+        getContentPane().add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 110, -1));
 
         txtCiudad.setText(" ");
         txtCiudad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -189,7 +180,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtCiudadKeyReleased(evt);
             }
         });
-        getContentPane().add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 240, -1));
+        getContentPane().add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 240, -1));
 
         txtCodigoPostal.setText(" ");
         txtCodigoPostal.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +193,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtCodigoPostalKeyReleased(evt);
             }
         });
-        getContentPane().add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 120, -1));
+        getContentPane().add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 120, -1));
 
         txtEstado.setText(" ");
         txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -210,7 +201,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
                 txtEstadoKeyReleased(evt);
             }
         });
-        getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 240, -1));
+        getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 240, -1));
 
         txtDomicilio.setColumns(20);
         txtDomicilio.setRows(5);
@@ -221,84 +212,84 @@ public class ModificarPaciente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtDomicilio);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 240, 68));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 240, 68));
 
         jLabel8.setText("*Teléfono Dom");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         jLabel9.setText("Telefono Oficina");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
 
         jLabel10.setText("Correo electronico");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, 20));
 
         jLabel11.setText("Sexo");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, 20));
 
         jLabel12.setText("Derechohabiente");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, -1, 20));
 
         jLabel13.setText("*Fecha de Nacimiento");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, 20));
 
         jLabel14.setText("*Edad");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, 20));
 
         jLabel15.setText("Medico");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, -1, 20));
 
         txtTelDom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTelDomKeyReleased(evt);
             }
         });
-        getContentPane().add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 159, -1));
+        getContentPane().add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 159, -1));
 
         txtTelOfi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTelOfiKeyReleased(evt);
             }
         });
-        getContentPane().add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 159, -1));
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 160, -1));
+        getContentPane().add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 159, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 160, 20));
 
         jLabel23.setText("*Lugar de Nacimiento");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, 20));
 
         txtDerechohabiente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDerechohabienteKeyReleased(evt);
             }
         });
-        getContentPane().add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 158, -1));
+        getContentPane().add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 158, 20));
 
         txtrfc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtrfcKeyReleased(evt);
             }
         });
-        getContentPane().add(txtrfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 158, -1));
+        getContentPane().add(txtrfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 158, 20));
 
         txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEdadKeyReleased(evt);
             }
         });
-        getContentPane().add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 75, -1));
+        getContentPane().add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 75, 20));
 
         txtLugarNac1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtLugarNac1KeyReleased(evt);
             }
         });
-        getContentPane().add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 158, -1));
+        getContentPane().add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 158, 20));
 
         txtFechaNac.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtFechaNacKeyReleased(evt);
             }
         });
-        getContentPane().add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 158, -1));
+        getContentPane().add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 158, 20));
 
         txtEstadoCivil.setText(" ");
         txtEstadoCivil.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -309,7 +300,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
         getContentPane().add(txtEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 240, -1));
 
         jLabel24.setText("RFC");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, -1, 20));
 
         lblPacientes.setFont(new java.awt.Font("Tahoma", 1, 40)); // NOI18N
         lblPacientes.setForeground(new java.awt.Color(255, 255, 255));
@@ -426,8 +417,8 @@ public class ModificarPaciente extends javax.swing.JFrame {
         jPanel2.add(lblCancelar);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 630, 100, 40));
-        getContentPane().add(lblSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 160, 20));
-        getContentPane().add(lblMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 160, 20));
+        getContentPane().add(lblSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 160, 20));
+        getContentPane().add(lblMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 160, 20));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo_blanco.jpg"))); // NOI18N
         jLabel16.setText("jLabel16");
@@ -652,31 +643,7 @@ public class ModificarPaciente extends javax.swing.JFrame {
         return true;
         
     }
-    
-  /*  public void insertarP(int id_Exp,String nom,String seg_nom,String apePat,
-                            String apeMat,String domicilio,String ciudad,
-                            String estado,String telDom,String telOfi,
-                            String correo,String sexo,String LugNac,
-                            String FechaNac,int edad, String medico){
-        String idPaciente = getRowNumber()+"";
-        try{
-            PreparedStatement pst = cn.prepareStatement("INSERT INTO PACIENTE(id_paciente,"
-                    + "id_expediente,nombre_paciente,segnombre_paciente,apepat_paciente,"
-                    + "apemat_paciente,domicilio,ciudad,estado,codigo_postal,telefono_domicilio,"
-                    + "telefono_oficina,correo_electronico,sexo,Lugar_Nac,Fecha_Nac,Edad,Medico)"
-                    + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            pst.setString(1,idPaciente);
-            pst.setString(2,id_Exp+"");
-            pst.setString(3,nom);
-            pst.setString(4,seg_nom);
-           
-        }
-        
-        catch(HeadlessException e){} catch (SQLException ex) {
-                Logger.getLogger(ModificarPaciente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }*/
-    
+       
     public int getRowNumber(){
        int numberRow = 0;
             try{
@@ -728,7 +695,6 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -778,7 +744,6 @@ public class ModificarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField txtEstadoCivil;
     private javax.swing.JTextField txtFechaNac;
     private javax.swing.JTextField txtLugarNac1;
-    private javax.swing.JTextField txtNExpediente;
     private javax.swing.JTextField txtNombreMadre;
     private javax.swing.JTextField txtNombrePadre;
     private javax.swing.JTextField txtNombrePareja;

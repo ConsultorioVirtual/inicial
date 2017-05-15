@@ -299,8 +299,6 @@ public class Expediente extends javax.swing.JFrame {
         jTextArea21 = new javax.swing.JTextArea();
         jLabel134 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        txtNExpediente = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtTelOfi = new javax.swing.JTextField();
         txtPNombre = new javax.swing.JTextField();
@@ -1207,145 +1205,138 @@ public class Expediente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Expediente No.");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
-        txtNExpediente.setEditable(false);
-        txtNExpediente.setText("1");
-        jPanel2.add(txtNExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 110, -1));
-
         jLabel9.setText("Telefono Oficina");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
-        jPanel2.add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 159, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        jPanel2.add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 159, -1));
 
         txtPNombre.setText(" ");
-        jPanel2.add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 110, -1));
+        jPanel2.add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 110, -1));
 
         jLabel3.setText("Nombre(s)");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         jLabel4.setText("Apellidos");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         txtApePat.setText(" ");
-        jPanel2.add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 110, -1));
+        jPanel2.add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 110, -1));
 
         txtSNombre.setText(" ");
-        jPanel2.add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 120, -1));
+        jPanel2.add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 120, -1));
 
         txtApeMat.setText(" ");
-        jPanel2.add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 120, -1));
+        jPanel2.add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 120, -1));
 
         jLabel10.setText("Correo electronico");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
-        jPanel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 160, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
+        jPanel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 160, -1));
 
         jLabel11.setText("Sexo");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, -1, -1));
 
         jLabel5.setText("Domicilio");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         txtDomicilio.setColumns(20);
         txtDomicilio.setRows(5);
         jScrollPane1.setViewportView(txtDomicilio);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 240, 68));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 240, 68));
 
         jLabel12.setText("Derechohabiente");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
-        jPanel2.add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 158, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+        jPanel2.add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 158, -1));
 
         jLabel23.setText("Lugar de Nacimiento");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, -1));
-        jPanel2.add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 158, -1));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
+        jPanel2.add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 158, -1));
 
         jLabel13.setText("Fecha de Nacimiento");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
-        jPanel2.add(txtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 158, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
+        jPanel2.add(txtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 158, -1));
 
         txtCiudad.setText(" ");
-        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 240, -1));
+        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 240, -1));
 
         jLabel6.setText("Ciudad");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         jLabel7.setText("Estado");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         txtEstado.setText(" ");
-        jPanel2.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 240, -1));
+        jPanel2.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 240, -1));
 
         jLabel8.setText("Codigo Postal");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         txtCodigoPostal.setText(" ");
-        jPanel2.add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 120, -1));
+        jPanel2.add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 120, -1));
 
         jLabel14.setText("Teléfono Dom");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
-        jPanel2.add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 159, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        jPanel2.add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 159, -1));
 
         jLabel15.setText("Edad");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
-        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 75, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
+        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 75, -1));
 
         jLabel16.setText("Medico");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, -1));
 
         jLabel24.setText("RFC");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, -1));
-        jPanel2.add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 158, -1));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
+        jPanel2.add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 158, -1));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 970, 10));
 
         jLabel25.setText("Estado Civil");
-        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
 
         txtEstadoCivil.setText(" ");
-        jPanel2.add(txtEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 240, -1));
+        jPanel2.add(txtEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 240, -1));
 
         jLabel19.setText("Nombre de la Madre");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         txtNombreMadre.setText(" ");
-        jPanel2.add(txtNombreMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 240, -1));
+        jPanel2.add(txtNombreMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 240, -1));
 
         jLabel20.setText("Nombre del Padre");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         txtNombrePadre.setText(" ");
-        jPanel2.add(txtNombrePadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 240, -1));
+        jPanel2.add(txtNombrePadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 240, -1));
 
         jLabel21.setText("Nombre de Pareja");
-        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
 
         txtNombrePareja.setText(" ");
-        jPanel2.add(txtNombrePareja, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 240, -1));
+        jPanel2.add(txtNombrePareja, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 240, -1));
 
         jLabel17.setText("Procedencia");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
         txtProcedencia.setText(" ");
-        jPanel2.add(txtProcedencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 240, -1));
+        jPanel2.add(txtProcedencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 240, -1));
 
         jLabel18.setText("Ocupacion");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
-        jPanel2.add(txtOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 230, -1));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, -1));
+        jPanel2.add(txtOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 230, -1));
 
         jLabel26.setText("Escolaridad");
-        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
-        jPanel2.add(txtEscolaridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 230, -1));
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, -1));
+        jPanel2.add(txtEscolaridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 230, -1));
 
         jLabel27.setText("Observaciones");
-        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, -1, -1));
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
 
         txtAObservaciones.setColumns(20);
         txtAObservaciones.setRows(5);
         jScrollPane2.setViewportView(txtAObservaciones);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 230, 80));
-        jPanel2.add(txtmedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 210, -1));
-        jPanel2.add(txtSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 160, -1));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 230, 80));
+        jPanel2.add(txtmedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 210, -1));
+        jPanel2.add(txtSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 160, -1));
 
         jTabbedPane1.addTab("Informacion Personal", jPanel2);
 
@@ -1519,7 +1510,6 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
@@ -1755,7 +1745,6 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextField txtFormulaMenstrual;
     private javax.swing.JTextField txtLugarNac1;
     private javax.swing.JTextField txtMediacionGestional;
-    private javax.swing.JTextField txtNExpediente;
     private javax.swing.JTextField txtNombreMadre;
     private javax.swing.JTextField txtNombrePadre;
     private javax.swing.JTextField txtNombrePareja;

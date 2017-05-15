@@ -5,6 +5,7 @@
  */
 package Clases;
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -77,18 +78,11 @@ public class ModificarPerfilDoctorClase {
         return vector1; 
     }//obtenerDatosDoctor
     
-    public boolean validarCampos(String domicilio,String ciudad, String estado,String codigo_postal, 
-                                 String tel_domicilio, String tel_oficina,String tel_Movil){
+    public boolean validarCampos(String domicilio,String ciudad, String estado,String codigo_postal, String tel_domicilio, 
+                                 String tel_oficina,String tel_Movil, String cedula_Profesional,String especialidad){
          boolean est = true;
          
-            /*if(nombre.equals("")){
-                showMessageDialog(null,"Ingrese un nombre");
-                est = false;
-                return est;}*/
-            /*if(apellido_paterno.equals("")){
-                showMessageDialog(null,"ingrese un apellido");
-                est = false;
-                return est;}*/
+            
             if(domicilio.equals("")){
                 showMessageDialog(null,"ingrese un domicilio");
                 est = false;
@@ -130,29 +124,19 @@ public class ModificarPerfilDoctorClase {
             if(tel_Movil.length()>10){
                 showMessageDialog(null,"ingrese un telefono de 10 o menos digitos");
                 est = false;
-                return est;    
-            }
-            /*if(sexo.equals("")){
-                showMessageDialog(null,"seleccione un sexo");
-                est = false;
-                return est;}*/
-            /*if(lugar_nacimiento.equals("")){
-                showMessageDialog(null,"ingrese un lugar de nacimiento");
-                est = false;
-                return est;}/*
-            /*if(validarFecha(fecha_nacimiento)){
-                showMessageDialog(null,"Ingrese un fecha en el formato 'aaaa-mm-dd'");
-                est = false;
                 return est;
-            } */         
-            /*if(edad.equals("")){
-                showMessageDialog(null,"ingrese una edad");
+              }
+            if(cedula_Profesional.equals("")){
+                showMessageDialog(null,"ingrese su cedula profesional");
                 est = false;
-                return est;}/
-            /*if(medico.equals("")){
-                showMessageDialog(null,"Seleccione un medico");
+                return est;}
+            if(especialidad.equals("")){
+                showMessageDialog(null,"ingrese su especialidad");
                 est = false;
-                return est;}*/
+                return est;}
+            
+            
+           
          return est;
     }//validarCampos
     
@@ -175,4 +159,38 @@ public class ModificarPerfilDoctorClase {
             showMessageDialog(null,"solo ingresar numeros o guiones");
         }
     }//validarTelefono
+    
+    
+    public boolean actualizarDatosDoctor(String domicilio,String ciudad,String 
+    estado,String codigo_postal,String tel_domicilio,String tel_oficina,
+    String tel_movil,String tel_extra,String correo_electronico,String cedula_profecional,
+    String especialidad, String observaciones, int id_usuario){
+        boolean est=true;
+            try{
+              PreparedStatement pst = cn.prepareStatement("UPDATE doctor SET domicilio ='"+domicilio+
+                "',ciudad = '"+ciudad+
+                "',estado = '"+estado+
+                "',codigo_postal = '"+codigo_postal+
+                "',tel_domicilio = '"+tel_domicilio+
+                "',tel_oficina = '"+tel_oficina+
+                "',tel_movil ='"+tel_movil+
+                "',tel_extra ='"+tel_extra+
+                "',correo_electronico = '"+correo_electronico+
+                "',cedula_profecional ='"+cedula_profecional+
+                "',especialidad ='"+especialidad+      
+                "',observaciones = '"+observaciones+"' WHERE id_usuario =  "+id_usuario);
+               
+              int a=pst.executeUpdate();
+         if(a>0){
+               showMessageDialog(null,"Datos actualizados");
+           }
+           else{
+                showMessageDialog(null,"Error al actualizar");
+                est = false;
+           }
+           }catch(HeadlessException | SQLException e){
+               showMessageDialog(null,e.getMessage());
+           } 
+        return est;
+    }//actualizarDatosRecepcionista
 }//clase

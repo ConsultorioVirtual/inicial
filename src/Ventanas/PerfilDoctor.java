@@ -5,6 +5,8 @@
  */
 package Ventanas;
 import Clases.ModificarPerfilDoctorClase;
+import static Ventanas.PerfilRecepcionista.id_recep;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
@@ -116,6 +118,16 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel23.setText("Guardar");
         jLabel23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel23.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
+        jLabel23.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jLabel23KeyReleased(evt);
+            }
+        });
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -151,30 +163,63 @@ public class PerfilDoctor extends javax.swing.JFrame {
 
         txtApellido2.setEditable(false);
         jPanel1.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 150, -1));
+
+        txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEstadoKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 300, -1));
+
+        txtCiudad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCiudadKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 300, -1));
         jPanel1.add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 110, -1));
         jPanel1.add(txtTelefonoOficina, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 150, -1));
         jPanel1.add(txtTelefonoDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 150, -1));
         jPanel1.add(txtTelefonoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 240, -1));
+
+        txtCedulaProfesional.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCedulaProfesionalKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtCedulaProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 240, -1));
         jPanel1.add(txtCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 140, -1));
         jPanel1.add(txtTelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 140, -1));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextArea2KeyReleased(evt);
+            }
+        });
         txtAreaObservaciones.setViewportView(jTextArea2);
 
         jPanel1.add(txtAreaObservaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 240, 70));
 
         txtAreaDomicilio.setColumns(20);
         txtAreaDomicilio.setRows(5);
+        txtAreaDomicilio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAreaDomicilioKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtAreaDomicilio);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 300, 70));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextArea1KeyReleased(evt);
+            }
+        });
         txtAreaEspecialidad.setViewportView(jTextArea1);
 
         jPanel1.add(txtAreaEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 240, 70));
@@ -247,6 +292,59 @@ public class PerfilDoctor extends javax.swing.JFrame {
     private void txtMedicoNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMedicoNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMedicoNoActionPerformed
+
+    private void jLabel23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel23KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel23KeyReleased
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        domicilio=txtAreaDomicilio.getText();
+        ciudad=txtCiudad.getText();
+        estado=txtEstado.getText();
+        codigo_postal=txtCodigoPostal.getText();
+        tel_domicilio=txtTelefonoDomicilio.getText();
+        tel_oficina=txtTelefonoOficina.getText();
+        tel_movil=txtTelefonoMovil.getText();
+        tel_extra=txtCorreoElectronico.getText();
+        correo_electronico=txtTelefonoExtra.getText();
+        cedula_Profecional=txtCedulaProfesional.getText();
+        especialidad=jTextArea1.getText();
+        observaciones=jTextArea2.getText();
+        
+        if(d.validarCampos(domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, tel_movil, cedula_Profecional, especialidad)){
+        int respuesta=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?",
+                 "Modificar perfil", JOptionPane.YES_NO_OPTION, 
+                 JOptionPane.QUESTION_MESSAGE);
+        if(respuesta == 0){
+       d.actualizarDatosDoctor(domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, tel_movil, tel_extra, correo_electronico, cedula_Profecional,especialidad, observaciones, id_Doctor);
+       dispose(); 
+        }//confirmacion y actualizacion
+        }//if Validacion de datos y actualizacion
+    }//GEN-LAST:event_jLabel23MouseClicked
+
+    private void txtAreaDomicilioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAreaDomicilioKeyReleased
+        txtAreaDomicilio.setText(txtAreaDomicilio.getText().toUpperCase());// TODO add your handling code here:
+    }//GEN-LAST:event_txtAreaDomicilioKeyReleased
+
+    private void txtCiudadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiudadKeyReleased
+        txtCiudad.setText(txtCiudad.getText().toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCiudadKeyReleased
+
+    private void txtEstadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoKeyReleased
+    txtEstado.setText(txtEstado.getText().toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoKeyReleased
+
+    private void txtCedulaProfesionalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaProfesionalKeyReleased
+        txtCedulaProfesional.setText(txtCedulaProfesional.getText().toUpperCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaProfesionalKeyReleased
+
+    private void jTextArea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea1KeyReleased
+    jTextArea1.setText(jTextArea1.getText().toUpperCase());    // TODO add your handling code here:
+    }//GEN-LAST:event_jTextArea1KeyReleased
+
+    private void jTextArea2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea2KeyReleased
+    jTextArea2.setText(jTextArea2.getText().toUpperCase());          // TODO add your handling code here:
+    }//GEN-LAST:event_jTextArea2KeyReleased
 
     /**
      * @param args the command line arguments

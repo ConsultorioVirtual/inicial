@@ -25,6 +25,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         setTitle("RECEPCIONISTA");
         Tabla.setModel(r.obtenerCitas(fechaInic));
         addItemsCitas();
+        r.itemsText(txtBusquedaAgenda);
         //obtenerFecha();   
     }
     @SuppressWarnings("unchecked")
@@ -41,8 +42,8 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         txtBusquedaAgenda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
-        cmbPacientes = new javax.swing.JComboBox<String>();
-        jLabel12 = new javax.swing.JLabel();
+        cmbPacientes = new javax.swing.JComboBox<>();
+        lblBuscar = new javax.swing.JLabel();
         panel = new javax.swing.JTabbedPane();
         AgendaPanel = new javax.swing.JPanel();
         lblNuevaCita = new javax.swing.JLabel();
@@ -126,14 +127,19 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 890, 340));
 
-        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opcion" }));
+        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 260, 30));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Busqueda2_32.png"))); // NOI18N
-        jLabel12.setText("Buscar");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 90, -1));
+        lblBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Busqueda2_32.png"))); // NOI18N
+        lblBuscar.setText("Buscar");
+        lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBuscarMouseClicked(evt);
+            }
+        });
+        jPanel4.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 90, -1));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 910, 430));
 
@@ -353,6 +359,34 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
         
     }//GEN-LAST:event_TablaMouseClicked
+
+    private void lblBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBuscarMouseClicked
+        String fecha=r.obtenerFecha(Calendar1.getDate()+"");
+        String nomb=txtBusquedaAgenda.getText();
+        if(panel.getSelectedIndex()==0){
+            if(cmbPacientes.getSelectedIndex()==0){
+                showMessageDialog(null,"Seleccione un criterio");
+            }
+            if(cmbPacientes.getSelectedIndex()==1){
+                //paciente
+                Tabla.setModel(r.obtenerCitasPaciente(fecha, nomb));
+            }
+            if(cmbPacientes.getSelectedIndex()==2){
+                //doctor
+                Tabla.setModel(r.obtenerCitasDoctor(fechaInic, nomb));
+            }
+            
+        }
+        if(panel.getSelectedIndex()==1){
+            if(cmbPacientes.getSelectedIndex()==0){
+                showMessageDialog(null,"Seleccione un criterio");
+            }
+            if(cmbPacientes.getSelectedIndex()==1){
+                //paciente
+                Tabla.setModel(r.obtenerPacientes(nomb));
+            }
+        }
+    }//GEN-LAST:event_lblBuscarMouseClicked
     
     
     public static void main(String args[]) {
@@ -401,7 +435,6 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -413,6 +446,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblAgregarPaciente;
+    private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblCancelar;
     private javax.swing.JLabel lblModificarPaciente;
     private javax.swing.JLabel lblNuevaCita;

@@ -18,6 +18,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     String fechaInic=r.obtenerFecha(fechasis+"");
     ModificarPacienteClase m = new ModificarPacienteClase();
     static int id_recep;
+    
     public Recepcionista(int id) {
         id_recep=id;
         initComponents();
@@ -296,10 +297,18 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     }//GEN-LAST:event_lblAgregarPacienteMouseClicked
 
     private void lblNuevaCitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaCitaMouseClicked
-        JFrame cita = new NuevaCita();
+        int columna=Tabla.getSelectedRow();
+        if(columna==-1){
+        showMessageDialog(null,"Seleccione un horario");
+        }
+        else{
+        String fec=r.obtenerFecha(Calendar1.getDate()+"");
+        String hor=Tabla.getValueAt(columna, 0)+"";
+        String doct=Tabla.getValueAt(columna,3)+"";
+        JFrame cita = new NuevaCita(fec,hor,doct);
         cita.setVisible(true);
         cita.addWindowListener(this);
-        
+        }
     }//GEN-LAST:event_lblNuevaCitaMouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked

@@ -8,22 +8,27 @@ package Ventanas;
 //fecha   hora  paciente  doctor estado 
 
 import Clases.CitasClase;
-import java.awt.Color;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class NuevaCita extends javax.swing.JFrame {
     CitasClase c = new CitasClase();
-    boolean estFecha=true;
-    /**
-     * Creates new form NuevaCita
-     */
-    public NuevaCita() {
+    static String fecCit;
+    static String horaCit;
+    static String doctCit;
+    public NuevaCita(String fec, String hora, String doct) {
+        fecCit=fec;
+        horaCit=hora;
+        doctCit=doct;
         initComponents();
         setTitle("Agregar cita");
-        setLocationRelativeTo(null);
-        c.obtenerPacientes(txtPaciente);
-       
+        setLocationRelativeTo(null);  
+        c.obtenerPacientes(txtPaciente,doct);
+        txtDoctor.setText(doct);
+        txtHora.setText(hora);
+        txtFecha.setText(fec);
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,11 +49,11 @@ public class NuevaCita extends javax.swing.JFrame {
         txtHora = new javax.swing.JTextField();
         txtPaciente = new javax.swing.JTextField();
         txtDoctor = new javax.swing.JTextField();
-        DateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,8 +98,7 @@ public class NuevaCita extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 100, 40));
 
-        txtHora.setForeground(new java.awt.Color(204, 204, 204));
-        txtHora.setText("HH:MM");
+        txtHora.setEditable(false);
         txtHora.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtHoraKeyPressed(evt);
@@ -111,14 +115,9 @@ public class NuevaCita extends javax.swing.JFrame {
 
         txtDoctor.setEditable(false);
         getContentPane().add(txtDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 278, -1));
-        getContentPane().add(DateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
         jLabel4.setText("Fecha");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, 20));
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo_blanco.jpg"))); // NOI18N
-        jLabel16.setText("jLabel16");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 420, 230));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,25 +132,30 @@ public class NuevaCita extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menu Azul.png"))); // NOI18N
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 70));
 
+        txtFecha.setEditable(false);
+        getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 280, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo_blanco.jpg"))); // NOI18N
+        jLabel16.setText("jLabel16");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 420, 230));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptarMouseClicked
-    if(c.validarCampos(txtHora.getText(),txtPaciente.getText())){
-     if(validarHora(txtHora.getText())){
-     if(c.validarFechayHora(txtHora.getText(),DateChooser1.getDate())){
-       if(c.insertarCita(c.obtenerFecha(DateChooser1),txtHora.getText(),
+    if(c.validarCampos(txtPaciente.getText())){
+     if(c.validarFechayHora(txtHora.getText(),txtFecha.getText())){
+       if(c.insertarCita(txtFecha.getText(),txtHora.getText(),
                c.obtenerIdPaciente(txtPaciente.getText()))){
            this.setVisible(false);
            dispose();
        }
      }
-     }//validarHora
     }//validar campos
     }//GEN-LAST:event_lblAceptarMouseClicked
 
     private void txtPacienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPacienteFocusLost
-        txtDoctor.setText(c.obtenerNombreDoctor(txtPaciente.getText()));
+        
     }//GEN-LAST:event_txtPacienteFocusLost
 
     private void lblCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCancelarMouseClicked
@@ -159,11 +163,7 @@ public class NuevaCita extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCancelarMouseClicked
 
     private void txtHoraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHoraKeyPressed
-        if(estFecha==true){
-            estFecha=false;
-            txtHora.setText("");
-            txtHora.setForeground(Color.black);
-        }
+
     }//GEN-LAST:event_txtHoraKeyPressed
 
     /**
@@ -196,13 +196,12 @@ public class NuevaCita extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NuevaCita().setVisible(true);
+                new NuevaCita(fecCit,horaCit,doctCit).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser DateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
@@ -215,26 +214,9 @@ public class NuevaCita extends javax.swing.JFrame {
     private javax.swing.JLabel lblAceptar;
     private javax.swing.JLabel lblCancelar;
     private javax.swing.JTextField txtDoctor;
+    private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtHora;
     private javax.swing.JTextField txtPaciente;
     // End of variables declaration//GEN-END:variables
-public boolean validarHora(String hora){
-    boolean estado=true;
-    if(hora.length()>5){estado=false;return estado;}
-    String horaC[]=hora.split(":");
-    if(Integer.parseInt(horaC[0])>23 | Integer.parseInt(horaC[0])<0){
-        showMessageDialog(null,"Hora no valida");
-        return false;
-    }
-    if(Integer.parseInt(horaC[1])>59 | Integer.parseInt(horaC[1])<0){
-        showMessageDialog(null,"Hora no valida");
-        return false;
-    }
-    if(horaC[0].length()<2){
-        txtHora.setText("0"+hora);
-    }
-            
-    return estado;
-}//validarHora
 
 }//clase

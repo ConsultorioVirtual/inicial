@@ -1,7 +1,6 @@
 package Clases;
 
 import com.mxrck.autocompleter.TextAutoCompleter;
-import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,12 +19,8 @@ public class CitasClase {
        
     /*Metodos*/
      
-    public boolean validarCampos(String fecha,String paciente){
+    public boolean validarCampos(String paciente){
         boolean estCampos = true;
-        if(fecha.equals("")|fecha.equals("HH:MM")){
-            showMessageDialog(null,"Ingrese una hora");
-            return false;
-        }
         if(paciente.equals("")){
             showMessageDialog(null,"Ingrese un paciente");
             return false;
@@ -33,36 +28,15 @@ public class CitasClase {
         return estCampos;
     }//validarCampos
     
-    public String obtenerNombreDoctor(String nombrePaciente){
-    int idPaciente = obtenerIdPaciente(nombrePaciente);
-    int idDoctor = obtenerIdDoctor(idPaciente);
-    String nombreDoctor="";
-    
-    try{
-                 String query = "select nombre,segundo_nombre, apellido_paterno, "
-                         + "apellido_materno\n" +
-                                "from detalle_doctor\n" +
-                                "where id_doctor="+idDoctor;
-                 PreparedStatement st = cn.prepareStatement(query);
-                 ResultSet rs = st.executeQuery();
-                 while(rs.next()){
-                    nombreDoctor += rs.getString("nombre")+" "+
-                           rs.getString("segundo_nombre")+" "+
-                            rs.getString("apellido_paterno")+" "+
-                            rs.getString("apellido_materno")+" ";
-                    }
-            }catch (SQLException ex){
-                    System.out.println(ex.getMessage());
-              }
-    return nombreDoctor;
-}//obtenerNombreDoctor
 
-    public void obtenerPacientes(JTextField txtPaciente) {
+    public void obtenerPacientes(JTextField txtPaciente,String nombreDoct) {
        TextAutoCompleter AutoCompletado = new TextAutoCompleter(txtPaciente);
     String nombres="";
+    int id_doctor=getidDoctor(nombreDoct);
     try{
-                 String query = "select nombre, segundo_nombre, apellido_paterno,"
-                         + "apellido_materno from paciente";
+                 String query = "select nombre, segundo_nombre, apellido_paterno"
+                + ",apellido_materno \n" +
+                 "from paciente where id_doctor = '"+id_doctor+"'";
                  PreparedStatement st = cn.prepareStatement(query);
                  ResultSet rs = st.executeQuery();
                  while(rs.next()){
@@ -72,42 +46,13 @@ public class CitasClase {
                             rs.getString("apellido_materno")+" "+",";
                     }
             }catch (SQLException ex){
-                    System.out.println(ex.getMessage());
+                    showMessageDialog(null,ex.getMessage());
               }
         String arrNombres[]= nombres.split(",");
         for(int i=0;i<arrNombres.length;i++){
           AutoCompletado.addItem(arrNombres[i]);
         }
      }//obtenerPacientes
-    
-    public String obtenerFecha(JDateChooser dateC){
-        String date = dateC.getDate()+"";
-        String meses[]={"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
-        String fecha[] = date.split(" ");
-        for(int i=0;i<meses.length;i++){
-            if(meses[i].equals(fecha[1])){
-                if((i+1)<10){
-                    date=fecha[5]+"-0"+(i+1)+"-"+fecha[2];
-                }else
-                date=fecha[5]+"-"+(i+1)+"-"+fecha[2];
-            }
-        }//for
-            return date;
-    }//obtenerFecha
-    
-    public String obtenerFecha(String date){
-        String meses[]={"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
-        String fecha[] = date.split(" ");
-        for(int i=0;i<meses.length;i++){
-            if(meses[i].equals(fecha[1])){
-                if((i+1)<10){
-                    date=fecha[5]+"-0"+(i+1)+"-"+fecha[2];
-                }else
-                date=fecha[5]+"-"+(i+1)+"-"+fecha[2];
-            }
-        }//for
-            return date;
-    }//obtenerFecha
     
     public String obtenerHora(String date){
         String fecha[] = date.split(" ");
@@ -172,6 +117,7 @@ public class CitasClase {
                 estado = false;
            }
            }catch(HeadlessException | SQLException e){
+               showMessageDialog(null,e.getMessage());
            } 
         }
         else{
@@ -223,11 +169,14 @@ public boolean validarDisponibilidad(int id_doctor, String fecha, String hora){
 
  /**
  * Este metodo devuelve verdadero la fecha y hora no han pasado
+     * @param text
+     * @param date
+     * @return 
  */
-    public boolean validarFechayHora(String text, Date date) {
+    public boolean validarFechayHora(String text, String date) {
      boolean valido=true;
         String fechaSist[] = obtenerFecha(fecha+"").split("-");
-        String fechaCita[] = obtenerFecha(date+"").split("-");
+        String fechaCita[] = date.split("-");
         String horaSist[] = obtenerHora(fecha+"").split(":");
         String horaCita[] = text.split(":");
         int horaSis=Integer.parseInt(horaSist[0]);
@@ -262,7 +211,7 @@ public boolean validarDisponibilidad(int id_doctor, String fecha, String hora){
             valido=false;
             return valido;
         }
-            if(horaCit==horaSis && minCit<=horaSis){
+            if(horaCit==horaSis && minCit<=minSis){
             showMessageDialog(null,"Fecha no disponible");
             valido=false;
             return valido;
@@ -320,5 +269,38 @@ public boolean validarDisponibilidad(int id_doctor, String fecha, String hora){
            } 
         return estado;
     }//cancelarCita
-
+    public String obtenerFecha(String date){
+        String meses[]={"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+        String fecha[] = date.split(" ");
+        for(int i=0;i<meses.length;i++){
+            if(meses[i].equals(fecha[1])){
+                if((i+1)<10){
+                    date=fecha[5]+"-0"+(i+1)+"-"+fecha[2];
+                }else
+                date=fecha[5]+"-"+(i+1)+"-"+fecha[2];
+            }
+        }//for
+            return date;
+    }//obtenerFecha
+    
+    public int getidDoctor(String nombre){
+       int idDoctor = 0;
+       String nombres [] = nombre.split(" ");
+            try{
+                 String query = "select id_doctor from detalle_doctor\n" +
+                                "where nombre='"+nombres[0]+"'\n" +
+                                "and segundo_nombre='"+nombres[1]+"'\n" +
+                                "and apellido_paterno='"+nombres[2]+"'\n" +
+                                "and apellido_materno='"+nombres[3]+"'";
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                    idDoctor = rs.getInt("id_doctor");
+                    }
+            }catch (SQLException ex){
+                    System.out.println(ex.getMessage());
+              }
+            return idDoctor;
+    }//getidDoctor
+    
 }//clase

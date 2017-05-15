@@ -196,7 +196,7 @@ public class RecepcionistaClase {
        }//obtenerDoctores
     
     public DefaultTableModel obtenerCitasDoctor(String fechaCitas,String nombreDoctor){
-           DefaultTableModel mod = tablaAgendaDoct();
+           DefaultTableModel mod;
            //"Hora", "Paciente", "Fecha", "Doctor"
            int id_doctor=getidDoctor(nombreDoctor);
            String hora="";
@@ -234,8 +234,17 @@ public class RecepcionistaClase {
                  String pacienteArr[]=paciente.split(",");
                  String fechaArr[]=fecha.split(",");
                  String doctorArr[]=doctor.split(",");
-                        
+                 if(doctor.equals("")){
+                 mod=tablaAgenda();
+                     JOptionPane.showMessageDialog(null,"El usuario no coincide con el criterio de busqueda");
+                 return mod;
+                 }
+                 mod = tablaAgendaDoct();
+                  for(int k=0;k<mod.getRowCount();k++){
+                      mod.setValueAt(doctor, k, 3);
+                  }      
                  for(int i=0;i<horaArr.length;i++){
+                     
                     Object vector[]={horaArr[i],pacienteArr[i],fechaArr[i],doctorArr[i]};
                     for(int j=0;j<mod.getRowCount();j++){
                          if(mod.getValueAt(j,0).equals(horaArr[i])){
@@ -244,9 +253,11 @@ public class RecepcionistaClase {
                         }
                     }
                       }//for
+                 return mod;
             }catch (SQLException ex){
                     System.out.println(ex.getMessage());
               }
+           mod = tablaAgendaDoct();
            return mod;
        }//obtenerCitasDoctor
     
@@ -308,10 +319,14 @@ public class RecepcionistaClase {
                     apPat+=rs.getString("apellido_paterno")+",";
                     apMat+=rs.getString("apellido_materno")+",";
                     }
+                 
                  String nombreArr[]=nombre.split(",");
                  String segNombArr[]=segNombre.split(",");
                  String apPatArr[]=apPat.split(",");
                  String apMatArr[]=apMat.split(",");
+                 
+
+                 
                  for(int i=0;i<nombreArr.length;i++){
                     Object vector[]={nombreArr[i],segNombArr[i],apPatArr[i],apMatArr[i]};
                     mod.addRow(vector);
@@ -382,7 +397,12 @@ public class RecepcionistaClase {
                  String pacienteArr[]=paciente.split(",");
                  String fechaArr[]=fecha.split(",");
                  String doctorArr[]=doctor.split(",");
-                        
+                 
+                 if(id_paciente==0){
+                       JOptionPane.showMessageDialog(null,"El usuario no coincide con el criterio de busqueda");
+                 return mod;
+                 }
+                 
                  for(int i=0;i<horaArr.length;i++){
                     Object vector[]={horaArr[i],pacienteArr[i],fechaArr[i],doctorArr[i]};
                     mod.addRow(vector);

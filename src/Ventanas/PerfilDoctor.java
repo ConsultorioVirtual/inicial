@@ -150,46 +150,46 @@ public class PerfilDoctor extends javax.swing.JFrame {
                 txtMedicoNoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMedicoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 80, -1));
+        jPanel1.add(txtMedicoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 80, -1));
 
         txtNombre1.setEditable(false);
-        jPanel1.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 140, -1));
+        jPanel1.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 140, -1));
 
         txtNombre2.setEditable(false);
-        jPanel1.add(txtNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 150, -1));
+        jPanel1.add(txtNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 150, -1));
 
         txtApellido1.setEditable(false);
-        jPanel1.add(txtApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 140, -1));
+        jPanel1.add(txtApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 140, -1));
 
         txtApellido2.setEditable(false);
-        jPanel1.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 150, -1));
+        jPanel1.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 150, -1));
 
         txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEstadoKeyReleased(evt);
             }
         });
-        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 300, -1));
+        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 300, -1));
 
         txtCiudad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCiudadKeyReleased(evt);
             }
         });
-        jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 300, -1));
-        jPanel1.add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 110, -1));
-        jPanel1.add(txtTelefonoOficina, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 150, -1));
-        jPanel1.add(txtTelefonoDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 150, -1));
-        jPanel1.add(txtTelefonoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 240, -1));
+        jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 300, -1));
+        jPanel1.add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, -1));
+        jPanel1.add(txtTelefonoOficina, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 150, -1));
+        jPanel1.add(txtTelefonoDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 150, -1));
+        jPanel1.add(txtTelefonoExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 240, -1));
 
         txtCedulaProfesional.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCedulaProfesionalKeyReleased(evt);
             }
         });
-        jPanel1.add(txtCedulaProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 240, -1));
-        jPanel1.add(txtCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 140, -1));
-        jPanel1.add(txtTelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 140, -1));
+        jPanel1.add(txtCedulaProfesional, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 240, -1));
+        jPanel1.add(txtCorreoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 180, 140, -1));
+        jPanel1.add(txtTelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 140, -1));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -200,7 +200,7 @@ public class PerfilDoctor extends javax.swing.JFrame {
         });
         txtAreaObservaciones.setViewportView(jTextArea2);
 
-        jPanel1.add(txtAreaObservaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 240, 70));
+        jPanel1.add(txtAreaObservaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 240, 70));
 
         txtAreaDomicilio.setColumns(20);
         txtAreaDomicilio.setRows(5);
@@ -211,7 +211,7 @@ public class PerfilDoctor extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtAreaDomicilio);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 300, 70));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 300, 70));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -222,31 +222,31 @@ public class PerfilDoctor extends javax.swing.JFrame {
         });
         txtAreaEspecialidad.setViewportView(jTextArea1);
 
-        jPanel1.add(txtAreaEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 240, 70));
+        jPanel1.add(txtAreaEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 240, 70));
 
         jLabel22.setText("Observaciones");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, 20));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, 20));
 
         jLabel21.setText("*Especialidad");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, 20));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, -1, 20));
 
         jLabel20.setText("*Cedula Profesional");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, 20));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, 20));
 
         jLabel19.setText("Correo Electronico");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, -1, 20));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, -1, 20));
 
         jLabel18.setText("Telefono Extra");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, 20));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, 20));
 
         jLabel17.setText("*Teléfono Movil");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, 20));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, 20));
 
         jLabel15.setText("Nombre de Usuario");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, -1, 20));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, -1, 20));
 
         jLabel14.setText("Nombre de Usuario");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 20));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, 20));
 
         jLabel12.setText("*Telefono Oficina");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
@@ -261,10 +261,10 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, 20));
 
         jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información de Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 420, 100));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 440, 100));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información Adicional", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 420, 330));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 440, 330));
 
         jLabel8.setText("Apellido(s)");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, 20));
@@ -279,7 +279,7 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, 20));
 
         jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Médico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 440));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 440));
 
         jLabel13.setText("*Telefono Domicilio");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 20));

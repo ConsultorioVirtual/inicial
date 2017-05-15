@@ -287,6 +287,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
             cmbPacientes.removeAllItems();
             cmbPacientes.addItem("Seleccione una opcion");
             cmbPacientes.addItem("Paciente");
+            cmbPacientes.addItem("Mostrar todo");
         }
     }//GEN-LAST:event_panelMouseClicked
 
@@ -384,6 +385,10 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
                 //doctor
                 Tabla.setModel(r.obtenerCitasDoctor(fechaInic, nomb));
             }
+            if(cmbPacientes.getSelectedIndex()==3){
+                //doctor
+                Tabla.setModel(r.obtenerCitas(r.obtenerFecha(Calendar1.getDate()+"")));
+            }
             
         }
         if(panel.getSelectedIndex()==1){
@@ -394,7 +399,12 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
                 //paciente
                 Tabla.setModel(r.obtenerPacientes(nomb));
             }
+            if(cmbPacientes.getSelectedIndex()==2){
+                //paciente
+                Tabla.setModel(r.obtenerPacientes());
+            }
         }
+        
     }//GEN-LAST:event_lblBuscarMouseClicked
     
     
@@ -468,6 +478,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         cmbPacientes.addItem("Seleccione una opcion");
         cmbPacientes.addItem("Paciente");
         cmbPacientes.addItem("Doctor");
+        cmbPacientes.addItem("Mostrar todo");
     }//addItemsCitas
 
     @Override
@@ -492,6 +503,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
             cmbPacientes.removeAllItems();
             cmbPacientes.addItem("Seleccione una opcion");
             cmbPacientes.addItem("Paciente");
+            cmbPacientes.addItem("Mostrar todo");
         }
     }
 

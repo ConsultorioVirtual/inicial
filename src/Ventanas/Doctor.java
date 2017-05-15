@@ -70,7 +70,6 @@ public class Doctor extends javax.swing.JFrame {
         Fondo_Pacientes1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblAgregarPaciente = new javax.swing.JLabel();
-        lblModificarUsuario = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         Fondo_Pacientes2 = new javax.swing.JLabel();
@@ -208,19 +207,6 @@ public class Doctor extends javax.swing.JFrame {
         });
         jPanel2.add(lblAgregarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        lblModificarUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblModificarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        lblModificarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ModificarPaciente_32.png"))); // NOI18N
-        lblModificarUsuario.setText("Modificar Usuario");
-        lblModificarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblModificarUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        lblModificarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblModificarUsuarioMouseClicked(evt);
-            }
-        });
-        jPanel2.add(lblModificarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
-
         jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 20, 80));
@@ -356,10 +342,6 @@ public class Doctor extends javax.swing.JFrame {
         recuperar datos*/
     }//GEN-LAST:event_lblModificarPerfilMouseClicked
 
-    private void lblModificarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarUsuarioMouseClicked
-        new ModificarRecepcionista().setVisible(true);
-    }//GEN-LAST:event_lblModificarUsuarioMouseClicked
-
     private void lblModificarExpedienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarExpedienteMouseClicked
         int columna=Tabla.getSelectedRow();
         if(columna==-1){
@@ -463,7 +445,6 @@ public class Doctor extends javax.swing.JFrame {
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblModificarExpediente;
     private javax.swing.JLabel lblModificarPerfil;
-    private javax.swing.JLabel lblModificarUsuario;
     private javax.swing.JLabel lblNuevaConsulta;
     private javax.swing.JTabbedPane panel;
     private javax.swing.JTextField txtBusquedaAgenda;

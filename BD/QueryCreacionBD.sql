@@ -104,26 +104,146 @@ create table detalle_doctor(
     apellido_materno VARCHAR(100)
 );
 
-SET SQL_SAFE_UPDATES = 0;
+/*Nuevo codigo*/
+create table consulta(
+	id_consulta int primary key auto_increment,
+    fecha date,
+    hora varchar(5),
+    motivo_consulta varchar(100),
+    sintomas varchar(100),
+    aparatos_sistemas varchar(200),
+    peso float,
+    talla int,
+    frecuencia_resp varchar(20),
+    presion_arterial varchar(20),
+    temperatura varchar(10),
+    frecuencia_cardiaca varchar(20),
+    oximetria varchar(45),
+    exploracion_fisica varchar(100),
+    estudios_labooratorio varchar(45),
+    diagnostico varchar(100),
+    terapeutica varchar(45),
+    tratamiento varchar(45),
+    doctor_id int,
+    foreign key(doctor_id) references doctor(id_doctor)
+);
 
-update recepcionista
-set domicilio = '@domicilio',
-    ciudad = '@ciudad',
-    estado = '@estado',
-    codigo_postal = '@codigo_postal',
-    tel_domicilio = '@tel_domicilio',
-    tel_oficina = '@tel_oficina',
-    tel_movil = '@tel_movil',
-    tel_extra = '@tel_extra',
-    correo_electronico = '@correo_electronico'
-where id_usuario = '@id_usuario';
+create table medicamentos(
+	id_medicamento int primary key auto_increment,
+    medicamento varchar(45),
+    presentacion varchar(45),
+    nombre_comercial varchar(45),
+    categoria varchar(45)
+);
 
+create table expediente(
+	id_expediente int primary key auto_increment,
+    parto varchar(2),
+    cesarea varchar(2),
+    no_gestacion int,
+    edad_gestacion int,
+    peso_nacer float,
+    talla int,
+    sitio_atencion_parto varchar(100),
+    cefalico float,
+    torcico float,
+    abdominal float,
+    apagar_s int,
+    silverman int,
+    ballard int,
+    complicaciones varchar(200),
+    anestesia_bol varchar(2),
+    especifique_anestesia varchar(100),
+    apnea_neonatal varchar(2),
+    hemorragias varchar(2),
+    convulsiones varchar(2),
+    cianosis varchar(2),
+    ictericia varchar(2),
+    observaciones varchar(200),
+    resumen varchar(300),
+    paciente_id int,
+    foreign key (paciente_id)references paciente(id_paciente)
+);
 
-drop database dbconsultorio;
+create table exploracion_fisica
+(
+	abdomen varchar(150),
+    cabeza varchar(150),
+    cuello varchar(150),
+    columna_vertebral varchar(150),
+    exploracion_ginecologica varchar(150),
+    exploracion_neurologica varchar(150),
+    extremidades varchar(150),
+    genitales varchar(150),
+    habitos_experior varchar(150),
+    torax varchar(150),
+    resumen varchar(300),
+    expediente_id int,
+    foreign key(expediente_id) references expediente(id_expediente)
+);
 
+create table obstetricos(
+	expediente_id int,
+    F_D_P date,
+    G int,
+    A INT,
+    P INT,
+    C INT,
+    nacidos_vivos int,
+    nacidos_muertos int,
+    viven int,
+    muerto_semana1 int,
+    muerto_despues int,
+    intergencia varchar(2),
+    parto_prematuro varchar(2),
+    malformaciones varchar(2),
+    isoinmunizacion varchar(2),
+    atencion_prenatal varchar(2),
+    no_consultas int,
+    medicacion_gestacional varchar(100),
+    examenes_complementarios varchar(100),
+    observaciones varchar (150),
+    resumen varchar(150),
+    foreign key(expediente_id) references expediente(id_expediente)
+);
 
+create table ginecologicos(
+	expediente_id int,
+    menarca int,
+    menopausia int,
+    formula_mentrual varchar(5),
+    f_u_m date,
+    f_u_m_citologia date,
+    ateracion_m_frecuencia varchar(45),
+    ateracion_m_duracion varchar(45),
+    ateracion_m_cantidad float,
+    inicio_vida_sexual int,
+    no_parejas int,
+    tipo_anticoncepcion varchar(45),
+    inicio_anticoncepcion date,
+    suspencion_anticoncepcion date,
+    observaciones varchar(100),
+    resumen varchar(200),
+    foreign key(expediente_id) references expediente(id_expediente)
+);
 
-
+create table interrogatorio
+(
+	expediente_id int,
+	cardiovascular varchar(45),
+    digestivo varchar(45),
+    endocrino varchar(45),
+    hemolintactico varchar(45),
+    musculo_esqueletico varchar(45),
+    piel_anexos varchar(45),
+    reproductor varchar(45),
+    respiracion varchar(45),
+    sistema_nervioso varchar(45),
+    sistemas_generales varchar(45),
+    urinario varchar(45),
+    resumen varchar(200),
+     foreign key(expediente_id) references expediente(id_expediente)
+);
 
 
 

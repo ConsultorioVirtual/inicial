@@ -1,12 +1,14 @@
 
 package Clases;
 
-import com.mxrck.autocompleter.TextAutoCompleter;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JTextField;
+import com.mxrck.autocompleter.TextAutoCompleter;
+
 
 
 public class LoginClase {
@@ -46,6 +48,7 @@ public class LoginClase {
     
     public void itemsUsuario(JTextField txtUsuario){
     TextAutoCompleter AutoCompletado = new TextAutoCompleter(txtUsuario);
+    
     String nombres="";
     try{
                  String query = "select nombre, apellido_paterno from usuarios";

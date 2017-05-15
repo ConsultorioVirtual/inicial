@@ -19,9 +19,9 @@ public Connection conexion(){
   try{
       /*Revisen la contraseña cuando usen el codigo*/
     Class.forName("org.gjt.mm.mysql.Driver");//.newInstance();
-    conectar=DriverManager.getConnection("jdbc:mysql://localhost/dbconsultorio","root","");
+    //conectar=DriverManager.getConnection("jdbc:mysql://localhost/dbconsultorio","root","");
     //conectar=DriverManager.getConnection("jdbc:mysql://localhost/dbconsultorio","root","ABD2017");
-    //conectar=DriverManager.getConnection("jdbc:mysql://localhost/dbconsultorio","root","abd2017");
+    conectar=DriverManager.getConnection("jdbc:mysql://localhost/dbconsultorio","root","abd2017");
   }
   catch(SQLException ex) {
              JOptionPane.showMessageDialog(null, "Error de conexion de la base de datos");

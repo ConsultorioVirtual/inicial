@@ -41,7 +41,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         txtBusquedaAgenda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
-        cmbPacientes = new javax.swing.JComboBox<>();
+        cmbPacientes = new javax.swing.JComboBox<String>();
         jLabel12 = new javax.swing.JLabel();
         panel = new javax.swing.JTabbedPane();
         AgendaPanel = new javax.swing.JPanel();
@@ -117,11 +117,16 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
                 "", "", "", ""
             }
         ));
+        Tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Tabla);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 890, 340));
 
-        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 260, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -344,6 +349,10 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         fecha=r.obtenerFecha(fecha);
         Tabla.setModel(r.obtenerCitas(fecha));
     }//GEN-LAST:event_btnIrMouseClicked
+
+    private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
+        
+    }//GEN-LAST:event_TablaMouseClicked
     
     
     public static void main(String args[]) {

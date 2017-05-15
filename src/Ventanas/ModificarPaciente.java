@@ -437,7 +437,6 @@ public class ModificarPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblAceptar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAceptar1MouseClicked
-        
         try{
         String nombre = txtPNombre.getText();
         String segundo_nombre = txtSNombre.getText();

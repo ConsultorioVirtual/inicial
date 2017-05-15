@@ -14,7 +14,6 @@ import Clases.conectar;
 import java.awt.HeadlessException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javafx.scene.control.ComboBox;
 import Clases.RegistroClase;
 //ventana de registro inicial
 

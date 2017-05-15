@@ -38,7 +38,6 @@ public class AgregarPacienteR extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -46,7 +45,6 @@ public class AgregarPacienteR extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtNExpediente = new javax.swing.JTextField();
         txtSNombre = new javax.swing.JTextField();
         txtPNombre = new javax.swing.JTextField();
         txtApeMat = new javax.swing.JTextField();
@@ -103,80 +101,74 @@ public class AgregarPacienteR extends javax.swing.JFrame {
         setTitle("Agregar Paciente");
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Expediente No.");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 970, 10));
 
         jLabel2.setText("* Nombre(s)");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
 
         jLabel3.setText("* Apellidos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         jLabel4.setText("* Domicilio");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         jLabel5.setText("* Ciudad");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
 
         jLabel6.setText("* Estado");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
         jLabel7.setText("* Codigo Postal");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, -1));
-
-        txtNExpediente.setEditable(false);
-        getContentPane().add(txtNExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 110, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
 
         txtSNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtSNombreKeyReleased(evt);
             }
         });
-        getContentPane().add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 120, -1));
+        getContentPane().add(txtSNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 120, -1));
 
         txtPNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPNombreKeyReleased(evt);
             }
         });
-        getContentPane().add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 110, -1));
+        getContentPane().add(txtPNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 110, -1));
 
         txtApeMat.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtApeMatKeyReleased(evt);
             }
         });
-        getContentPane().add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 120, -1));
+        getContentPane().add(txtApeMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 120, -1));
 
         txtApePat.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtApePatKeyReleased(evt);
             }
         });
-        getContentPane().add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, -1));
+        getContentPane().add(txtApePat, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 110, -1));
 
         txtCiudad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCiudadKeyReleased(evt);
             }
         });
-        getContentPane().add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 240, -1));
+        getContentPane().add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 240, -1));
 
         txtCodigoPostal.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCodigoPostalKeyReleased(evt);
             }
         });
-        getContentPane().add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 120, -1));
+        getContentPane().add(txtCodigoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 120, -1));
 
         txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEstadoKeyReleased(evt);
             }
         });
-        getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 240, -1));
+        getContentPane().add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 240, -1));
 
         txtDomicilio.setColumns(20);
         txtDomicilio.setRows(5);
@@ -187,55 +179,55 @@ public class AgregarPacienteR extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtDomicilio);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 240, 68));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 240, 68));
 
         jLabel8.setText("* Teléfono Dom");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, -1));
 
         jLabel9.setText("* Telefono Oficina");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
 
         jLabel10.setText("Correo electronico");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, -1));
 
         jLabel11.setText("* Sexo");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, -1));
 
         jLabel12.setText("Derechohabiente");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
 
         jLabel13.setText("* Fecha de Nacimiento");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, -1, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
 
         jLabel14.setText("* Edad");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, -1, -1));
 
         jLabel15.setText("* Medico");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
 
         txtTelDom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTelDomKeyReleased(evt);
             }
         });
-        getContentPane().add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 159, -1));
+        getContentPane().add(txtTelDom, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 159, -1));
 
         txtTelOfi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtTelOfiKeyReleased(evt);
             }
         });
-        getContentPane().add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 159, -1));
+        getContentPane().add(txtTelOfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 159, -1));
 
         txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtCorreoKeyReleased(evt);
             }
         });
-        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 160, -1));
+        getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 160, -1));
 
         jLabel23.setText("* Lugar de Nacimiento");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, -1));
 
         txtDerechohabiente.setForeground(new java.awt.Color(204, 204, 204));
         txtDerechohabiente.setText("ISSSTE, IMSS, ETC");
@@ -244,28 +236,28 @@ public class AgregarPacienteR extends javax.swing.JFrame {
                 txtDerechohabienteKeyReleased(evt);
             }
         });
-        getContentPane().add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 158, -1));
+        getContentPane().add(txtDerechohabiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 158, -1));
 
         txtRFC.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtRFCKeyReleased(evt);
             }
         });
-        getContentPane().add(txtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 158, -1));
+        getContentPane().add(txtRFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 158, -1));
 
         txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEdadKeyReleased(evt);
             }
         });
-        getContentPane().add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 75, -1));
+        getContentPane().add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 75, -1));
 
         txtLugarNac1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtLugarNac1KeyReleased(evt);
             }
         });
-        getContentPane().add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 158, -1));
+        getContentPane().add(txtLugarNac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 158, -1));
 
         txtFechaNac.setForeground(new java.awt.Color(204, 204, 204));
         txtFechaNac.setText("aaaa-mm-dd");
@@ -274,7 +266,7 @@ public class AgregarPacienteR extends javax.swing.JFrame {
                 txtFechaNacKeyReleased(evt);
             }
         });
-        getContentPane().add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 158, -1));
+        getContentPane().add(txtFechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 158, -1));
 
         txtEstadoCivil.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -284,12 +276,12 @@ public class AgregarPacienteR extends javax.swing.JFrame {
         getContentPane().add(txtEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 240, -1));
 
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opcion", "HOMBRE", "MUJER" }));
-        getContentPane().add(cmbSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 160, -1));
+        getContentPane().add(cmbSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 160, -1));
 
         jLabel24.setText("RFC");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, -1, -1));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, -1, -1));
 
-        getContentPane().add(cmbMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 170, -1));
+        getContentPane().add(cmbMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 170, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 14, 300));
@@ -602,7 +594,6 @@ public class AgregarPacienteR extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JComboBox cmbMedico;
     private javax.swing.JComboBox cmbSexo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -647,7 +638,6 @@ public class AgregarPacienteR extends javax.swing.JFrame {
     private javax.swing.JTextField txtEstadoCivil;
     private javax.swing.JTextField txtFechaNac;
     private javax.swing.JTextField txtLugarNac1;
-    private javax.swing.JTextField txtNExpediente;
     private javax.swing.JTextField txtNombreMadre;
     private javax.swing.JTextField txtNombrePadre;
     private javax.swing.JTextField txtNombrePareja;

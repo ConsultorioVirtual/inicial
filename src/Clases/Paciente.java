@@ -25,7 +25,7 @@ public class Paciente {
     /*Variables*/
     conectar cc=new conectar();
     Connection cn=cc.conexion();
-        
+    Expediente e = new Expediente();
     
     /*Metodos*/
         public boolean insertarP(String nombre,String segundo_nombre, String apellido_paterno,
@@ -80,6 +80,7 @@ public class Paciente {
               int a=pst.executeUpdate();
          if(a>0){
                showMessageDialog(null,"Registro de paciente creado");
+               e.insertarExpediente(idPaciente);
            }
            else{
                 showMessageDialog(null,"Error al agregar");
@@ -233,8 +234,7 @@ public class Paciente {
             showMessageDialog(null,"solo ingresar numeros");
         }
     }//soloNumeros
-    
-        public void validarTelefono(java.awt.event.KeyEvent evt) {
+    public void validarTelefono(java.awt.event.KeyEvent evt) {
         int k=(int)evt.getKeyChar();
         if (k >= 97 && k <= 122 || k>=65 && k<=90){
             showMessageDialog(null,"solo ingresar numeros o guiones");
@@ -269,4 +269,6 @@ public class Paciente {
         
         return est;
     } //  validarFecha 
+
+    
 }//clase

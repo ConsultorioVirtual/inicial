@@ -1,5 +1,6 @@
 package Ventanas;
 import Clases.DoctorClase;
+import Clases.ModificarPacienteClase;
 import Clases.conectar;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import Ventanas.AgregarPacienteR;
 import java.util.Date;
+import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -25,6 +27,7 @@ public class Doctor extends javax.swing.JFrame {
     java.util.Date fechasis = new Date();
     DoctorClase d = new DoctorClase();
     String fechaInic=d.obtenerFecha(fechasis+"");
+    ModificarPacienteClase m = new ModificarPacienteClase();
     public Doctor(int id) {/*debe recibir el id del doctor para que solo pueda ver
         los pacientes que le corresponden*/
         id_doct=id;
@@ -78,7 +81,7 @@ public class Doctor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
         txtBusquedaAgenda = new javax.swing.JTextField();
-        cmbPacientes = new javax.swing.JComboBox<>();
+        cmbPacientes = new javax.swing.JComboBox<String>();
         lblBuscar = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -114,7 +117,7 @@ public class Doctor extends javax.swing.JFrame {
                 lblNuevaConsultaMouseClicked(evt);
             }
         });
-        AgendaPanel.add(lblNuevaConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        AgendaPanel.add(lblNuevaConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -278,12 +281,17 @@ public class Doctor extends javax.swing.JFrame {
                 "", "", "", ""
             }
         ));
+        Tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Tabla);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 900, 270));
         jPanel4.add(txtBusquedaAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 260, 30));
 
-        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 260, 30));
 
         lblBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -353,7 +361,18 @@ public class Doctor extends javax.swing.JFrame {
     }//GEN-LAST:event_lblModificarUsuarioMouseClicked
 
     private void lblModificarExpedienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarExpedienteMouseClicked
-        new Expediente().setVisible(true);
+        int columna=Tabla.getSelectedRow();
+        if(columna==-1){
+        showMessageDialog(null,"Seleccione un paciente");
+        }
+        else{
+            String nombre=Tabla.getValueAt(columna,0)+"";
+            String segundo_nombre=Tabla.getValueAt(columna,1)+"";
+            String apellido_paterno=Tabla.getValueAt(columna,2)+"";
+            String apellido_materno=Tabla.getValueAt(columna,3)+"";
+            int id=m.obtenerIdPaciente(nombre, segundo_nombre, apellido_paterno, apellido_materno);
+            new Expediente(id).setVisible(true);
+        }
     }//GEN-LAST:event_lblModificarExpedienteMouseClicked
 
     private void btnIrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIrMouseClicked
@@ -361,6 +380,23 @@ public class Doctor extends javax.swing.JFrame {
         fecha=d.obtenerFecha(fecha);
         Tabla.setModel(d.obtenerCitas(fecha, id_doct));
     }//GEN-LAST:event_btnIrMouseClicked
+
+    private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
+        int columna=Tabla.getSelectedRow();
+        String paciente = Tabla.getValueAt(columna,1)+"";
+        String p[]= paciente.split(" ");
+        if(columna==-1){
+        showMessageDialog(null,"Seleccione un paciente");
+        }
+        else{
+            String nombre=p[0];
+            String segundo_nombre=p[1];
+            String apellido_paterno=p[2];
+            String apellido_materno=p[3];
+            int id=m.obtenerIdPaciente(nombre, segundo_nombre, apellido_paterno, apellido_materno);
+            new Expediente(id).setVisible(true);
+        }
+    }//GEN-LAST:event_TablaMouseClicked
     
     
     public static void main(String args[]) {

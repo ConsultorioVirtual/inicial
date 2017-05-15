@@ -342,7 +342,8 @@ public class Doctor extends javax.swing.JFrame {
     }//GEN-LAST:event_lblAgregarPacienteMouseClicked
 
     private void lblModificarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarPerfilMouseClicked
-        new PerfilDoctor().setVisible(true);
+        
+        new PerfilDoctor(id_doct).setVisible(true);
         /*enviar el id del doctor para saber cual modificar o de cual
         recuperar datos*/
     }//GEN-LAST:event_lblModificarPerfilMouseClicked

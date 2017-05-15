@@ -37,6 +37,11 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         txtMedicoNo.setText(id+"");
         Object vector[] = p.obtenerDatosRecepcionista(id_recep);
         //JOptionPane.showMessageDialog(null,"vector: "+vector[0]);
+        txtNombre1.enable(false);
+        txtNombre2.enable(false);
+        txtApellido1.enable(false);
+        txtApellido2.enable(false);
+        txtMedicoNo.enable(false);
         llenarCampos(vector);
         
     }
@@ -494,7 +499,6 @@ lblNombreUsuario.setText(vector[0]+" "+vector[2]);
         if(txtCiudad.getText().equals("null")){txtCiudad.setText("");}
         if(txtEstado.getText().equals("null")){txtEstado.setText("");}
         if(txtCodigoPostal.getText().equals("null")){txtCodigoPostal.setText("");}
-        if(txtAreaDomicilio.getText().equals("null")){txtAreaDomicilio.setText("");}
         if(txtTelefonoDomicilio.getText().equals("null")){txtTelefonoDomicilio.setText("");}
         if(txtTelefonoOficina.getText().equals("null")){txtTelefonoOficina.setText("");}
         if(txtTelefonoMovil.getText().equals("null")){txtTelefonoMovil.setText("");}

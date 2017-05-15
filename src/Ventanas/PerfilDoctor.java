@@ -4,20 +4,52 @@
  * and open the template in the editor.
  */
 package Ventanas;
+import Clases.ModificarPerfilDoctorClase;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
  * @author Carlos Puga
  */
 public class PerfilDoctor extends javax.swing.JFrame {
-
+    
+    static int id_Doctor;
+    String nombre;
+    String segundo_nombre;
+    String apellido_paterno;
+    String apellido_materno;
+    String domicilio;
+    String ciudad;
+    String estado;
+    String codigo_postal;
+    String tel_domicilio;
+    String tel_oficina;
+    String tel_movil;
+    String tel_extra;
+    String correo_electronico;
+    String cedula_Profecional;
+    String especialidad;
+    String observaciones;
+    
+    ModificarPerfilDoctorClase d = new ModificarPerfilDoctorClase();
+    
+    
     /**
      * Creates new form PerfilDoctor
      */
-    public PerfilDoctor() {
+    public PerfilDoctor(int id) {
         initComponents();
+         id_Doctor=id;//id de usuario del doctor
         setLocationRelativeTo(null);
         setTitle("PERFIL DOCTOR");
+        txtMedicoNo.setText(id+"");
+        Object vector[] = d.obtenerDatosDoctor(id_Doctor);
+        llenarCampos(vector);
+        txtNombre1.enable(false);
+        txtNombre2.enable(false);
+        txtApellido1.enable(false);
+        txtApellido2.enable(false);
+        txtMedicoNo.enable(false);
     }
 
     /**
@@ -150,10 +182,10 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel22.setText("Observaciones");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, 20));
 
-        jLabel21.setText("Especialidad");
+        jLabel21.setText("*Especialidad");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, 20));
 
-        jLabel20.setText("Cedula Profesional");
+        jLabel20.setText("*Cedula Profesional");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, 20));
 
         jLabel19.setText("Correo Electronico");
@@ -162,7 +194,7 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel18.setText("Telefono Extra");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, 20));
 
-        jLabel17.setText("Teléfono Movil");
+        jLabel17.setText("*Teléfono Movil");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, -1, 20));
 
         jLabel15.setText("Nombre de Usuario");
@@ -171,10 +203,10 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel14.setText("Nombre de Usuario");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, 20));
 
-        jLabel12.setText("Telefono Oficina");
+        jLabel12.setText("*Telefono Oficina");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
 
-        jLabel11.setText("Codigo Postal");
+        jLabel11.setText("*Codigo Postal");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, 20));
 
         jLabel6.setText("Usuario No");
@@ -192,19 +224,19 @@ public class PerfilDoctor extends javax.swing.JFrame {
         jLabel8.setText("Apellido(s)");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, 20));
 
-        jLabel7.setText("Estado");
+        jLabel7.setText("*Estado");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, -1, 20));
 
-        jLabel9.setText("Domicilio");
+        jLabel9.setText("*Domicilio");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, 20));
 
-        jLabel10.setText("Ciudad");
+        jLabel10.setText("*Ciudad");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, 20));
 
         jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Médico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 440));
 
-        jLabel13.setText("Telefono Domicilio");
+        jLabel13.setText("*Telefono Domicilio");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1000, 470));
@@ -246,7 +278,7 @@ public class PerfilDoctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PerfilDoctor().setVisible(true);
+                new PerfilDoctor(id_Doctor).setVisible(true);
             }
         });
     }
@@ -298,4 +330,41 @@ public class PerfilDoctor extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefonoMovil;
     private javax.swing.JTextField txtTelefonoOficina;
     // End of variables declaration//GEN-END:variables
+public void llenarCampos(Object vector[]){
+/*0nombre,1segundo_nombre,2apellido_paterno,3apellido_materno,4domicilio,5ciudad,
+6estado,7codigo_postal,8tel_domicilio,9tel_oficina,10tel_movil,11tel_extra,12correo_electronico*/
+txtNombre1.setText(vector[0]+"");
+txtNombre2.setText(vector[1]+"");
+txtApellido1.setText(vector[2]+"");
+txtApellido2.setText(vector[3]+"");
+txtAreaDomicilio.setText(vector[4]+"");
+txtCiudad.setText(vector[5]+"");
+txtEstado.setText(vector[6]+"");
+txtCodigoPostal.setText(vector[7]+"");
+txtTelefonoDomicilio.setText(vector[8]+"");
+txtTelefonoOficina.setText(vector[9]+"");
+txtTelefonoMovil.setText(vector[10]+"");
+txtTelefonoExtra.setText(vector[11]+"");
+txtCorreoElectronico.setText(vector[12]+"");
+txtCedulaProfesional.setText(vector[13]+"");
+jTextArea1.setText(vector[14]+"");
+jTextArea2.setText(vector[15]+"");
+jLabel15.setText(" "+vector[0]+" "+vector[2]);
+
+
+        if(txtAreaDomicilio.getText().equals("null")){txtAreaDomicilio.setText("");}
+        if(txtCiudad.getText().equals("null")){txtCiudad.setText("");}
+        if(txtEstado.getText().equals("null")){txtEstado.setText("");}
+        if(txtCodigoPostal.getText().equals("null")){txtCodigoPostal.setText("");}
+        if(txtTelefonoDomicilio.getText().equals("null")){txtTelefonoDomicilio.setText("");}
+        if(txtTelefonoOficina.getText().equals("null")){txtTelefonoOficina.setText("");}
+        if(txtTelefonoMovil.getText().equals("null")){txtTelefonoMovil.setText("");}
+        if(txtTelefonoExtra.getText().equals("null")){txtTelefonoExtra.setText("");}
+        if(txtCorreoElectronico.getText().equals("null")){txtCorreoElectronico.setText("");}
+        if(txtCedulaProfesional.getText().equals("null")){txtCedulaProfesional.setText("");}
+        if(jTextArea1.getText().equals("null")){jTextArea1.setText("");}
+        if(jTextArea2.getText().equals("null")){jTextArea2.setText("");}
+}//llenarCampos
+    
+
 }

@@ -32,7 +32,6 @@ public class RecepcionistaClase {
     String datos[][]={};
    
   /*metodos*/
-  
     public String obtenerFecha(String date){
         String meses[]={"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
         String fecha[] = date.split(" ");
@@ -47,17 +46,17 @@ public class RecepcionistaClase {
             return date;
     }//obtenerFecha
     
-       public DefaultTableModel tablaAgendaDoct(){
+    public DefaultTableModel tablaAgendaDoct(){
            DefaultTableModel mod = new DefaultTableModel(h,cabeceraCitas);         
         return mod;
     }//tablaAgendaDoct
        
-        public DefaultTableModel tablaAgend(){
+    public DefaultTableModel tablaAgend(){
            DefaultTableModel mod = new DefaultTableModel(datos,cabeceraCitas);         
         return mod;
     }//tablaAgend
     
-           public DefaultTableModel tablaAgenda(){
+    public DefaultTableModel tablaAgenda(){
            DefaultTableModel mod = new DefaultTableModel(datos,cabeceraCitas);
            
            for(int i=0;i<h.length;i++){
@@ -69,11 +68,11 @@ public class RecepcionistaClase {
         return mod;
     }//tablaAgenda
        
-       public DefaultTableModel tablaPacientes(){
+    public DefaultTableModel tablaPacientes(){
         return new DefaultTableModel(datos,cabeceraPacientes);
     }//tablaPacientes
        
-       public DefaultTableModel obtenerPacientes(){
+    public DefaultTableModel obtenerPacientes(){
            DefaultTableModel mod = tablaPacientes();
            String nombre="";
            String segNombre="";
@@ -104,7 +103,7 @@ public class RecepcionistaClase {
            return mod;
        }//obtenerPacientes
        
-       public DefaultTableModel obtenerCitas(String fechaCitas){
+    public DefaultTableModel obtenerCitas(String fechaCitas){
            DefaultTableModel mod = tablaAgenda();
            //"Hora", "Paciente", "Fecha", "Doctor"
            String hora="";
@@ -297,8 +296,7 @@ public class RecepcionistaClase {
         AutoCompletado.addItem(arrNombres[i]);
         }
     }//itemsText
-    
-    
+     
     public DefaultTableModel obtenerPacientes(String nombreP){
            DefaultTableModel mod = tablaPacientes();
            String []nombrePaciente=nombreP.split(" ");
@@ -319,13 +317,11 @@ public class RecepcionistaClase {
                     apPat+=rs.getString("apellido_paterno")+",";
                     apMat+=rs.getString("apellido_materno")+",";
                     }
-                 
+  
                  String nombreArr[]=nombre.split(",");
                  String segNombArr[]=segNombre.split(",");
                  String apPatArr[]=apPat.split(",");
                  String apMatArr[]=apMat.split(",");
-                 
-
                  
                  for(int i=0;i<nombreArr.length;i++){
                     Object vector[]={nombreArr[i],segNombArr[i],apPatArr[i],apMatArr[i]};
@@ -358,7 +354,7 @@ public class RecepcionistaClase {
             return idDoctor;
     }//getidDoctor
     
-        public DefaultTableModel obtenerCitasPaciente(String fechaCitas,String nombrePaciente){
+    public DefaultTableModel obtenerCitasPaciente(String fechaCitas,String nombrePaciente){
            DefaultTableModel mod = tablaAgend();
            //"Hora", "Paciente", "Fecha", "Doctor"
            int id_paciente=getidPaciente(nombrePaciente);
@@ -413,7 +409,7 @@ public class RecepcionistaClase {
            return mod;
        }//obtenerCitasPaciente
     
-        public int getidPaciente(String nombre){
+    public int getidPaciente(String nombre){
        int idPaciente = 0;
        String nombres [] = nombre.split(" ");
        
@@ -433,6 +429,5 @@ public class RecepcionistaClase {
               }
             return idPaciente;
     }//getidPaciente    
-        
-        
+            
 }//clase

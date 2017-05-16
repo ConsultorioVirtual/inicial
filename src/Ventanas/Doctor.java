@@ -28,25 +28,18 @@ public class Doctor extends javax.swing.JFrame {
     DoctorClase d = new DoctorClase();
     String fechaInic=d.obtenerFecha(fechasis+"");
     ModificarPacienteClase m = new ModificarPacienteClase();
+    
     public Doctor(int id) {/*debe recibir el id del doctor para que solo pueda ver
         los pacientes que le corresponden*/
         id_doct=id;
-        
         initComponents();
         setLocationRelativeTo(null);
         setTitle("DOCTOR");
         Tabla.setModel(d.obtenerCitas(fechaInic, id_doct));
-    }
-    public void tablaAgenda(){
-        modelo=new DefaultTableModel(datos,cabeceraCitas);
-        Tabla.setModel(modelo);
+        d.itemsText(txtBusquedaAgenda, id_doct);
+        addItemsCitas();
     }
     
-    public void tablaPacientes(){
-        modelo=new DefaultTableModel(datos,cabeceraPacientes);
-        Tabla.setModel(modelo);
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -80,7 +73,7 @@ public class Doctor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
         txtBusquedaAgenda = new javax.swing.JTextField();
-        cmbPacientes = new javax.swing.JComboBox<String>();
+        cmbPacientes = new javax.swing.JComboBox<>();
         lblBuscar = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -116,7 +109,7 @@ public class Doctor extends javax.swing.JFrame {
                 lblNuevaConsultaMouseClicked(evt);
             }
         });
-        AgendaPanel.add(lblNuevaConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+        AgendaPanel.add(lblNuevaConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -277,13 +270,18 @@ public class Doctor extends javax.swing.JFrame {
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 900, 270));
         jPanel4.add(txtBusquedaAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 260, 30));
 
-        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opcion" }));
+        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 260, 30));
 
         lblBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblBuscar.setForeground(new java.awt.Color(255, 255, 255));
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Busqueda2_32.png"))); // NOI18N
         lblBuscar.setText("Buscar");
+        lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBuscarMouseClicked(evt);
+            }
+        });
         jPanel4.add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 90, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -306,25 +304,19 @@ public class Doctor extends javax.swing.JFrame {
     private void panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMouseClicked
         if(panel.getSelectedIndex()==0){
             Tabla.setModel(d.obtenerCitas(fechaInic, id_doct));
-            cmbPacientes.removeAllItems();
-            cmbPacientes.addItem("Seleccione una opcion");
-            cmbPacientes.addItem("Paciente");
-            cmbPacientes.addItem("Fecha");
-            cmbPacientes.addItem("Doctor");
+            addItemsCitas();
         }
         if(panel.getSelectedIndex()==1){
             Tabla.setModel(d.obtenerPacientes(id_doct));
             cmbPacientes.removeAllItems();
             cmbPacientes.addItem("Seleccione una opcion");
             cmbPacientes.addItem("Paciente");
-            
+            cmbPacientes.addItem("Mostrar todo");
         }
     }//GEN-LAST:event_panelMouseClicked
 
     private void btnIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrActionPerformed
-        tablaAgenda();
-        obtenerFecha();
-        panel.setSelectedIndex(0);
+
     }//GEN-LAST:event_btnIrActionPerformed
 
     private void lblNuevaConsultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaConsultaMouseClicked
@@ -336,10 +328,7 @@ public class Doctor extends javax.swing.JFrame {
     }//GEN-LAST:event_lblAgregarPacienteMouseClicked
 
     private void lblModificarPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarPerfilMouseClicked
-        
-        new PerfilDoctor(id_doct).setVisible(true);
-        /*enviar el id del doctor para saber cual modificar o de cual
-        recuperar datos*/
+       new PerfilDoctor(id_doct).setVisible(true);
     }//GEN-LAST:event_lblModificarPerfilMouseClicked
 
     private void lblModificarExpedienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblModificarExpedienteMouseClicked
@@ -379,6 +368,39 @@ public class Doctor extends javax.swing.JFrame {
             new Expediente(id).setVisible(true);
         }
     }//GEN-LAST:event_TablaMouseClicked
+
+    private void lblBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBuscarMouseClicked
+        String fechaCal=d.obtenerFecha(Calendar1.getDate()+"");
+        if(panel.getSelectedIndex()==0){
+            if(cmbPacientes.getSelectedIndex()==0){
+                showMessageDialog(null,"Seleccione un criterio de busqueda");
+            }
+            if(cmbPacientes.getSelectedIndex()==1){
+                //obtener paciente
+                String paciente=txtBusquedaAgenda.getText();
+                Tabla.setModel(d.obtenerCitasPaciente(fechaCal, paciente));
+            }
+            if(cmbPacientes.getSelectedIndex()==2){
+                //obtener todo
+                
+                Tabla.setModel(d.obtenerCitas(fechaCal, id_doct));
+            }
+        }
+        if(panel.getSelectedIndex()==1){
+            if(cmbPacientes.getSelectedIndex()==0){
+                showMessageDialog(null,"Seleccione un criterio de busqueda");
+            }
+            if(cmbPacientes.getSelectedIndex()==1){
+                //obtener paciente
+                String paciente=txtBusquedaAgenda.getText();
+                Tabla.setModel(d.obtenerPacientes(paciente));
+            }
+            if(cmbPacientes.getSelectedIndex()==2){
+                //obtener todo
+                Tabla.setModel(d.obtenerPacientes(id_doct));
+            }
+        }
+    }//GEN-LAST:event_lblBuscarMouseClicked
     
     
     public static void main(String args[]) {
@@ -449,55 +471,11 @@ public class Doctor extends javax.swing.JFrame {
     private javax.swing.JTabbedPane panel;
     private javax.swing.JTextField txtBusquedaAgenda;
     // End of variables declaration//GEN-END:variables
+    public void addItemsCitas(){
+        cmbPacientes.removeAllItems();
+        cmbPacientes.addItem("Seleccione una opcion");
+        cmbPacientes.addItem("Paciente");
+        cmbPacientes.addItem("Mostrar todo");
+    }//addItemsCitas
 
-    public void obtenerCitas(String fecha){
-        String hora="";
-        String paciente="";
-        String fechaAct="";
-        String doct="";
-        String horaArr [];
-        String pacienteArr [];
-        String fechaActArr [];
-        String doctArr [];
-        TableModel tableModel = Tabla.getModel();
-        tablaAgenda();
-        try{
-                 String query = "select hora, paciente, fecha, doctor from citas\n" +
-                "WHERE fecha= '"+ fecha +"' and estado = 1 ORDER BY hora";
-                 PreparedStatement st = cn.prepareStatement(query);
-                 ResultSet rs = st.executeQuery();
-                 while(rs.next()){
-                    hora += rs.getString("hora")+",";
-                    paciente+=rs.getString("paciente")+",";
-                    fechaAct+=rs.getString("fecha")+",";
-                    doct+=rs.getString("doctor")+",";
-                    }
-                 
-            }catch (SQLException ex){
-                    System.out.println(ex.getMessage());
-              }
-        horaArr=hora.split(",");
-        pacienteArr=paciente.split(",");
-        fechaActArr=fechaAct.split(",");
-        doctArr=doct.split(",");
-            for(int i=0;i<horaArr.length;i++){//i=filas
-                Object datos[]={horaArr[i], pacienteArr[i], fechaActArr[i], doctArr[i]};
-                modelo.addRow(datos);
-        }
-    }//obtenerCitas
-    
-    public void obtenerFecha(){
-        String date = Calendar1.getDate()+"";
-        String meses[]={"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
-        String fecha[] = date.split(" ");
-        for(int i=0;i<meses.length;i++){
-            if(meses[i].equals(fecha[1])){
-                if((i+1)<10){
-                    date=fecha[5]+"-0"+(i+1)+"-"+fecha[2];
-                }else
-                date=fecha[5]+"-"+(i+1)+"-"+fecha[2];
-            }
-        }//for
-            obtenerCitas(date);
-    }//obtenerFecha
 }//class

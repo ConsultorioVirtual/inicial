@@ -74,6 +74,7 @@ public Object[] obtenerDatospaciente(int id_paciente){
                     observaciones= rs.getString("observaciones");
                     }   
       String doctor=obtenerDoctor(Integer.parseInt(id_doctor));
+      
       Object vector[]={nombre,segundo_nombre,apellido_paterno,apellido_materno,
           domicilio,ciudad,estado,codigo_postal,tel_domicilio,tel_oficina,
             correo_electronico,sexo,derechohabiente,lugar_nacimiento,
@@ -87,7 +88,7 @@ public Object[] obtenerDatospaciente(int id_paciente){
         return vector1; 
     }//obtenerDatospaciente
 
-     public int getidDoctor(String nombre){
+    public int getidDoctor(String nombre){
        int idDoctor = 0;
        String nombres [] = nombre.split(" ");
        String nomb = nombres[0];
@@ -267,9 +268,6 @@ public Object[] obtenerDatospaciente(int id_paciente){
                 return est;}*/
          return est;
     }//validarCampos
-
-
-
 
 public void actualizarP(String nombre,String segundo_nombre, String apellido_paterno,
                 String apellido_materno,String domicilio,String ciudad,String estado,

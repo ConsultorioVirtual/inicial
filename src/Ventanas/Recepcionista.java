@@ -27,15 +27,19 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         Tabla.setModel(r.obtenerCitas(fechaInic));
         addItemsCitas();
         r.itemsText(txtBusquedaAgenda);
-        //obtenerFecha();   
+        //obtenerFecha(); 
+        
+        
     }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        Calendar1 = new com.toedter.calendar.JCalendar();
+        calendar1 = new com.toedter.calendar.JCalendar();
         btnIr = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -43,7 +47,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         txtBusquedaAgenda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
-        cmbPacientes = new javax.swing.JComboBox<>();
+        cmbPacientes = new javax.swing.JComboBox<String>();
         lblBuscar = new javax.swing.JLabel();
         panel = new javax.swing.JTabbedPane();
         AgendaPanel = new javax.swing.JPanel();
@@ -73,10 +77,20 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         jPanel3.setBackground(new java.awt.Color(0, 102, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Calendar1.setBackground(new java.awt.Color(51, 255, 204));
-        Calendar1.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
-        Calendar1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(Calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 270));
+        calendar1.setBackground(new java.awt.Color(51, 255, 204));
+        calendar1.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
+        calendar1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        calendar1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                calendar1MouseMoved(evt);
+            }
+        });
+        calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calendar1MouseClicked(evt);
+            }
+        });
+        jPanel3.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 270));
 
         btnIr.setText("Ir a fecha");
         btnIr.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,7 +142,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 890, 340));
 
-        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        cmbPacientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opcion" }));
         jPanel4.add(cmbPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 260, 30));
 
         lblBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -303,7 +317,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         showMessageDialog(null,"Seleccione un horario");
         }
         else{
-        String fec=r.obtenerFecha(Calendar1.getDate()+"");
+        String fec=r.obtenerFecha(calendar1.getDate()+"");
         String hor=Tabla.getValueAt(columna, 0)+"";
         String doct=Tabla.getValueAt(columna,3)+"";
         JFrame cita = new NuevaCita(fec,hor,doct);
@@ -361,7 +375,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     }//GEN-LAST:event_lblCancelarMouseClicked
 
     private void btnIrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIrMouseClicked
-        String fecha = Calendar1.getDate().toString();
+        String fecha = calendar1.getDate().toString();
         fecha=r.obtenerFecha(fecha);
         Tabla.setModel(r.obtenerCitas(fecha));
     }//GEN-LAST:event_btnIrMouseClicked
@@ -371,7 +385,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     }//GEN-LAST:event_TablaMouseClicked
 
     private void lblBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBuscarMouseClicked
-        String fecha=r.obtenerFecha(Calendar1.getDate()+"");
+        String fecha=r.obtenerFecha(calendar1.getDate()+"");
         String nomb=txtBusquedaAgenda.getText();
         if(panel.getSelectedIndex()==0){
             if(cmbPacientes.getSelectedIndex()==0){
@@ -387,7 +401,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
             }
             if(cmbPacientes.getSelectedIndex()==3){
                 //doctor
-                Tabla.setModel(r.obtenerCitas(r.obtenerFecha(Calendar1.getDate()+"")));
+                Tabla.setModel(r.obtenerCitas(r.obtenerFecha(calendar1.getDate()+"")));
             }
             
         }
@@ -406,6 +420,16 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
         }
         
     }//GEN-LAST:event_lblBuscarMouseClicked
+
+    private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
+        String fecha = calendar1.getDate().toString();
+        fecha=r.obtenerFecha(fecha);
+        Tabla.setModel(r.obtenerCitas(fecha));
+    }//GEN-LAST:event_calendar1MouseClicked
+
+    private void calendar1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseMoved
+        
+    }//GEN-LAST:event_calendar1MouseMoved
     
     
     public static void main(String args[]) {
@@ -442,7 +466,6 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AgendaPanel;
-    private com.toedter.calendar.JCalendar Calendar1;
     private javax.swing.JLabel Fondo_Agenda;
     private javax.swing.JLabel Fondo_Pacientes;
     private javax.swing.JLabel Fondo_Pacientes1;
@@ -450,6 +473,7 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     private javax.swing.JPanel PerfilPanel;
     private javax.swing.JTable Tabla;
     private javax.swing.JButton btnIr;
+    private com.toedter.calendar.JCalendar calendar1;
     private javax.swing.JComboBox<String> cmbPacientes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -526,5 +550,11 @@ public class Recepcionista extends javax.swing.JFrame implements WindowListener{
     public void windowDeactivated(WindowEvent e) {
         
     }
+    
+    
+
+
+   
+   
     
 }//class

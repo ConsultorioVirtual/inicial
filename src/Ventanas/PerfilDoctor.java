@@ -305,8 +305,8 @@ public class PerfilDoctor extends javax.swing.JFrame {
         tel_domicilio=txtTelefonoDomicilio.getText();
         tel_oficina=txtTelefonoOficina.getText();
         tel_movil=txtTelefonoMovil.getText();
-        tel_extra=txtCorreoElectronico.getText();
-        correo_electronico=txtTelefonoExtra.getText();
+        tel_extra=txtTelefonoExtra.getText();
+        correo_electronico=txtCorreoElectronico.getText();
         cedula_Profecional=txtCedulaProfesional.getText();
         especialidad=jTextArea1.getText();
         observaciones=jTextArea2.getText();

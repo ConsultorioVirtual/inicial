@@ -328,8 +328,8 @@ public class PerfilRecepcionista extends javax.swing.JFrame {
         tel_domicilio=txtTelefonoDomicilio.getText();
         tel_oficina=txtTelefonoOficina.getText();
         tel_movil=txtTelefonoMovil.getText();
-        tel_extra=txtCorreoElectronico.getText();
-        correo_electronico=txtTelefonoExtra.getText();
+        tel_extra=txtTelefonoExtra.getText();
+        correo_electronico=txtCorreoElectronico.getText();
         
         if(p.validarCampos(domicilio, ciudad, estado, codigo_postal, tel_domicilio, tel_oficina, tel_movil)){
         int respuesta=JOptionPane.showConfirmDialog(null, "¿Desea guardar los cambios?",

@@ -98,7 +98,6 @@ public class Expediente extends javax.swing.JFrame {
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea5 = new javax.swing.JTextArea();
@@ -109,6 +108,7 @@ public class Expediente extends javax.swing.JFrame {
         txtCantidad = new javax.swing.JTextField();
         txtInicio = new javax.swing.JTextField();
         txtSuspencion = new javax.swing.JTextField();
+        jLabel64 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
@@ -203,7 +203,9 @@ public class Expediente extends javax.swing.JFrame {
         jLabel93 = new javax.swing.JLabel();
         txtAnestesia = new javax.swing.JTextField();
         txtIctericia = new javax.swing.JTextField();
+        jLabel105 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        txtParto1 = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
@@ -498,9 +500,6 @@ public class Expediente extends javax.swing.JFrame {
         jLabel65.setText("Tipo");
         jPanel7.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, 20));
 
-        jLabel64.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Anticoncepcion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        jPanel7.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 470, 80));
-
         jLabel68.setText("Observaciones");
         jPanel7.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
@@ -524,6 +523,9 @@ public class Expediente extends javax.swing.JFrame {
         jPanel7.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 80, -1));
         jPanel7.add(txtInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 150, -1));
         jPanel7.add(txtSuspencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
+
+        jLabel64.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Anticoncepcion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPanel7.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 470, 80));
 
         jTabbedPane2.addTab("Ginecologicos", jPanel7);
 
@@ -640,12 +642,12 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel31.setText("Edad gestacional");
-        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, 20));
-        jPanel6.add(spnEdadGestacional, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 50, -1));
-        jPanel6.add(spnNoGestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 50, -1));
+        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, 20));
+        jPanel6.add(spnEdadGestacional, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 50, -1));
+        jPanel6.add(spnNoGestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 50, -1));
         jPanel6.add(txtSitioParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 320, -1));
-        jPanel6.add(txtTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 140, -1));
-        jPanel6.add(txtPesoAlNacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, -1));
+        jPanel6.add(txtTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 140, -1));
+        jPanel6.add(txtPesoAlNacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 140, -1));
         jPanel6.add(spnToracico, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 80, -1));
         jPanel6.add(spnCefalico, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 80, -1));
         jPanel6.add(spnAbdominal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 80, -1));
@@ -687,16 +689,16 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jLabel34.setText("Talla");
-        jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, 20));
+        jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, 20));
 
         jLabel35.setText("Peso al Nacer");
-        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 20));
+        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, 20));
 
         jLabel33.setText("Sitio de Atencion del Parto");
         jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel32.setText("No. de gestación");
-        jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 20));
+        jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, 20));
 
         txtComplicaciones.setColumns(20);
         txtComplicaciones.setRows(5);
@@ -721,7 +723,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel28.setText("Resumen");
         jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
 
-        jLabel69.setText("PARTO");
+        jLabel69.setText("Parto");
         jPanel6.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
 
         jLabel86.setText("Apnea Neonatal");
@@ -740,7 +742,7 @@ public class Expediente extends javax.swing.JFrame {
                 txtPartoActionPerformed(evt);
             }
         });
-        jPanel6.add(txtParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 60, -1));
+        jPanel6.add(txtParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, -1));
 
         jLabel90.setText("Convulsiones");
         jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
@@ -761,8 +763,18 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.add(txtAnestesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 80, -1));
         jPanel6.add(txtIctericia, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 80, -1));
 
+        jLabel105.setText("Cesarea");
+        jPanel6.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 10));
+
         jLabel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PERINATALES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 580));
+        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 580));
+
+        txtParto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtParto1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(txtParto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 60, -1));
 
         jTabbedPane2.addTab("Perinatales", jPanel6);
 
@@ -1401,6 +1413,10 @@ public class Expediente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIntergenesiaActionPerformed
 
+    private void txtParto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtParto1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1442,6 +1458,7 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel109;
@@ -1737,6 +1754,7 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextField txtOcupacion;
     private javax.swing.JTextField txtPNombre;
     private javax.swing.JTextField txtParto;
+    private javax.swing.JTextField txtParto1;
     private javax.swing.JTextField txtPartoPrematuro;
     private javax.swing.JTextField txtPesoAlNacer;
     private javax.swing.JTextField txtProcedencia;
@@ -1815,7 +1833,7 @@ public void obtenerInterrogatorio(){
 }
 
 public void obtenerObstetrico(){
-
+    
 }
 
 public void obtenerGinecologicos(){

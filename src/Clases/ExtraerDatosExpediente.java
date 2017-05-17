@@ -370,7 +370,7 @@ public class ExtraerDatosExpediente {
                 Object vector[]={F_D_P,G,A,P,C,nacidos_vivos,nacidos_muertos,viven,muerto_semana1,
                                  muerto_despues,intergencia,parto_prematuro,malformaciones,
                                  isoinmunizacion,atencion_prenatal,medicacion_gestacional,
-                                 examenes_complementarios,observaciones};
+                                 examenes_complementarios,observaciones,resumen};
                 return vector;
         } catch (SQLException ex){ System.out.println(ex.getMessage()); }
         return vector1;

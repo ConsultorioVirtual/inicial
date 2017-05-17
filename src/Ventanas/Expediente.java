@@ -16,6 +16,7 @@ public class Expediente extends javax.swing.JFrame {
      conectar cc=new conectar();
      Connection cn=cc.conexion();
     ExtraerDatosExpediente m = new ExtraerDatosExpediente();
+    
     Object vector[];
     Object vectorExFi[];
     Object vectorInterrogatorio[];

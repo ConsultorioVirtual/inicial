@@ -66,8 +66,6 @@ public class Expediente extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
-        rdbtnParto = new javax.swing.JRadioButton();
-        rdbtnCesarea = new javax.swing.JRadioButton();
         spnEdadGestacional = new javax.swing.JSpinner();
         spnNoGestacion = new javax.swing.JSpinner();
         txtSitioParto = new javax.swing.JTextField();
@@ -97,6 +95,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -123,17 +122,17 @@ public class Expediente extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        cmbFrecuencia = new javax.swing.JComboBox<String>();
-        cmbDuracion = new javax.swing.JComboBox<String>();
-        cmbCantidad = new javax.swing.JComboBox<String>();
+        cmbFrecuencia = new javax.swing.JComboBox<>();
+        cmbDuracion = new javax.swing.JComboBox<>();
+        cmbCantidad = new javax.swing.JComboBox<>();
         jLabel58 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         spnVidaSexual = new javax.swing.JSpinner();
         jLabel63 = new javax.swing.JLabel();
         spnNoParejas = new javax.swing.JSpinner();
         txtTipo = new javax.swing.JTextField();
-        cmbInicio = new javax.swing.JComboBox<String>();
-        cmbSuspencion = new javax.swing.JComboBox<String>();
+        cmbInicio = new javax.swing.JComboBox<>();
+        cmbSuspencion = new javax.swing.JComboBox<>();
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
@@ -146,7 +145,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
-        cmbFPP = new javax.swing.JComboBox<String>();
+        cmbFPP = new javax.swing.JComboBox<>();
         jLabel72 = new javax.swing.JLabel();
         spnG = new javax.swing.JSpinner();
         spnA = new javax.swing.JSpinner();
@@ -427,17 +426,9 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel31.setText("Edad gestacional");
-        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, 20));
-
-        rdbtnParto.setBackground(new java.awt.Color(255, 255, 255));
-        rdbtnParto.setText("Parto");
-        jPanel6.add(rdbtnParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-
-        rdbtnCesarea.setBackground(new java.awt.Color(255, 255, 255));
-        rdbtnCesarea.setText("Cesarea");
-        jPanel6.add(rdbtnCesarea, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-        jPanel6.add(spnEdadGestacional, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 50, -1));
-        jPanel6.add(spnNoGestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 50, -1));
+        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, 20));
+        jPanel6.add(spnEdadGestacional, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 50, -1));
+        jPanel6.add(spnNoGestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 50, -1));
         jPanel6.add(txtSitioParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 320, -1));
         jPanel6.add(txtTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 140, -1));
         jPanel6.add(txtPesoAlNacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 140, -1));
@@ -508,6 +499,9 @@ public class Expediente extends javax.swing.JFrame {
         jLabel36.setText("Perimetros (cm)");
         jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar uno", "Parto", "Cesarea" }));
+        jPanel6.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, -1));
+
         jLabel34.setText("Talla");
         jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, 20));
 
@@ -518,7 +512,7 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel32.setText("No. de gestación");
-        jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, 20));
+        jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 20));
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -580,13 +574,13 @@ public class Expediente extends javax.swing.JFrame {
         jLabel61.setText("de Cantidad");
         jPanel7.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, 20));
 
-        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
+        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
         jPanel7.add(cmbFrecuencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 80, -1));
 
-        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Menometrorragia" }));
+        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Menometrorragia" }));
         jPanel7.add(cmbDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
 
-        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
+        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
         jPanel7.add(cmbCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 80, -1));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -602,10 +596,10 @@ public class Expediente extends javax.swing.JFrame {
         jPanel7.add(spnNoParejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 80, -1));
         jPanel7.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 420, -1));
 
-        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui se pone Date Chooser" }));
+        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui se pone Date Chooser" }));
         jPanel7.add(cmbInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 160, -1));
 
-        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un datechooser" }));
+        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui va un datechooser" }));
         jPanel7.add(cmbSuspencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
 
         jLabel67.setText("Suspención");
@@ -648,7 +642,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel70.setText("F.P.P");
         jPanel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
 
-        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un date chooser" }));
+        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui va un date chooser" }));
         jPanel8.add(cmbFPP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 150, -1));
 
         jLabel72.setText("G");
@@ -1421,6 +1415,7 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -1599,8 +1594,6 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JLabel lblEliminarExpediente;
     private javax.swing.JLabel lblGuardarExpediente;
     private javax.swing.JLabel lblNuevaConsulta;
-    private javax.swing.JRadioButton rdbtnCesarea;
-    private javax.swing.JRadioButton rdbtnParto;
     private javax.swing.JSpinner spnA;
     private javax.swing.JSpinner spnAbdominal;
     private javax.swing.JSpinner spnApgar;

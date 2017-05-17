@@ -17,6 +17,9 @@ import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Receta extends javax.swing.JFrame implements Printable {
 //dff
@@ -44,7 +47,7 @@ public class Receta extends javax.swing.JFrame implements Printable {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaReceta = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,11 +60,12 @@ public class Receta extends javax.swing.JFrame implements Printable {
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        cmbFuente = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -94,14 +98,14 @@ public class Receta extends javax.swing.JFrame implements Printable {
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 390));
 
-        jScrollPane1.setBorder(null);
+        textAreaReceta.setBorder(null);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        textAreaReceta.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 610, 260));
+        jPanel1.add(textAreaReceta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 570, 240));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jLabel1.setText("CED: PROF 227123123 / CED ESPECIALISTA");
@@ -155,6 +159,21 @@ public class Receta extends javax.swing.JFrame implements Printable {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel6.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 153), null));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cmbFuente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cmbFuente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arial", "Tahoma", "Helvética", "Calibri", "Century" }));
+        cmbFuente.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbFuenteItemStateChanged(evt);
+            }
+        });
+        jPanel6.add(cmbFuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
+
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 80));
+
         jPanel5.setBackground(new java.awt.Color(0, 102, 153));
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 153), null));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -183,17 +202,12 @@ public class Receta extends javax.swing.JFrame implements Printable {
         jLabel19.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("a la Derecha");
-        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
-
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("a la Izquierda");
         jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 80));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 270, 80));
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 153));
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 153), null));
@@ -223,7 +237,7 @@ public class Receta extends javax.swing.JFrame implements Printable {
         jLabel16.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 210, 80));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 210, 80));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menu Azul.png"))); // NOI18N
         jLabel12.setText("jLabel8");
@@ -261,6 +275,13 @@ public class Receta extends javax.swing.JFrame implements Printable {
 
     }//GEN-LAST:event_formKeyPressed
 
+    public void CambiarFuente(){
+        String fuenteSeleccionada = cmbFuente.getSelectedItem().toString();
+        Font fuente=new Font(fuenteSeleccionada, Font.PLAIN, 12);
+       
+        jTextArea1.setFont(fuente);
+    }
+    
     private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
         try {
             // Open printer dialog and pass JPanel to print
@@ -273,6 +294,10 @@ public class Receta extends javax.swing.JFrame implements Printable {
             Logger.getLogger(Receta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel9MousePressed
+
+    private void cmbFuenteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbFuenteItemStateChanged
+        CambiarFuente();
+    }//GEN-LAST:event_cmbFuenteItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -310,6 +335,7 @@ public class Receta extends javax.swing.JFrame implements Printable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbFuente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -322,7 +348,6 @@ public class Receta extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -336,10 +361,11 @@ public class Receta extends javax.swing.JFrame implements Printable {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane textAreaReceta;
     // End of variables declaration//GEN-END:variables
  public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
 

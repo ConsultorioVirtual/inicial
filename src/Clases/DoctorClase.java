@@ -36,8 +36,9 @@ public class DoctorClase {
         return new DefaultTableModel(datos,cabeceraPacientes);
     }//tablaPacientes
     
-    public DefaultTableModel obtenerPacientes(int id_doctor){
+    public DefaultTableModel obtenerPacientes(int id_usuario){
            DefaultTableModel mod = tablaPacientes();
+           int id_doctor=getidDoctor(id_usuario);
            String nombre="";
            String segNombre="";
            String apPat="";
@@ -270,4 +271,21 @@ public class DoctorClase {
               }
             return idPaciente;
     }//getidPaciente    
+
+    public int getidDoctor(int id_usuario){
+       int idDoctor = 0;
+              
+            try{
+                 String query = "select id_doctor from detalle_doctor\n" +
+                                "where id_usuario='"+id_usuario+"'";
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                    idDoctor = rs.getInt("id_doctor");
+                    }
+            }catch (SQLException ex){
+                    System.out.println(ex.getMessage());
+              }
+            return idDoctor;
+    }//getidPaciente  
 }//clase

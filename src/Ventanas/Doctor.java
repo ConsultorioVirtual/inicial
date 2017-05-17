@@ -1,6 +1,6 @@
 package Ventanas;
 import Clases.DoctorClase;
-import Clases.ModificarPacienteClase;
+import Clases.ExtraerDatosExpediente;
 import Clases.conectar;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +27,7 @@ public class Doctor extends javax.swing.JFrame {
     java.util.Date fechasis = new Date();
     DoctorClase d = new DoctorClase();
     String fechaInic=d.obtenerFecha(fechasis+"");
-    ModificarPacienteClase m = new ModificarPacienteClase();
+    ExtraerDatosExpediente m = new ExtraerDatosExpediente();
     
     public Doctor(int id) {/*debe recibir el id del doctor para que solo pueda ver
         los pacientes que le corresponden*/
@@ -353,7 +353,7 @@ public class Doctor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIrMouseClicked
 
     private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
-        int columna=Tabla.getSelectedRow();
+       /* int columna=Tabla.getSelectedRow();
         String paciente = Tabla.getValueAt(columna,1)+"";
         String p[]= paciente.split(" ");
         if(columna==-1){
@@ -366,7 +366,7 @@ public class Doctor extends javax.swing.JFrame {
             String apellido_materno=p[3];
             int id=m.obtenerIdPaciente(nombre, segundo_nombre, apellido_paterno, apellido_materno);
             new Expediente(id).setVisible(true);
-        }
+        }*/
     }//GEN-LAST:event_TablaMouseClicked
 
     private void lblBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBuscarMouseClicked

@@ -277,8 +277,6 @@ public void actualizarP(String nombre,String segundo_nombre, String apellido_pat
         String nombre_pareja, String procedencia, String ocupacion, String escolaridad,
         String observaciones){
         
-           
-        
         if(segundo_nombre.equals("")){segundo_nombre="-";}
         if(apellido_materno.equals("")){apellido_materno="-";}
         if(derechohabiente.equals("ISSSTE, IMSS, ETC")){derechohabiente="";}

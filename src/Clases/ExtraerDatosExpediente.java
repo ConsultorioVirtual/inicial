@@ -153,7 +153,6 @@ public class ExtraerDatosExpediente {
         return id_paciente;
     }//obtenerIdPaciente
     
-    /*EXPEDIENTE */
     public int getidExpediente(int idPaciente){
         int idExpediente=0;
             try{
@@ -167,7 +166,7 @@ public class ExtraerDatosExpediente {
         catch (SQLException ex){ System.out.println(ex.getMessage()); }
         return idExpediente;
     }//getidExpediente
-
+     /*EXPEDIENTE */
     public String obtenerDatosPatologicos(int idExpediente){
         String descripcionPatologicos="";
         try{
@@ -233,10 +232,12 @@ public class ExtraerDatosExpediente {
               }
         return vector1;
     }
+    
     public Object[] obtenerDatosInterrogatorio(int idExpediente){
         String cardiovascular="";
         String digestivo="";
         String endocrino="";
+        String hemolintactico="";
         String musculo_esqueletico="";
         String piel_anexos="";
         String reproductor="";
@@ -245,6 +246,7 @@ public class ExtraerDatosExpediente {
         String sistemas_generales="";
         String urinario="";
         String resumen="";
+        
         String[] vector1={""};
         try{
                  String query = "select * from interrogatorio where expediente_id='"+idExpediente+"'";
@@ -254,6 +256,7 @@ public class ExtraerDatosExpediente {
                     cardiovascular= rs.getString("cardiovascular");
                     digestivo= rs.getString("digestivo");
                     endocrino= rs.getString("endocrino");
+                    hemolintactico=rs.getString("hemolintactico");
                     musculo_esqueletico= rs.getString("musculo_esqueletico");
                     piel_anexos= rs.getString("piel_anexos");
                     reproductor= rs.getString("reproductor");
@@ -263,7 +266,7 @@ public class ExtraerDatosExpediente {
                     urinario= rs.getString("urinario");
                     resumen= rs.getString("resumen");
                  }
-                 Object vector[]={cardiovascular,digestivo,endocrino,musculo_esqueletico,piel_anexos,reproductor,
+                 Object vector[]={cardiovascular,digestivo,endocrino,hemolintactico,musculo_esqueletico,piel_anexos,reproductor,
                                     respiracion,sistema_nervioso,sistemas_generales,urinario,resumen};
                  return vector;
         }catch (SQLException ex){
@@ -272,5 +275,164 @@ public class ExtraerDatosExpediente {
         return vector1;
     }
     
-    
+    public Object[] obtenerDatosGinecologicos(int idExpediente){
+        String menarca="";
+        String menopausia="";
+        String formula="";
+        String f_u_m="";
+        String f_u_m_citologia="";
+        String alteracion_m_frecuencia="";
+        String alteracion_m_duracion="";
+        String alteracion_m_cantidad="";
+        String inicio_vida_sexual="";
+        String no_parejas="";
+        String tipo_anticoncepcion="";
+        String inicio_anticoncepcion="";
+        String suspencion_anticoncepcion="";
+        String observaciones="";
+        String resumen="";
+        String vector1[]={""};
+        try{
+                 String query = "select * from ginecologicos where expediente_id='"+idExpediente+"'";
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                    menarca= rs.getString("menarca");
+                    menopausia= rs.getString("menopausia");
+                    formula= rs.getString("formula");
+                    f_u_m= rs.getString("f_u_m");
+                    f_u_m_citologia= rs.getString("f_u_m_citologia");
+                    alteracion_m_frecuencia= rs.getString("alteracion_m_frecuencia");
+                    alteracion_m_duracion= rs.getString("alteracion_m_duracion");
+                    alteracion_m_cantidad= rs.getString("alteracion_m_cantidad");
+                    inicio_vida_sexual= rs.getString("inicio_vida_sexual");
+                    no_parejas= rs.getString("no_parejas");
+                    tipo_anticoncepcion= rs.getString("tipo_anticoncepcion");
+                    inicio_anticoncepcion= rs.getString("inicio_anticoncepcion");
+                    suspencion_anticoncepcion= rs.getString("suspencion_anticoncepcion");
+                    observaciones= rs.getString("observaciones");
+                    resumen= rs.getString("resumen");                  
+                 }
+                Object vector[]={menarca,menopausia,formula,f_u_m,f_u_m_citologia,alteracion_m_frecuencia,
+                                    alteracion_m_duracion,alteracion_m_cantidad,inicio_vida_sexual,no_parejas,
+                                    tipo_anticoncepcion,inicio_anticoncepcion,suspencion_anticoncepcion,
+                                    observaciones,resumen};
+                return vector;
+        } catch (SQLException ex){ System.out.println(ex.getMessage()); }
+        return vector1;
+    }
+    public Object[] obtenerDatosObstetricos(int idExpediente){
+        String F_D_P="";
+        String G="";
+        String A="";
+        String P="";
+        String C="";
+        String nacidos_vivos="";
+        String nacidos_muertos="";
+        String viven="";
+        String muerto_semana1="";
+        String muerto_despues="";
+        String intergencia="";
+        String parto_prematuro="";
+        String malformaciones="";
+        String isoinmunizacion="";
+        String atencion_prenatal="";
+        String medicacion_gestacional="";
+        String examenes_complementarios="";
+        String observaciones="";
+        String vector1[]={""};
+        try{
+                 String query = "select * from patologicos where expediente_id='"+idExpediente+"'";
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                    F_D_P= rs.getString("F_D_P");
+                    G= rs.getString("G"); 
+                    A= rs.getString("A"); 
+                    P= rs.getString("P"); 
+                    C= rs.getString("C"); 
+                    nacidos_vivos= rs.getString("nacidos_vivos"); 
+                    nacidos_muertos= rs.getString("nacidos_muerto"); 
+                    viven= rs.getString("viven"); 
+                    muerto_semana1= rs.getString("muerto_semana1"); 
+                    muerto_despues= rs.getString("muerto_despues"); 
+                    intergencia= rs.getString("intergencia"); 
+                    parto_prematuro= rs.getString("parto_prematuro"); 
+                    malformaciones= rs.getString("malformaciones"); 
+                    isoinmunizacion= rs.getString("isoinmunizacion"); 
+                    atencion_prenatal= rs.getString("atencion_prenatal");
+                    medicacion_gestacional= rs.getString("medicacion_gestacional"); 
+                    examenes_complementarios= rs.getString("examenes_complementarios"); 
+                    observaciones= rs.getString("observaciones");   
+                 }
+                Object vector[]={F_D_P,G,A,P,C,nacidos_vivos,nacidos_muertos,viven,muerto_semana1,
+                                 muerto_despues,intergencia,parto_prematuro,malformaciones,
+                                 isoinmunizacion,atencion_prenatal,medicacion_gestacional,
+                                 examenes_complementarios,observaciones};
+                return vector;
+        } catch (SQLException ex){ System.out.println(ex.getMessage()); }
+        return vector1;
+    }
+    public Object[] obtenerDatosExpediente_Perinatales(int idExpediente){
+        String parto="";
+        String cesarea="";
+        String no_gestacion="";
+        String edad_gestacion="";
+        String peso_nacer="";
+        String talla="";
+        String sitio_atencion_parto="";
+        String cefalico="";
+        String torcico="";
+        String abdominal="";
+        String apagar_s="";
+        String silverman="";
+        String ballard="";
+        String complicaciones="";
+        String anestesia_bol="";
+        String especifique_anestesia="";
+        String apnea_neonatal="";
+        String hemorragias="";
+        String convulciones="";
+        String cianosis="";
+        String ictericia="";
+        String observaciones="";
+        String resumen="";
+        String vector1[]={""};
+        try{
+                 String query = "select * from expediente where id_expediente='"+idExpediente+"'";
+                 PreparedStatement st = cn.prepareStatement(query);
+                 ResultSet rs = st.executeQuery();
+                 while(rs.next()){
+                    parto= rs.getString("parto");
+                    cesarea= rs.getString("cesarea");
+                    no_gestacion= rs.getString("no_gestacion");
+                    edad_gestacion= rs.getString("edad_gestacion");
+                    peso_nacer= rs.getString("peso_nacer");
+                    talla= rs.getString("talla");
+                    sitio_atencion_parto= rs.getString("sitio_atencion_parto");
+                    cefalico= rs.getString("cefalico");
+                    torcico= rs.getString("torcico");
+                    abdominal= rs.getString("abdominal");
+                    apagar_s= rs.getString("apagar_s");
+                    silverman= rs.getString("silverman");
+                    ballard= rs.getString("ballard");
+                    complicaciones= rs.getString("complicaciones");
+                    anestesia_bol= rs.getString("anestesia_bol");
+                    especifique_anestesia= rs.getString("especifique_anestesia");
+                    apnea_neonatal= rs.getString("apnea_neonatal");
+                    hemorragias= rs.getString("hemorragias");
+                    convulciones= rs.getString("convulciones");
+                    cianosis= rs.getString("cianosis");
+                    ictericia= rs.getString("ictericia");
+                    observaciones= rs.getString("observaciones");
+                    resumen= rs.getString("resumen");
+                 }
+                Object vector[]={parto,cesarea,no_gestacion,edad_gestacion,peso_nacer,talla,
+                                    sitio_atencion_parto,cefalico,torcico,abdominal,apagar_s,silverman,
+                                    ballard,complicaciones,anestesia_bol,especifique_anestesia,apnea_neonatal,
+                                    hemorragias,convulciones,cianosis,ictericia,observaciones,resumen};
+        return vector;
+        } catch (SQLException ex){ System.out.println(ex.getMessage()); }
+        return vector1;
+    }
 }

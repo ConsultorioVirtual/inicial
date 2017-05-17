@@ -88,17 +88,13 @@ public class Expediente extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        cmbFrecuencia = new javax.swing.JComboBox<String>();
-        cmbDuracion = new javax.swing.JComboBox<String>();
-        cmbCantidad = new javax.swing.JComboBox<String>();
+        txtFrecuencia = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         spnVidaSexual = new javax.swing.JSpinner();
         jLabel63 = new javax.swing.JLabel();
         spnNoParejas = new javax.swing.JSpinner();
         txtTipo = new javax.swing.JTextField();
-        cmbInicio = new javax.swing.JComboBox<String>();
-        cmbSuspencion = new javax.swing.JComboBox<String>();
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
@@ -109,9 +105,12 @@ public class Expediente extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         txtAGinecologicos = new javax.swing.JTextArea();
         jLabel47 = new javax.swing.JLabel();
+        txtDuracion = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
+        txtInicio = new javax.swing.JTextField();
+        txtSuspencion = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
-        cmbFPP = new javax.swing.JComboBox<String>();
         jLabel72 = new javax.swing.JLabel();
         spnG = new javax.swing.JSpinner();
         spnA = new javax.swing.JSpinner();
@@ -132,11 +131,6 @@ public class Expediente extends javax.swing.JFrame {
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
         jLabel82 = new javax.swing.JLabel();
         jSpinner3 = new javax.swing.JSpinner();
         jLabel83 = new javax.swing.JLabel();
@@ -145,10 +139,21 @@ public class Expediente extends javax.swing.JFrame {
         txtExamenesComplementarios = new javax.swing.JTextField();
         jLabel85 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
+        txtObservaciones = new javax.swing.JTextArea();
         jScrollPane14 = new javax.swing.JScrollPane();
         txtObstetricos = new javax.swing.JTextArea();
         jLabel53 = new javax.swing.JLabel();
+        txtFPP = new javax.swing.JTextField();
+        jLabel95 = new javax.swing.JLabel();
+        txtIntergenesia = new javax.swing.JTextField();
+        jLabel97 = new javax.swing.JLabel();
+        txtPartoPrematuro = new javax.swing.JTextField();
+        jLabel99 = new javax.swing.JLabel();
+        txtMalformaciones = new javax.swing.JTextField();
+        jLabel101 = new javax.swing.JLabel();
+        txtIsoinmunizacion = new javax.swing.JTextField();
+        jLabel103 = new javax.swing.JLabel();
+        txtAtencionPrenatal = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         spnEdadGestacional = new javax.swing.JSpinner();
@@ -162,8 +167,7 @@ public class Expediente extends javax.swing.JFrame {
         spnApgar = new javax.swing.JSpinner();
         spnSilverman = new javax.swing.JSpinner();
         spnBallard = new javax.swing.JSpinner();
-        txtAnestesia = new javax.swing.JTextField();
-        checkAnestesia = new javax.swing.JCheckBox();
+        txtEspecifique = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
@@ -174,13 +178,12 @@ public class Expediente extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         txtAreaComplicaciones = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtComplicaciones = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -188,15 +191,18 @@ public class Expediente extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtApneaNeonatal = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtHemorragias = new javax.swing.JTextField();
+        txtParto = new javax.swing.JTextField();
         jLabel90 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtConvulsiones = new javax.swing.JTextField();
         jLabel92 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtCianosis = new javax.swing.JTextField();
         jLabel93 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtAnestesia = new javax.swing.JTextField();
+        txtIctericia = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -468,15 +474,7 @@ public class Expediente extends javax.swing.JFrame {
 
         jLabel61.setText("de Cantidad");
         jPanel7.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, 20));
-
-        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
-        jPanel7.add(cmbFrecuencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 80, -1));
-
-        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Menometrorragia" }));
-        jPanel7.add(cmbDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
-
-        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
-        jPanel7.add(cmbCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 80, -1));
+        jPanel7.add(txtFrecuencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 80, -1));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel58.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alteraciones de la mestruación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
@@ -490,12 +488,6 @@ public class Expediente extends javax.swing.JFrame {
         jPanel7.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, 20));
         jPanel7.add(spnNoParejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 80, -1));
         jPanel7.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 420, -1));
-
-        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui se pone Date Chooser" }));
-        jPanel7.add(cmbInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 160, -1));
-
-        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un datechooser" }));
-        jPanel7.add(cmbSuspencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
 
         jLabel67.setText("Suspención");
         jPanel7.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, 20));
@@ -528,6 +520,10 @@ public class Expediente extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel47.setText("Resumen");
         jPanel7.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
+        jPanel7.add(txtDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
+        jPanel7.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 80, -1));
+        jPanel7.add(txtInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 150, -1));
+        jPanel7.add(txtSuspencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
 
         jTabbedPane2.addTab("Ginecologicos", jPanel7);
 
@@ -536,9 +532,6 @@ public class Expediente extends javax.swing.JFrame {
 
         jLabel70.setText("F.P.P");
         jPanel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
-
-        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un date chooser" }));
-        jPanel8.add(cmbFPP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 150, -1));
 
         jLabel72.setText("G");
         jPanel8.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
@@ -582,46 +575,26 @@ public class Expediente extends javax.swing.JFrame {
         jLabel71.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel8.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 470, 120));
 
-        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("Intergenesia");
-        jPanel8.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox3.setText("Atencion Prenatal");
-        jPanel8.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-
-        jCheckBox4.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox4.setText("Parto Prematuro");
-        jPanel8.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
-
-        jCheckBox5.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox5.setText("Malformaciones");
-        jPanel8.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
-
-        jCheckBox6.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox6.setText("Isoinmunizacion");
-        jPanel8.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
-
         jLabel82.setText("No. de Consultas");
-        jPanel8.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, 20));
-        jPanel8.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 210, 80, -1));
+        jPanel8.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, 20));
+        jPanel8.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 80, -1));
 
         jLabel83.setText("Medicación Gestacional");
-        jPanel8.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 20));
-        jPanel8.add(txtMediacionGestional, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 240, 330, -1));
+        jPanel8.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 20));
+        jPanel8.add(txtMediacionGestional, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 330, -1));
 
         jLabel84.setText("Examenes Complementarios");
-        jPanel8.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, 20));
-        jPanel8.add(txtExamenesComplementarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 330, -1));
+        jPanel8.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 20));
+        jPanel8.add(txtExamenesComplementarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 330, -1));
 
         jLabel85.setText("Observaciones");
-        jPanel8.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        jPanel8.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane7.setViewportView(jTextArea6);
+        txtObservaciones.setColumns(20);
+        txtObservaciones.setRows(5);
+        jScrollPane7.setViewportView(txtObservaciones);
 
-        jPanel8.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 470, 180));
+        jPanel8.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 470, 180));
 
         txtObstetricos.setColumns(20);
         txtObstetricos.setRows(5);
@@ -633,6 +606,33 @@ public class Expediente extends javax.swing.JFrame {
         jLabel53.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel53.setText("Resumen");
         jPanel8.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
+        jPanel8.add(txtFPP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 140, -1));
+
+        jLabel95.setText("Intergenesia");
+        jPanel8.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, 20));
+
+        txtIntergenesia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIntergenesiaActionPerformed(evt);
+            }
+        });
+        jPanel8.add(txtIntergenesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 30, 20));
+
+        jLabel97.setText("Parto Prematuro");
+        jPanel8.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, 20));
+        jPanel8.add(txtPartoPrematuro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 30, -1));
+
+        jLabel99.setText("Malformaciones");
+        jPanel8.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, 20));
+        jPanel8.add(txtMalformaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 30, -1));
+
+        jLabel101.setText("Isoinmunizacion");
+        jPanel8.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 20));
+        jPanel8.add(txtIsoinmunizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 30, -1));
+
+        jLabel103.setText("Atencion Prenatal");
+        jPanel8.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, 20));
+        jPanel8.add(txtAtencionPrenatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 30, -1));
 
         jTabbedPane2.addTab("Obstetricos", jPanel8);
 
@@ -652,18 +652,14 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.add(spnApgar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 80, -1));
         jPanel6.add(spnSilverman, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 80, -1));
         jPanel6.add(spnBallard, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 80, -1));
-        jPanel6.add(txtAnestesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 310, -1));
-
-        checkAnestesia.setBackground(new java.awt.Color(255, 255, 255));
-        checkAnestesia.setText("Anestesia");
-        jPanel6.add(checkAnestesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 20));
+        jPanel6.add(txtEspecifique, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 310, -1));
 
         jLabel46.setText("Observaciones");
         jPanel6.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         jLabel44.setForeground(new java.awt.Color(102, 102, 102));
         jLabel44.setText("especifique");
-        jPanel6.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, 20));
+        jPanel6.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, 20));
 
         jLabel43.setText("Complicaciones:");
         jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
@@ -690,9 +686,6 @@ public class Expediente extends javax.swing.JFrame {
         jLabel36.setText("Perimetros (cm)");
         jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "PARTO", " " }));
-        jPanel6.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 100, -1));
-
         jLabel34.setText("Talla");
         jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, 20));
 
@@ -705,9 +698,9 @@ public class Expediente extends javax.swing.JFrame {
         jLabel32.setText("No. de gestación");
         jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 20));
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        txtAreaComplicaciones.setViewportView(jTextArea3);
+        txtComplicaciones.setColumns(20);
+        txtComplicaciones.setRows(5);
+        txtAreaComplicaciones.setViewportView(txtComplicaciones);
 
         jPanel6.add(txtAreaComplicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 450, 50));
 
@@ -728,38 +721,45 @@ public class Expediente extends javax.swing.JFrame {
         jLabel28.setText("Resumen");
         jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
 
-        jLabel69.setText("jLabel69");
-        jPanel6.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+        jLabel69.setText("PARTO");
+        jPanel6.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
 
         jLabel86.setText("Apnea Neonatal");
-        jPanel6.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+        jPanel6.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
+        jPanel6.add(txtApneaNeonatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 80, -1));
 
-        jTextField1.setText("jTextField1");
-        jPanel6.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 70, -1));
+        jLabel45.setText("Anestesia");
+        jPanel6.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
         jLabel88.setText("Hemorragias");
-        jPanel6.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
+        jPanel6.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
+        jPanel6.add(txtHemorragias, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 80, -1));
 
-        jTextField2.setText("jTextField1");
-        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 70, -1));
+        txtParto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPartoActionPerformed(evt);
+            }
+        });
+        jPanel6.add(txtParto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 60, -1));
 
         jLabel90.setText("Convulsiones");
-        jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+        jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
 
-        jTextField3.setText("jTextField1");
-        jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 70, -1));
+        txtConvulsiones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConvulsionesActionPerformed(evt);
+            }
+        });
+        jPanel6.add(txtConvulsiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 80, -1));
 
         jLabel92.setText("Cianosis");
-        jPanel6.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, 20));
-
-        jTextField4.setText("jTextField1");
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 70, 20));
+        jPanel6.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, 30));
+        jPanel6.add(txtCianosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 80, 20));
 
         jLabel93.setText("Ictericia");
-        jPanel6.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, -1, -1));
-
-        jTextField5.setText("jTextField1");
-        jPanel6.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 70, -1));
+        jPanel6.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, -1));
+        jPanel6.add(txtAnestesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 80, -1));
+        jPanel6.add(txtIctericia, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 80, -1));
 
         jLabel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PERINATALES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 580));
@@ -1389,6 +1389,18 @@ public class Expediente extends javax.swing.JFrame {
        
     }//GEN-LAST:event_lblGuardarExpedienteMouseClicked
 
+    private void txtPartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPartoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPartoActionPerformed
+
+    private void txtConvulsionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConvulsionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConvulsionesActionPerformed
+
+    private void txtIntergenesiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIntergenesiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIntergenesiaActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1422,24 +1434,13 @@ public class Expediente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox checkAnestesia;
-    private javax.swing.JComboBox<String> cmbCantidad;
-    private javax.swing.JComboBox<String> cmbDuracion;
-    private javax.swing.JComboBox<String> cmbFPP;
-    private javax.swing.JComboBox<String> cmbFrecuencia;
-    private javax.swing.JComboBox<String> cmbInicio;
-    private javax.swing.JComboBox<String> cmbSuspencion;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
@@ -1496,6 +1497,7 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
@@ -1550,8 +1552,11 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -1609,15 +1614,8 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea20;
     private javax.swing.JTextArea jTextArea21;
     private javax.swing.JTextArea jTextArea22;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblEliminarExpediente;
     private javax.swing.JLabel lblGuardarExpediente;
     private javax.swing.JLabel lblNuevaConsulta;
@@ -1669,6 +1667,7 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextField txtAnestesia;
     private javax.swing.JTextField txtApeMat;
     private javax.swing.JTextField txtApePat;
+    private javax.swing.JTextField txtApneaNeonatal;
     private javax.swing.JTextArea txtArColumnaVertebral;
     private javax.swing.JTextArea txtAreaAbdomen;
     private javax.swing.JScrollPane txtAreaCabeza;
@@ -1699,34 +1698,53 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JScrollPane txtAreaSistemaNervioso;
     private javax.swing.JScrollPane txtAreaSistemasGenerales;
     private javax.swing.JTextArea txtAreaTratamiento;
+    private javax.swing.JTextField txtAtencionPrenatal;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCianosis;
     private javax.swing.JTextField txtCitologia;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtCodigoPostal;
+    private javax.swing.JTextArea txtComplicaciones;
+    private javax.swing.JTextField txtConvulsiones;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDerechohabiente;
     private javax.swing.JTextArea txtDomicilio;
+    private javax.swing.JTextField txtDuracion;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtEscolaridad;
+    private javax.swing.JTextField txtEspecifique;
     private javax.swing.JTextField txtEstado;
     private javax.swing.JTextField txtEstadoCivil;
     private javax.swing.JTextField txtExamenesComplementarios;
+    private javax.swing.JTextField txtFPP;
     private javax.swing.JTextField txtFUM;
     private javax.swing.JTextField txtFechaNac;
     private javax.swing.JTextField txtFormulaMenstrual;
+    private javax.swing.JTextField txtFrecuencia;
+    private javax.swing.JTextField txtHemorragias;
+    private javax.swing.JTextField txtIctericia;
+    private javax.swing.JTextField txtInicio;
+    private javax.swing.JTextField txtIntergenesia;
+    private javax.swing.JTextField txtIsoinmunizacion;
     private javax.swing.JTextField txtLugarNac1;
+    private javax.swing.JTextField txtMalformaciones;
     private javax.swing.JTextField txtMediacionGestional;
     private javax.swing.JTextField txtNombreMadre;
     private javax.swing.JTextField txtNombrePadre;
     private javax.swing.JTextField txtNombrePareja;
+    private javax.swing.JTextArea txtObservaciones;
     private javax.swing.JTextArea txtObstetricos;
     private javax.swing.JTextField txtOcupacion;
     private javax.swing.JTextField txtPNombre;
+    private javax.swing.JTextField txtParto;
+    private javax.swing.JTextField txtPartoPrematuro;
     private javax.swing.JTextField txtPesoAlNacer;
     private javax.swing.JTextField txtProcedencia;
     private javax.swing.JTextField txtRFC;
     private javax.swing.JTextField txtSNombre;
     private javax.swing.JTextField txtSexo;
     private javax.swing.JTextField txtSitioParto;
+    private javax.swing.JTextField txtSuspencion;
     private javax.swing.JTextField txtTalla;
     private javax.swing.JTextField txtTelDom;
     private javax.swing.JTextField txtTelOfi;

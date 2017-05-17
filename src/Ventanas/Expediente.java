@@ -1840,6 +1840,124 @@ public void obtenerGinecologicos(){
     
 }
 
+public void actualizarAntecedentes(){
+ 
+//ANTECEDENTES 
+     //Patologicos
+        String patologicos = txtAPatologicos.getText();
+     
+    //No patologicos
+        String noPatologicos = txtANoPatologicos.getText();
+     
+    //Ginecologicos
+        String menarca = spnMenarca.getValue()+"";
+        String menopausia = spnMenopausia.getValue()+"";
+        String formulaMestrual = txtFormulaMenstrual.getText();
+        String fum = txtFUM.getText();
+        String fuCitologia = txtCitologia.getText();
+        String frecuencia = txtFrecuencia.getText();
+        String duracion = txtDuracion.getText();
+        String cantidad = txtCantidad.getText();
+        String inicioVidaSexual = spnVidaSexual.getValue()+"";
+        String noParejas = spnNoParejas.getValue()+"";
+        String tipo = txtTipo.getText();
+        String inicio = txtInicio.getText();
+        String suspension = txtSuspencion.getText();
+        String observacionesGinecologicos = jTextArea5.getText();
+   
+    //Obstetricos
+        String fpp = txtFPP.getText();
+        String g = spnG.getValue()+"";
+        String a = spnA.getValue()+"";
+        String p = spnP.getValue()+"";
+        String c = spnC.getValue()+"";
+        String nacidosVivos = spnNacidosVivos.getValue()+"";
+        String nacidosMuertos = spnNacidosMuertos.getValue()+"";
+        String viven = spnViven.getValue()+"";
+        String muertoPrimSem = spnMuertoPrimeraSem.getValue()+"";             
+        String muertoDesPrimSem = spnMuertoDesPrimeraSem.getValue()+"";
+        String intergenesia = txtIntergenesia.getText();
+        String partoPrematuro = txtPartoPrematuro.getText();
+        String malformaciones = txtMalformaciones.getText();
+        String isoinmunizacion = txtIsoinmunizacion.getText();
+        String atencionPrenatal = txtAtencionPrenatal.getText();
+        String noConsulta = jSpinner3.getValue()+"";
+        String medicacionGestacional = txtMedicacionGestional.getText();
+        String examenesComplementarios = txtExamenesComplementarios.getText();
+        String observacionesObstetricos = txtObservaciones.getText();
+}
+
+public void actualizarPerinatales(){
+        int idExpediente= a.getidExpediente(id_pac);
+        String parto=txtParto.getText();
+        String cesarea=txtCesarea.getText();
+        String no_gestacion=spnNoGestacion.getValue().toString();
+        String edad_gestacion=spnEdadGestacional.getValue().toString();
+        String peso_nacer=txtPesoAlNacer.getText();
+        String talla=txtTalla.getText();
+        String sitio_atencion_parto=txtSitioParto.getText();
+        String cefalico=spnCefalico.getValue().toString();
+        String torcico=spnToracico.getValue().toString();
+        String abdominal=spnAbdominal.getValue().toString();
+        String apagar_s=spnApgar.getValue().toString();
+        String silverman=spnSilverman.getValue().toString();
+        String ballard=spnBallard.getValue().toString();
+        String complicaciones=txtComplicaciones.getText();
+        String anestesia_bol=txtAnestesia.getText();
+        String especifique_anestesia=txtTipo.getText();
+        String apnea_neonatal=txtApneaNeonatal.getText();
+        String hemorragias=txtHemorragias.getText();
+        String convulciones=txtConvulsiones.getText();
+        String cianosis=txtCianosis.getText();
+        String ictericia=txtIctericia.getText();
+        String observaciones=txtObservaciones.getText();
+        String resumen=txtAPerinatales.getText();
+        
+        a.actualizarExpediente(idExpediente,parto,cesarea, no_gestacion,edad_gestacion,
+                        peso_nacer,talla,sitio_atencion_parto,cefalico,
+                         torcico,abdominal,apagar_s,silverman,ballard,
+                        complicaciones,anestesia_bol,especifique_anestesia,apnea_neonatal,
+                        hemorragias,convulciones,cianosis,ictericia,observaciones,resumen);
+   }
+
+public void actualizarInterrogatorio(){
+    int idExpediente= a.getidExpediente(id_pac);
+    String cardiovascular=txtACardiovascular.getText();
+    String digestivo=txtADigestivo.getText();
+    String endocrino=txtAEndocrino.getText();
+    String hemolintactico=txtAHemolinfatico.getText();
+    String musculo_esqueletico=txtAMusculo_esqueletico.getText();
+    String piel_anexos=txtAPiel_Anexos.getText();
+    String reproductor=txtAReproductor.getText();
+    String respiracion=txtARespiracion.getText();
+    String sistema_nervioso=txtASistema_Nervioso.getText();
+    String sistemas_generales=txtASistemasGenerales.getText();
+    String urinario=txtAUrinario.getText();
+    String resumen=txtAResumen.getText();
+    
+    a.actualizarInterrogatorio(idExpediente,cardiovascular,digestivo,endocrino,
+                                        hemolintactico,musculo_esqueletico,piel_anexos,
+                                        reproductor,respiracion,sistema_nervioso,
+                                        sistemas_generales,urinario,resumen);
+    
+}
+
+public void actualizarExploracionFisica(){
+    int idExpediente=a.getidExpediente(id_pac);
+    String abdomen=txtAreaAbdomen.getText();
+    String cabeza=txtACabeza.getText();
+    String cuello=txtACuello.getText();
+    String columna_vertebral=txtArColumnaVertebral.getText();
+    String exploracion_ginecologica=txtAExploracionGinegologica.getText();
+    String exploracion_neurologica=txtAExploracionNeurologica.getText();
+    String extremidades=txtAExtremidades.getText();
+    String genitales=txtAGenitales.getText();
+    String habitos_exterior=txtAHabitusExterior.getText();
+    String torax=txtATorax.getText();
+    String resumen=txtAResumen.getText(); 
+    a.actualizarExploracionFisica(idExpediente, abdomen, cabeza, cuello, columna_vertebral, exploracion_ginecologica, exploracion_neurologica, extremidades, genitales, habitos_exterior, torax, resumen); 
+}                       
+
 
 }
 

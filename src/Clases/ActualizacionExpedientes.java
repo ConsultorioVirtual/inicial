@@ -101,7 +101,7 @@ public class ActualizacionExpedientes {
                                     String f_u_m,String f_u_m_citologia,String alteracion_m_frecuencia,
                                     String alteracion_m_duracion,String alteracion_m_cantidad,String inicio_vida_sexual,
                                     String no_parejas,String tipo_anticoncepcion,String inicio_anticoncepcion,
-                                    String suspencion_anticoncepcion,String observaciones){
+                                    String suspencion_anticoncepcion,String observaciones, String resumen){
         try{
             PreparedStatement pst = cn.prepareStatement("UPDATE ginecologicos SET menarca ='"+menarca+
                 "',menopausia = '"+menopausia+
@@ -116,7 +116,8 @@ public class ActualizacionExpedientes {
                 "',tipo_anticoncepcion = '"+tipo_anticoncepcion+
                 "',inicio_anticoncepcion = '"+inicio_anticoncepcion+
                 "',suspencion_anticoncepcion = '"+suspencion_anticoncepcion+
-                "',observaciones = '"+observaciones
+                "',observaciones = '"+observaciones+
+                "',resumen = '"+resumen
                 +"' WHERE expediente_id ="+idExpediente);
             int a=pst.executeUpdate();
          if(a>0){
@@ -163,7 +164,7 @@ public class ActualizacionExpedientes {
     }//INTERROGATORIO
    
     /**/
-    public void actualizarExpediente(int idExpediente,String parto,String cesarea,String no_gestacion,String edad_gestacion,
+    public void actualizarExpediente(int id_pac,String parto,String cesarea,String no_gestacion,String edad_gestacion,
                         String peso_nacer,String talla,String sitio_atencion_parto,String cefalico,
                         String torcico,String abdominal,String apagar_s,String silverman,String ballard,
                         String complicaciones,String anestesia_bol,String especifique_anestesia,String apnea_neonatal,
@@ -193,7 +194,7 @@ public class ActualizacionExpedientes {
                 "',ictericia= '"+ictericia+
                 "',observaciones= '"+observaciones+
                 "',resumen = '"+resumen
-                +"' WHERE id_expediente ="+idExpediente);
+                +"' WHERE paciente_id ="+id_pac);
             int a=pst.executeUpdate();
          if(a>0){
                showMessageDialog(null,"Registro de perinatales actualizado");
@@ -211,7 +212,7 @@ public class ActualizacionExpedientes {
                         String nacidos_muertos,String viven,String muerto_semana1,String muerto_despues,
                         String intergencia,String parto_prematuro,String malformaciones,
                         String isoinmunizacion,String atencion_prenatal,String medicacion_gestacional,
-                        String examenes_complementarios,String observaciones){
+                        String examenes_complementarios,String observaciones, String resumen){
         try{
             PreparedStatement pst = cn.prepareStatement("UPDATE obstetricos SET F_D_P ='"+F_D_P+
                 "',G = '"+G+
@@ -229,7 +230,9 @@ public class ActualizacionExpedientes {
                 "',isoinmunizacion = '"+isoinmunizacion+
                 "',atencion_prenatal= '"+atencion_prenatal+
                 "',medicacion_gestacional= '"+medicacion_gestacional+
-                "',examenes_complementarios= '"+examenes_complementarios
+                "',examenes_complementarios= '"+examenes_complementarios+
+                "',observaciones = '"+observaciones+
+                "',resumen = '"+resumen    
                 +"' WHERE expediente_id="+idExpediente);
             int a=pst.executeUpdate();
          if(a>0){

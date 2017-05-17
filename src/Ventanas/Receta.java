@@ -1,13 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package Ventanas;
 
-/**
- *
- * @author Carlos Puga
- */
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -18,8 +10,6 @@ import java.awt.print.PrinterJob;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 
 public class Receta extends javax.swing.JFrame implements Printable {
 //dff

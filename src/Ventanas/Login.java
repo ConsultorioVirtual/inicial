@@ -32,12 +32,12 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnEntrar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        btnEntrar = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -51,6 +51,19 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnEntrar.setText("Entrar");
+        btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEntrarMouseClicked(evt);
+            }
+        });
+        btnEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnEntrarKeyPressed(evt);
+            }
+        });
+        getContentPane().add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 90, 40));
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("IDENTIFICACION DE USUARIOS");
@@ -62,21 +75,13 @@ public class Login extends javax.swing.JFrame {
         jLabel12.setText("Seleccione su nombre de usuario y escriba su contraseña para ingresar al sistema.");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 410, 20));
 
-        btnEntrar.setText("Entrar");
-        btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEntrarMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 90, 40));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setText("Consultorio");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Version 1.0", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(153, 153, 153))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 470, 130));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Consultorio");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,6 +156,27 @@ public class Login extends javax.swing.JFrame {
         String temp = txtUsuario.getText();
         txtUsuario.setText(temp.toUpperCase());
     }//GEN-LAST:event_txtUsuarioKeyReleased
+
+    private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
+        if(evt.getKeyCode() == evt.VK_ENTER){
+           String []arrNombres=txtUsuario.getText().split(" ");
+        int id=l.getId(arrNombres[0],arrNombres[1]);
+        if(l.login(txtUsuario.getText(),pswContraseña.getText()).equals("DOCTOR")){
+            Doctor d = new Doctor(id);/*enviar el id del doctor*/
+            d.setVisible(true);
+            dispose();
+        }else
+        if(l.login(txtUsuario.getText(),pswContraseña.getText()).equals("ASISTENTE")){
+            Recepcionista r = new Recepcionista(id);
+            r.setVisible(true);
+            dispose();
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null,"Usuario y/o contraseña no validos");
+        } 
+        }
+    }//GEN-LAST:event_btnEntrarKeyPressed
 
     /**
      * @param args the command line arguments

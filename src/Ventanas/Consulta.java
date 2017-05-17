@@ -31,7 +31,6 @@ public class Consulta extends javax.swing.JFrame {
 
         jLabel31 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -103,6 +102,11 @@ public class Consulta extends javax.swing.JFrame {
         jLabel31.setText("Receta Medica");
         jLabel31.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel31.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel31MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -112,14 +116,6 @@ public class Consulta extends javax.swing.JFrame {
         jLabel30.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel30.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imprimir_32.png"))); // NOI18N
-        jLabel32.setText("Imprimir Resumen");
-        jLabel32.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel32.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Menu Azul.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -291,6 +287,11 @@ public class Consulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
+        Receta r = new Receta();
+        r.setVisible(true);
+    }//GEN-LAST:event_jLabel31MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -353,7 +354,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

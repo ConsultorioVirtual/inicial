@@ -93,6 +93,7 @@ public class RecepcionistaClase {
                  String segNombArr[]=segNombre.split(",");
                  String apPatArr[]=apPat.split(",");
                  String apMatArr[]=apMat.split(",");
+                 
                  for(int i=0;i<nombreArr.length;i++){
                     Object vector[]={nombreArr[i],segNombArr[i],apPatArr[i],apMatArr[i]};
                     mod.addRow(vector);
@@ -317,7 +318,11 @@ public class RecepcionistaClase {
                     apPat+=rs.getString("apellido_paterno")+",";
                     apMat+=rs.getString("apellido_materno")+",";
                     }
-  
+                 if(nombre.equals("")){
+                 mod=tablaPacientes();
+                     JOptionPane.showMessageDialog(null,"El usuario no coincide con el criterio de busqueda");
+                 return mod;
+                 }
                  String nombreArr[]=nombre.split(",");
                  String segNombArr[]=segNombre.split(",");
                  String apPatArr[]=apPat.split(",");

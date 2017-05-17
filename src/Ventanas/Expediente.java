@@ -21,6 +21,9 @@ public class Expediente extends javax.swing.JFrame {
     Object vectorInterrogatorio[];
     String Datosnopatologicos="";
     String Datospatologicos="";
+    
+    Object vectorObstetricos[];
+    Object vectorGinecolicos[];
     static int id_pac;
     /**
      * Creates new form Expediente
@@ -35,11 +38,18 @@ public class Expediente extends javax.swing.JFrame {
         Datospatologicos=m.obtenerDatosPatologicos(m.getidExpediente(id));
         vectorExFi=m.obtenerDatosExploracionFisica(m.getidExpediente(id));
         vectorInterrogatorio = m.obtenerDatosInterrogatorio(m.getidExpediente(id));
+        
+        vectorGinecolicos=m.obtenerDatosGinecologicos(m.getidExpediente(id));;
+        vectorObstetricos=m.obtenerDatosObstetricos(m.getidExpediente(id));
+        
         obtenerDatos();
         obtenerPatologicos();
         obtenernoPatologicos();
         obtenerExploracionFisica();
         obtenerInterrogatorio();
+        
+        obtenerGinecologicos();;
+        obtenerObstetrico();
         
     }
 
@@ -95,7 +105,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -106,7 +116,7 @@ public class Expediente extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtAPerinatales = new javax.swing.JTextArea();
         jLabel28 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
@@ -122,17 +132,17 @@ public class Expediente extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
-        cmbFrecuencia = new javax.swing.JComboBox<>();
-        cmbDuracion = new javax.swing.JComboBox<>();
-        cmbCantidad = new javax.swing.JComboBox<>();
+        cmbFrecuencia = new javax.swing.JComboBox<String>();
+        cmbDuracion = new javax.swing.JComboBox<String>();
+        cmbCantidad = new javax.swing.JComboBox<String>();
         jLabel58 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         spnVidaSexual = new javax.swing.JSpinner();
         jLabel63 = new javax.swing.JLabel();
         spnNoParejas = new javax.swing.JSpinner();
         txtTipo = new javax.swing.JTextField();
-        cmbInicio = new javax.swing.JComboBox<>();
-        cmbSuspencion = new javax.swing.JComboBox<>();
+        cmbInicio = new javax.swing.JComboBox<String>();
+        cmbSuspencion = new javax.swing.JComboBox<String>();
         jLabel67 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
@@ -141,11 +151,11 @@ public class Expediente extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea5 = new javax.swing.JTextArea();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextArea23 = new javax.swing.JTextArea();
+        txtAGinecologicos = new javax.swing.JTextArea();
         jLabel47 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
-        cmbFPP = new javax.swing.JComboBox<>();
+        cmbFPP = new javax.swing.JComboBox<String>();
         jLabel72 = new javax.swing.JLabel();
         spnG = new javax.swing.JSpinner();
         spnA = new javax.swing.JSpinner();
@@ -181,7 +191,7 @@ public class Expediente extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jTextArea25 = new javax.swing.JTextArea();
+        txtObstetricos = new javax.swing.JTextArea();
         jLabel53 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -472,7 +482,7 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, 20));
 
         jLabel45.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel6.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 450, 180));
+        jPanel6.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 450, 180));
 
         jLabel43.setText("Complicaciones:");
         jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
@@ -499,8 +509,8 @@ public class Expediente extends javax.swing.JFrame {
         jLabel36.setText("Perimetros (cm)");
         jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar uno", "Parto", "Cesarea" }));
-        jPanel6.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, -1));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar uno", "Parto", "Cesarea" }));
+        jPanel6.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 100, -1));
 
         jLabel34.setText("Talla");
         jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, 20));
@@ -521,7 +531,7 @@ public class Expediente extends javax.swing.JFrame {
         jPanel6.add(txtAreaComplicaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 450, 50));
 
         jLabel30.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PERINATALES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 530));
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
@@ -529,10 +539,10 @@ public class Expediente extends javax.swing.JFrame {
 
         jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 430, 90));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setBorder(null);
-        jScrollPane4.setViewportView(jTextArea2);
+        txtAPerinatales.setColumns(20);
+        txtAPerinatales.setRows(5);
+        txtAPerinatales.setBorder(null);
+        jScrollPane4.setViewportView(txtAPerinatales);
 
         jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 370, 480));
 
@@ -574,13 +584,13 @@ public class Expediente extends javax.swing.JFrame {
         jLabel61.setText("de Cantidad");
         jPanel7.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, 20));
 
-        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
+        cmbFrecuencia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Amenorrea", "Polimenorrea", "Oligomenorrea" }));
         jPanel7.add(cmbFrecuencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 80, -1));
 
-        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Menometrorragia" }));
+        cmbDuracion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Menometrorragia" }));
         jPanel7.add(cmbDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
 
-        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
+        cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Hipermenorrea", "Hipomenorrea", "" }));
         jPanel7.add(cmbCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 80, -1));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -596,10 +606,10 @@ public class Expediente extends javax.swing.JFrame {
         jPanel7.add(spnNoParejas, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 80, -1));
         jPanel7.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 420, -1));
 
-        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui se pone Date Chooser" }));
+        cmbInicio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui se pone Date Chooser" }));
         jPanel7.add(cmbInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 160, -1));
 
-        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui va un datechooser" }));
+        cmbSuspencion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un datechooser" }));
         jPanel7.add(cmbSuspencion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 140, -1));
 
         jLabel67.setText("Suspención");
@@ -623,10 +633,10 @@ public class Expediente extends javax.swing.JFrame {
 
         jPanel7.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 470, 250));
 
-        jTextArea23.setColumns(20);
-        jTextArea23.setRows(5);
-        jTextArea23.setBorder(null);
-        jScrollPane10.setViewportView(jTextArea23);
+        txtAGinecologicos.setColumns(20);
+        txtAGinecologicos.setRows(5);
+        txtAGinecologicos.setBorder(null);
+        jScrollPane10.setViewportView(txtAGinecologicos);
 
         jPanel7.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 370, 480));
 
@@ -642,7 +652,7 @@ public class Expediente extends javax.swing.JFrame {
         jLabel70.setText("F.P.P");
         jPanel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
 
-        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aqui va un date chooser" }));
+        cmbFPP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Aqui va un date chooser" }));
         jPanel8.add(cmbFPP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 150, -1));
 
         jLabel72.setText("G");
@@ -728,10 +738,10 @@ public class Expediente extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 470, 180));
 
-        jTextArea25.setColumns(20);
-        jTextArea25.setRows(5);
-        jTextArea25.setBorder(null);
-        jScrollPane14.setViewportView(jTextArea25);
+        txtObstetricos.setColumns(20);
+        txtObstetricos.setRows(5);
+        txtObstetricos.setBorder(null);
+        jScrollPane14.setViewportView(txtObstetricos);
 
         jPanel8.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 370, 480));
 
@@ -741,7 +751,7 @@ public class Expediente extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Obstetricos", jPanel8);
 
-        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 530));
+        jPanel3.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 560));
 
         jTabbedPane1.addTab("Antecedentes", jPanel3);
 
@@ -1581,12 +1591,9 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea20;
     private javax.swing.JTextArea jTextArea21;
     private javax.swing.JTextArea jTextArea22;
-    private javax.swing.JTextArea jTextArea23;
-    private javax.swing.JTextArea jTextArea25;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
@@ -1622,12 +1629,14 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextArea txtAExploracionNeurologica;
     private javax.swing.JTextArea txtAExtremidades;
     private javax.swing.JTextArea txtAGenitales;
+    private javax.swing.JTextArea txtAGinecologicos;
     private javax.swing.JTextArea txtAHabitusExterior;
     private javax.swing.JTextArea txtAHemolinfatico;
     private javax.swing.JTextArea txtAMusculo_esqueletico;
     private javax.swing.JTextArea txtANoPatologicos;
     private javax.swing.JTextArea txtAObservaciones;
     private javax.swing.JTextArea txtAPatologicos;
+    private javax.swing.JTextArea txtAPerinatales;
     private javax.swing.JTextArea txtAPiel_Anexos;
     private javax.swing.JTextArea txtAReproductor;
     private javax.swing.JTextArea txtARespiracion;
@@ -1689,6 +1698,7 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreMadre;
     private javax.swing.JTextField txtNombrePadre;
     private javax.swing.JTextField txtNombrePareja;
+    private javax.swing.JTextArea txtObstetricos;
     private javax.swing.JTextField txtOcupacion;
     private javax.swing.JTextField txtPNombre;
     private javax.swing.JTextField txtPesoAlNacer;
@@ -1738,7 +1748,6 @@ public void obtenernoPatologicos(){
 public void obtenerPatologicos(){
     txtAPatologicos.setText(Datospatologicos);
 }
-
 public void obtenerExploracionFisica(){
     txtAreaAbdomen.setText(vectorExFi[0]+"");
     txtACabeza.setText(vectorExFi[1]+"");
@@ -1752,7 +1761,6 @@ public void obtenerExploracionFisica(){
     txtATorax.setText(vectorExFi[9]+"");
     txtAResumen.setText(vectorExFi[10]+"");
 }
-    
 public void obtenerInterrogatorio(){
     txtACardiovascular.setText(vectorInterrogatorio[0]+"");
     txtADigestivo.setText(vectorInterrogatorio[1]+"");
@@ -1766,6 +1774,13 @@ public void obtenerInterrogatorio(){
     txtASistemasGenerales.setText(vectorInterrogatorio[9]+"");
     txtAUrinario.setText(vectorInterrogatorio[10]+"");
     txtAResumenInt.setText(vectorInterrogatorio[11]+"");
+}
+public void obtenerObstetrico(){
+
+}
+
+public void obtenerGinecologicos(){
+    
 }
 
 

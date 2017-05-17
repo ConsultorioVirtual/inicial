@@ -340,6 +340,7 @@ public class ExtraerDatosExpediente {
         String medicacion_gestacional="";
         String examenes_complementarios="";
         String observaciones="";
+        String resumen="";
         String vector1[]={""};
         try{
                  String query = "select * from patologicos where expediente_id='"+idExpediente+"'";
@@ -364,6 +365,7 @@ public class ExtraerDatosExpediente {
                     medicacion_gestacional= rs.getString("medicacion_gestacional"); 
                     examenes_complementarios= rs.getString("examenes_complementarios"); 
                     observaciones= rs.getString("observaciones");   
+                    resumen=rs.getString("resumen");
                  }
                 Object vector[]={F_D_P,G,A,P,C,nacidos_vivos,nacidos_muertos,viven,muerto_semana1,
                                  muerto_despues,intergencia,parto_prematuro,malformaciones,

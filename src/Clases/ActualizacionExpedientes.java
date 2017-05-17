@@ -103,7 +103,7 @@ public class ActualizacionExpedientes {
                                     String no_parejas,String tipo_anticoncepcion,String inicio_anticoncepcion,
                                     String suspencion_anticoncepcion,String observaciones){
         try{
-            PreparedStatement pst = cn.prepareStatement("UPDATE exploracion_fisica SET menarca ='"+menarca+
+            PreparedStatement pst = cn.prepareStatement("UPDATE ginecologicos SET menarca ='"+menarca+
                 "',menopausia = '"+menopausia+
                 "',formula = '"+formula+
                 "',f_u_m= '"+f_u_m+
@@ -136,7 +136,7 @@ public class ActualizacionExpedientes {
                                         String reproductor,String respiracion,String sistema_nervioso,
                                         String sistemas_generales, String urinario,String resumen){
         try{
-            PreparedStatement pst = cn.prepareStatement("UPDATE exploracion_fisica SET cardiovascular ='"+cardiovascular+
+            PreparedStatement pst = cn.prepareStatement("UPDATE interrogatorio SET cardiovascular ='"+cardiovascular+
                 "',digestivo = '"+digestivo+
                 "',endocrino= '"+endocrino+
                 "',hemolintactico= '"+hemolintactico+
@@ -170,7 +170,7 @@ public class ActualizacionExpedientes {
                         String hemorragias,String convulciones,String cianosis,String ictericia,String observaciones,
                         String resumen){
         try{
-            PreparedStatement pst = cn.prepareStatement("UPDATE exploracion_fisica SET parto ='"+parto+
+            PreparedStatement pst = cn.prepareStatement("UPDATE expediente SET parto ='"+parto+
                 "',cesarea = '"+cesarea+
                 "',no_gestacion= '"+no_gestacion+
                 "',edad_gestacion= '"+edad_gestacion+
